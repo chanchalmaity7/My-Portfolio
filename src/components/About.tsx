@@ -49,7 +49,7 @@ export default function About() {
               </div>
             </div>
             <p className="text-lg mb-6">
-              Hi! I'm Chanchal Maity, a seasoned Full Stack Developer with <span className="text-purple-400 font-semibold">3+ years</span> of professional experience. 
+              Hi! I&apos;m Chanchal Maity, a seasoned Full Stack Developer with <span className="text-purple-400 font-semibold">3+ years</span> of professional experience. 
               I specialize in building enterprise-grade web and mobile applications using the MERN stack with TypeScript.
             </p>
             <p className="text-lg mb-6">

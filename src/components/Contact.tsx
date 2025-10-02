@@ -25,7 +25,7 @@ export default function Contact() {
           >
             <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
             <p className="text-gray-400 mb-8">
-              Ready to work together? Let's discuss your next project and bring your ideas to life with modern web technologies.
+              Ready to work together? Let&apos;s discuss your next project and bring your ideas to life with modern web technologies.
             </p>
             
             <div className="space-y-4">
