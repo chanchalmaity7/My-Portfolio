@@ -156,7 +156,7 @@ export default function AppShowcase() {
             <div>
               <h4 className="text-white font-semibold mb-4">Technologies Used:</h4>
               <div className="flex flex-wrap gap-2">
-                {['React Native', 'TypeScript', 'Expo', 'Node.js', 'MongoDB'].map((tech) => (
+                {['React Native', 'Flutter', 'TypeScript', 'Expo', 'Node.js', 'MongoDB'].map((tech) => (
                   <span
                     key={tech}
                     className="bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm"

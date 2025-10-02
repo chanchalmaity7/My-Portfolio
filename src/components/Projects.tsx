@@ -41,7 +41,7 @@ export default function Projects() {
     {
       title: 'Client Projects Portfolio',
       description: 'Multiple confidential client projects including e-commerce platforms, business management systems, and custom web applications with advanced features.',
-      tech: ['React', 'Next.js', 'Node.js', 'MongoDB', 'TypeScript'],
+      tech: ['React', 'Next.js', 'Flutter', 'Node.js', 'MongoDB', 'TypeScript'],
       status: 'Private Work - NDA',
       gradient: 'from-indigo-500 to-purple-600'
     }

@@ -7,6 +7,7 @@ export default function Skills() {
     { name: 'Express.js', level: 85, color: 'bg-gray-500' },
     { name: 'React.js', level: 95, color: 'bg-blue-500' },
     { name: 'React Native', level: 80, color: 'bg-cyan-500' },
+    { name: 'Flutter', level: 75, color: 'bg-sky-500' },
     { name: 'Node.js', level: 90, color: 'bg-green-600' },
     { name: 'Next.js', level: 92, color: 'bg-black' },
     { name: 'TypeScript', level: 88, color: 'bg-blue-600' },
