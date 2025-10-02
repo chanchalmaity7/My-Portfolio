@@ -15,10 +15,10 @@ export default function Home() {
       <main>
         <section id="home"><Hero /></section>
         <section id="apps"><AppShowcase /></section>
-        <section id="about"><About /></section>
-        <section id="experience"><Experience /></section>
         <section id="skills"><Skills /></section>
         <section id="projects"><Projects /></section>
+        <section id="about"><About /></section>
+        <section id="experience"><Experience /></section>
         <section id="contact"><Contact /></section>
       </main>
       <Footer />
