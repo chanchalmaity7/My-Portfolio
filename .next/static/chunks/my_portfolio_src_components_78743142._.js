@@ -2070,83 +2070,137 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my_portfolio/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my_portfolio/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my_portfolio/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
 function Projects() {
+    _s();
+    const [expandedProject, setExpandedProject] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const projects = [
         {
-            title: 'AasPas',
-            description: 'Full-stack location-based service app with React Native mobile development, real-time GPS tracking, dual-role system (Customer/Worker), JWT authentication, and Socket.io integration.',
+            title: 'AasPas - Local Services Aggregator App',
+            shortDescription: 'Advanced React Native app with TypeScript, dual-role system (Customer/Worker), real-time GPS tracking, and Socket.io integration.',
+            fullDescription: 'Advanced React Native app with TypeScript, Expo platform, dual-role system (Customer/Worker), geospatial matching engine using MongoDB 2dsphere indexes, real-time GPS tracking, Socket.io live updates, JWT authentication, OTP verification, 3-step worker profile setup, earnings tracking, complex animations with Animated API, AsyncStorage persistence, role-based access control, push notifications (FCM), aggregation pipelines, microservices architecture, and Vercel deployment.',
             tech: [
                 'React Native',
                 'TypeScript',
                 'Expo',
                 'Node.js',
+                'Express.js',
                 'MongoDB',
-                'Socket.io'
+                'Socket.io',
+                'JWT',
+                'bcryptjs',
+                'Mongoose',
+                'Vercel'
             ],
-            status: 'Backend Live',
-            gradient: 'from-blue-500 to-purple-600'
+            status: 'Backend Live - Production Ready',
+            gradient: 'from-blue-500 to-purple-600',
+            liveUrl: 'https://your-aaspas-link.com'
         },
         {
-            title: 'Lizz-Shop',
-            description: 'Full-featured e-commerce platform with complex shopping cart, payment integration, and admin panel.',
+            title: 'Lizz-Shop - Full Stack E-commerce Platform',
+            shortDescription: 'Enterprise-grade e-commerce platform built with Next.js 15 & TypeScript. Complete shopping experience with user authentication, shopping cart, and wishlist.',
+            fullDescription: 'Enterprise-grade e-commerce platform built with Next.js 15 & TypeScript. Complete shopping experience with user authentication, shopping cart, wishlist, product search, and admin panel. Features glassmorphism design, mobile-responsive UI, Context API state management, MongoDB Atlas database, JWT authentication, password encryption, real-time updates, 18+ products catalog, BOGO offers, inventory management, order tracking, and Vercel deployment. Demonstrates full-stack development skills with modern tech stack.',
             tech: [
-                'React',
-                'Node.js',
-                'Express',
-                'MongoDB'
-            ],
-            status: 'Live Demo',
-            gradient: 'from-green-500 to-teal-600'
-        },
-        {
-            title: 'Architect Website',
-            description: 'Professional architectural firm website with modern design and portfolio showcase.',
-            tech: [
-                'Next.js',
+                'Next.js 15',
                 'TypeScript',
-                'Tailwind CSS'
+                'MongoDB Atlas',
+                'JWT Auth',
+                'Tailwind CSS',
+                'Context API',
+                'Mongoose',
+                'bcryptjs',
+                'React Icons',
+                'Vercel'
             ],
-            status: 'Live Demo',
-            gradient: 'from-orange-500 to-red-600'
+            status: 'Live Demo - Production Ready',
+            gradient: 'from-green-500 to-teal-600',
+            liveUrl: 'https://your-lizz-shop-link.com'
         },
         {
-            title: 'MushroomDelight',
-            description: 'Modern web application with clean UI/UX and responsive design for food delivery.',
+            title: 'Building Junction - Premium Architectural Consultancy Website',
+            shortDescription: 'Professional architectural firm website for West Bengal\'s premier consultancy with modern design, portfolio showcase, and client management.',
+            fullDescription: 'Complete architectural consultancy website for Building Junction - West Bengal\'s #1 architectural firm. Features: Next.js 15 with TypeScript, responsive glassmorphism design, animated hero sections, service showcase with pricing, portfolio gallery, contact forms, mobile-first approach, intersection observer animations, gradient themes, professional branding, client testimonials, project statistics (300+ projects, 98% satisfaction), multi-page architecture (Home, About, Services, Portfolio, Contact), SEO optimized, and production-ready deployment.',
             tech: [
-                'React',
-                'Next.js',
-                'Tailwind CSS'
-            ],
-            status: 'Live Demo',
-            gradient: 'from-purple-500 to-pink-600'
-        },
-        {
-            title: 'EduQuest',
-            description: 'Smart India Hackathon project - Educational platform with interactive learning modules.',
-            tech: [
-                'MERN Stack',
+                'Next.js 15',
                 'TypeScript',
-                'Tailwind CSS'
+                'Tailwind CSS 4',
+                'Intersection Observer API',
+                'Responsive Design',
+                'Glassmorphism UI',
+                'Animation Effects',
+                'SEO Optimization'
             ],
-            status: 'Hackathon Project',
-            gradient: 'from-cyan-500 to-blue-600'
+            status: 'Live Demo - Production Ready',
+            gradient: 'from-orange-500 to-red-600',
+            liveUrl: 'https://your-building-junction-link.com'
         },
         {
-            title: 'Client Projects Portfolio',
-            description: 'Multiple confidential client projects including e-commerce platforms, business management systems, and custom web applications with advanced features.',
+            title: 'MushroomDelight - Premium Food Delivery Platform',
+            shortDescription: 'Full-stack organic mushroom e-commerce platform with modern UI/UX, payment gateway integration, and comprehensive order management.',
+            fullDescription: 'Complete organic mushroom e-commerce platform built with Next.js 15 & TypeScript. Features: Razorpay payment gateway integration, MongoDB database with Mongoose ODM, user authentication with JWT & bcryptjs, shopping cart & checkout system, order tracking & management, admin dashboard for products & settings, email notifications with Nodemailer, responsive design with Framer Motion animations, floating particles & cursor effects, product catalog with dynamic pricing, COD & online payment options, delivery charge calculations, user profiles & order history, contact forms & newsletter subscription, SEO optimized pages, and production-ready deployment.',
+            tech: [
+                'Next.js 15',
+                'TypeScript',
+                'MongoDB',
+                'Mongoose',
+                'Razorpay Gateway',
+                'JWT Auth',
+                'bcryptjs',
+                'Nodemailer',
+                'Framer Motion',
+                'Tailwind CSS',
+                'React Icons'
+            ],
+            status: 'Live Demo - Production Ready',
+            gradient: 'from-purple-500 to-pink-600',
+            liveUrl: 'https://your-mushroom-delight-link.com'
+        },
+        {
+            title: 'EduQuest - Gamified Learning Platform',
+            shortDescription: 'Smart India Hackathon 2024 winning project - Gamified educational platform with interactive learning, 3D quiz arena, and comprehensive analytics.',
+            fullDescription: 'Smart India Hackathon 2024 project - Complete gamified learning platform built with React 18 & TypeScript. Features: XP & leveling system with achievements, interactive 3D quiz arena using React Three Fiber, student & teacher dashboards, quiz builder with multiple question types, real-time leaderboards & analytics, offline PWA support with service workers, Capacitor mobile app integration, local storage client for data persistence, progress tracking & milestone system, learning games & memory challenges, badge collection system, responsive design with Radix UI components, and comprehensive student performance analytics.',
+            tech: [
+                'React 18',
+                'TypeScript',
+                'Vite',
+                'React Three Fiber',
+                'Radix UI',
+                'Tailwind CSS',
+                'Capacitor',
+                'PWA',
+                'Service Workers',
+                'Local Storage',
+                'Lucide Icons'
+            ],
+            status: 'Smart India Hackathon 2024 - Award Winner',
+            gradient: 'from-cyan-500 to-blue-600',
+            liveUrl: 'https://your-eduquest-link.com'
+        },
+        {
+            title: 'Enterprise Client Projects Portfolio',
+            shortDescription: '10+ confidential enterprise projects including e-commerce platforms, business management systems, and custom web applications.',
+            fullDescription: 'Comprehensive portfolio of 10+ enterprise-grade client projects delivered under NDA agreements. Includes: full-stack e-commerce platforms with payment gateways (Razorpay, Stripe), business management systems with role-based access control, custom CRM & ERP solutions, real-time chat applications with Socket.io, inventory management systems, restaurant POS systems, healthcare management platforms, educational portals with video streaming, multi-tenant SaaS applications, API integrations with third-party services, cloud deployment on AWS/Vercel, database optimization & scaling, and mobile-responsive progressive web apps. All projects feature modern UI/UX, secure authentication, performance optimization, and production-ready deployment.',
             tech: [
                 'React',
                 'Next.js',
                 'Flutter',
                 'Node.js',
                 'MongoDB',
-                'TypeScript'
+                'TypeScript',
+                'Socket.io',
+                'Payment Gateways',
+                'AWS',
+                'PostgreSQL',
+                'Redis'
             ],
-            status: 'Private Work - NDA',
-            gradient: 'from-indigo-500 to-purple-600'
+            status: 'Private Enterprise Work - NDA Protected',
+            gradient: 'from-indigo-500 to-purple-600',
+            liveUrl: null
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2176,20 +2230,20 @@ function Projects() {
                             children: "Projects"
                         }, void 0, false, {
                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                            lineNumber: 60,
+                            lineNumber: 75,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "w-24 h-1 bg-purple-500 mx-auto"
                         }, void 0, false, {
                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                            lineNumber: 61,
+                            lineNumber: 76,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                    lineNumber: 53,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2221,7 +2275,7 @@ function Projects() {
                                     className: "h-32 bg-gradient-to-r ".concat(project.gradient)
                                 }, void 0, false, {
                                     fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 94,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2232,16 +2286,61 @@ function Projects() {
                                             children: project.title
                                         }, void 0, false, {
                                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                            lineNumber: 82,
+                                            lineNumber: 97,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-gray-400 mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed",
-                                            children: project.description
+                                            children: expandedProject === index ? project.fullDescription : project.shortDescription
                                         }, void 0, false, {
                                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                            lineNumber: 83,
+                                            lineNumber: 98,
                                             columnNumber: 17
+                                        }, this),
+                                        project.shortDescription !== project.fullDescription && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>setExpandedProject(expandedProject === index ? null : index),
+                                            className: "text-purple-400 hover:text-purple-300 text-xs mb-3 flex items-center gap-1 transition-colors duration-200",
+                                            children: expandedProject === index ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        children: "Show Less"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/my_portfolio/src/components/Projects.tsx",
+                                                        lineNumber: 109,
+                                                        columnNumber: 25
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "transform rotate-180 transition-transform duration-200",
+                                                        children: "▼"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/my_portfolio/src/components/Projects.tsx",
+                                                        lineNumber: 110,
+                                                        columnNumber: 25
+                                                    }, this)
+                                                ]
+                                            }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        children: "See More"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/my_portfolio/src/components/Projects.tsx",
+                                                        lineNumber: 114,
+                                                        columnNumber: 25
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "transition-transform duration-200",
+                                                        children: "▼"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/my_portfolio/src/components/Projects.tsx",
+                                                        lineNumber: 115,
+                                                        columnNumber: 25
+                                                    }, this)
+                                                ]
+                                            }, void 0, true)
+                                        }, void 0, false, {
+                                            fileName: "[project]/my_portfolio/src/components/Projects.tsx",
+                                            lineNumber: 103,
+                                            columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex flex-wrap gap-2 mb-4",
@@ -2250,58 +2349,72 @@ function Projects() {
                                                     children: tech
                                                 }, tech, false, {
                                                     fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                                    lineNumber: 87,
+                                                    lineNumber: 123,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                            lineNumber: 85,
+                                            lineNumber: 121,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex justify-center",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-green-400 text-sm font-semibold",
-                                                children: project.status
-                                            }, void 0, false, {
-                                                fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                                lineNumber: 94,
-                                                columnNumber: 19
-                                            }, this)
-                                        }, void 0, false, {
+                                            className: "flex flex-col items-center gap-3",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-green-400 text-sm font-semibold",
+                                                    children: project.status
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my_portfolio/src/components/Projects.tsx",
+                                                    lineNumber: 130,
+                                                    columnNumber: 19
+                                                }, this),
+                                                project.liveUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                    href: project.liveUrl,
+                                                    target: "_blank",
+                                                    rel: "noopener noreferrer",
+                                                    className: "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg",
+                                                    children: "Visit Website"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my_portfolio/src/components/Projects.tsx",
+                                                    lineNumber: 132,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 129,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                    lineNumber: 81,
+                                    lineNumber: 96,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, project.title, true, {
                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                            lineNumber: 66,
+                            lineNumber: 81,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                    lineNumber: 64,
+                    lineNumber: 79,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-            lineNumber: 52,
+            lineNumber: 67,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-        lineNumber: 51,
+        lineNumber: 66,
         columnNumber: 5
     }, this);
 }
+_s(Projects, "XVpfx9rEJQsgS90V+TVe0Do2THU=");
 _c = Projects;
 var _c;
 __turbopack_context__.k.register(_c, "Projects");

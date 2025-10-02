@@ -75,10 +75,19 @@ src/
 ## 🎯 Key Projects Featured
 
 1. **AasPas** - Location-based service platform
+   - [Visit](your-link-here) | [GitHub](your-github-link)
+
 2. **Lizz-Shop** - Full-featured e-commerce platform
+   - [Visit](your-link-here) | [GitHub](your-github-link)
+
 3. **Architect Website** - Professional architectural firm website
+   - [Visit](your-link-here) | [GitHub](your-github-link)
+
 4. **MushroomDelight** - Modern food delivery application
+   - [Visit](your-link-here) | [GitHub](your-github-link)
+
 5. **EduQuest** - Smart India Hackathon educational platform
+   - [Visit](your-link-here) | [GitHub](your-github-link)
 
 ## 📧 Contact
 
