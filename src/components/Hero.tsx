@@ -39,7 +39,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -90,7 +90,7 @@ export default function Hero() {
             </div>
             
             <motion.p 
-              className="text-xl md:text-2xl text-gray-300"
+              className="text-lg sm:text-xl md:text-2xl text-gray-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
@@ -132,29 +132,29 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-4 sm:mb-6 leading-relaxed px-4 sm:px-0">
               Senior Full Stack Developer with <span className="text-purple-400 font-bold">3+ years</span> of experience delivering enterprise-grade solutions. 
               Specialized in TypeScript, React ecosystem, and modern cloud architectures.
             </p>
             
             {/* Professional Stats */}
-            <div className="grid grid-cols-3 gap-6 mb-8 max-w-lg mx-auto">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-6 sm:mb-8 max-w-xs sm:max-w-lg mx-auto px-4 sm:px-0">
               <div className="text-center">
-                <div className="text-2xl font-bold text-purple-400">15+</div>
-                <div className="text-sm text-gray-400">Projects</div>
+                <div className="text-lg sm:text-2xl font-bold text-purple-400">15+</div>
+                <div className="text-xs sm:text-sm text-gray-400">Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-pink-400">3+</div>
-                <div className="text-sm text-gray-400">Years Exp</div>
+                <div className="text-lg sm:text-2xl font-bold text-pink-400">3+</div>
+                <div className="text-xs sm:text-sm text-gray-400">Years Exp</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-cyan-400">5+</div>
-                <div className="text-sm text-gray-400">Tech Stack</div>
+                <div className="text-lg sm:text-2xl font-bold text-cyan-400">5+</div>
+                <div className="text-xs sm:text-sm text-gray-400">Tech Stack</div>
               </div>
             </div>
             
             {/* Floating Tech Stack */}
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 px-4 sm:px-0">
               {[
                 { name: 'JavaScript', color: 'bg-yellow-500', icon: 'JS' },
                 { name: 'TypeScript', color: 'bg-blue-600', icon: 'TS' },
@@ -173,7 +173,7 @@ export default function Hero() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1 + (index * 0.1), duration: 0.5 }}
                   whileHover={{ scale: 1.2, y: -5 }}
-                  className={`${tech.color} text-white px-3 py-1 rounded-full text-sm font-semibold cursor-pointer`}
+                  className={`${tech.color} text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold cursor-pointer`}
                 >
                   {tech.name}
                 </motion.div>

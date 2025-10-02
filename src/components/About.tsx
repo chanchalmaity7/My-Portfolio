@@ -12,11 +12,11 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">About Me</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">About Me</h2>
           <div className="w-24 h-1 bg-purple-500 mx-auto"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -37,7 +37,7 @@ export default function About() {
             viewport={{ once: true }}
             className="text-gray-300"
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Senior Full Stack Developer</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Senior Full Stack Developer</h3>
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-2 h-2 bg-green-400 rounded-full"></span>
@@ -60,12 +60,12 @@ export default function About() {
               Proficient in modern development workflows including CI/CD, cloud deployment, and agile methodologies. 
               I excel at translating business requirements into robust technical solutions.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm">Senior Developer</span>
-              <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm">MERN Expert</span>
-              <span className="bg-green-600 text-white px-4 py-2 rounded-full text-sm">React Native</span>
-              <span className="bg-orange-600 text-white px-4 py-2 rounded-full text-sm">TypeScript Pro</span>
-              <span className="bg-indigo-600 text-white px-4 py-2 rounded-full text-sm">Cloud Deploy</span>
+            <div className="flex flex-wrap gap-2 sm:gap-3">
+              <span className="bg-purple-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm">Senior Developer</span>
+              <span className="bg-blue-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm">MERN Expert</span>
+              <span className="bg-green-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm">React Native</span>
+              <span className="bg-orange-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm">TypeScript Pro</span>
+              <span className="bg-indigo-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm">Cloud Deploy</span>
             </div>
           </motion.div>
         </div>

@@ -12,19 +12,19 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Contact Me</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">Contact Me</h2>
           <div className="w-24 h-1 bg-purple-500 mx-auto"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
-            <p className="text-gray-400 mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Get In Touch</h3>
+            <p className="text-sm sm:text-base text-gray-400 mb-6 sm:mb-8">
               Ready to work together? Let&apos;s discuss your next project and bring your ideas to life with modern web technologies.
             </p>
             
@@ -66,7 +66,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-slate-800 p-8 rounded-xl"
+            className="bg-slate-800 p-6 sm:p-8 rounded-xl"
           >
             <form className="space-y-6">
               <div>

@@ -51,14 +51,14 @@ export default function AppShowcase() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Mobile App Showcase</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">Mobile App Showcase</h2>
           <div className="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
           <p className="text-gray-300 max-w-2xl mx-auto">
             Interactive preview of mobile applications built with React Native and modern technologies
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Phone Mockup */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -69,7 +69,7 @@ export default function AppShowcase() {
           >
             <div className="relative">
               {/* Phone Frame */}
-              <div className="w-80 h-[600px] bg-black rounded-[3rem] p-2 shadow-2xl">
+              <div className="w-64 sm:w-80 h-[500px] sm:h-[600px] bg-black rounded-[2rem] sm:rounded-[3rem] p-2 shadow-2xl">
                 <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
                   {/* Notch */}
                   <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-10"></div>
@@ -125,10 +125,10 @@ export default function AppShowcase() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-bold text-white mb-6">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
               {apps[currentApp].name}
             </h3>
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+            <p className="text-gray-300 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
               {apps[currentApp].description}
             </p>
 

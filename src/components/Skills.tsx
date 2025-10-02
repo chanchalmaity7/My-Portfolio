@@ -26,11 +26,11 @@ export default function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Skills</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">Skills</h2>
           <div className="w-24 h-1 bg-purple-500 mx-auto"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
@@ -38,11 +38,11 @@ export default function Skills() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-slate-800 p-6 rounded-xl"
+              className="bg-slate-800 p-4 sm:p-6 rounded-xl"
             >
               <div className="flex justify-between items-center mb-3">
-                <h3 className="text-white font-semibold">{skill.name}</h3>
-                <span className="text-purple-400 font-bold">{skill.level}%</span>
+                <h3 className="text-sm sm:text-base text-white font-semibold">{skill.name}</h3>
+                <span className="text-xs sm:text-sm text-purple-400 font-bold">{skill.level}%</span>
               </div>
               <div className="w-full bg-slate-700 rounded-full h-3">
                 <motion.div
