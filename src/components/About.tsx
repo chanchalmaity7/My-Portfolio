@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -23,10 +24,14 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 p-8 rounded-2xl">
-              <div className="w-32 h-32 bg-white rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-4xl font-bold text-purple-600">CM</span>
-              </div>
+            <div className="relative w-80 h-80 mx-auto rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/img/chanchal.jpg"
+                alt="Chanchal Maity"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent"></div>
             </div>
           </motion.div>
 
