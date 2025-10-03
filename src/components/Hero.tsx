@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-20 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-16 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <motion.div
@@ -38,8 +38,36 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="mb-2 relative z-0"
+          >
+            <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-purple-400 to-pink-400 p-1 bg-gradient-to-r from-purple-400 to-pink-400 shadow-2xl">
+              <div className="w-full h-full rounded-full overflow-hidden bg-gray-800">
+                <img 
+                  src="/img/chanchal.jpg" 
+                  alt="Chanchal Maity" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = `data:image/svg+xml;base64,${btoa(`
+                      <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="160" height="160" fill="#374151"/>
+                        <circle cx="80" cy="60" r="25" fill="#9CA3AF"/>
+                        <path d="M40 140c0-22.091 17.909-40 40-40s40 17.909 40 40" fill="#9CA3AF"/>
+                      </svg>
+                    `)}`;
+                  }}
+                />
+              </div>
+            </div>
+          </motion.div>
+          
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-3"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -48,7 +76,7 @@ export default function Hero() {
           </motion.h1>
           
           <motion.div 
-            className="flex items-center justify-center gap-4 mb-8"
+            className="flex items-center justify-center gap-4 mb-3"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -127,18 +155,18 @@ export default function Hero() {
           </motion.div>
           
           <motion.div 
-            className="mb-12 max-w-2xl mx-auto"
+            className="mb-4 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-4 sm:mb-6 leading-relaxed px-4 sm:px-0">
-              Senior Full Stack Developer with <span className="text-purple-400 font-bold">3+ years</span> of experience delivering enterprise-grade solutions. 
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-2 sm:mb-3 leading-relaxed px-4 sm:px-0">
+              Senior Full Stack Developer with <span className="text-purple-400 font-bold">3+ years</span> of experience delivering enterprise-grade solutions.<br className="hidden lg:block" /> 
               Specialized in TypeScript, React ecosystem, and modern cloud architectures.
             </p>
             
             {/* Professional Stats */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-6 sm:mb-8 max-w-xs sm:max-w-lg mx-auto px-4 sm:px-0">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-3 sm:mb-4 max-w-xs sm:max-w-lg mx-auto px-4 sm:px-0">
               <div className="text-center">
                 <div className="text-lg sm:text-2xl font-bold text-purple-400">15+</div>
                 <div className="text-xs sm:text-sm text-gray-400">Projects</div>
@@ -156,16 +184,12 @@ export default function Hero() {
             {/* Floating Tech Stack */}
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3 px-4 sm:px-0">
               {[
-                { name: 'JavaScript', color: 'bg-yellow-500', icon: 'JS' },
-                { name: 'TypeScript', color: 'bg-blue-600', icon: 'TS' },
-                { name: 'HTML5', color: 'bg-orange-500', icon: 'H5' },
-                { name: 'MongoDB', color: 'bg-green-500', icon: 'M' },
-                { name: 'Express', color: 'bg-gray-600', icon: 'E' },
-                { name: 'React', color: 'bg-blue-500', icon: 'R' },
-                { name: 'React Native', color: 'bg-cyan-500', icon: 'RN' },
-                { name: 'Flutter', color: 'bg-sky-500', icon: 'FL' },
-                { name: 'Node.js', color: 'bg-green-600', icon: 'N' },
-                { name: 'Next.js', color: 'bg-black', icon: 'NX' }
+                { name: 'JavaScript', color: 'bg-yellow-500' },
+                { name: 'TypeScript', color: 'bg-blue-600' },
+                { name: 'React', color: 'bg-blue-500' },
+                { name: 'Node.js', color: 'bg-green-600' },
+                { name: 'MongoDB', color: 'bg-green-500' },
+                { name: 'Next.js', color: 'bg-black' }
               ].map((tech, index) => (
                 <motion.div
                   key={tech.name}
