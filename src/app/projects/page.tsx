@@ -1,11 +1,15 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function ProjectsPage() {
+  const [expandedProject, setExpandedProject] = useState<number | null>(null);
+  
   const projects = [
     {
-      title: 'AasPas',
+      title: 'AasPas - Local Services Aggregator App',
+      image: '/img/aaspas.jpeg',
       description: 'Full-stack location-based service app with React Native mobile development, real-time GPS tracking, dual-role system (Customer/Worker), JWT authentication, and Socket.io integration.',
       tech: ['React Native', 'TypeScript', 'Expo', 'Node.js', 'MongoDB', 'Socket.io'],
       status: 'Backend Live',
@@ -20,7 +24,8 @@ export default function ProjectsPage() {
       ]
     },
     {
-      title: 'Lizz-Shop',
+      title: 'Lizz-Shop - Full Stack E-commerce Platform',
+      image: '/project/Lizz-Shop.png',
       description: 'Full-featured e-commerce platform with complex shopping cart, payment integration, and admin panel.',
       tech: ['React', 'Node.js', 'Express', 'MongoDB'],
       status: 'Live Demo',
@@ -35,7 +40,8 @@ export default function ProjectsPage() {
       ]
     },
     {
-      title: 'Architect Website',
+      title: 'Building Junction - Premium Architectural Consultancy Website',
+      image: '/project/Building Junction.png',
       description: 'Professional architectural firm website with modern design and portfolio showcase.',
       tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
       status: 'Live Demo',
@@ -50,7 +56,8 @@ export default function ProjectsPage() {
       ]
     },
     {
-      title: 'MushroomDelight',
+      title: 'Mushdelight - Premium Food Delivery Platform',
+      image: '/project/Mushdelight.png',
       description: 'Modern web application with clean UI/UX and responsive design for food delivery.',
       tech: ['React', 'Next.js', 'Tailwind CSS'],
       status: 'Live Demo',
@@ -65,7 +72,8 @@ export default function ProjectsPage() {
       ]
     },
     {
-      title: 'EduQuest',
+      title: 'EduQuest - Gamified Learning Platform',
+      image: '/project/EduQuest .png',
       description: 'Smart India Hackathon project - Educational platform with interactive learning modules.',
       tech: ['MERN Stack', 'TypeScript', 'Tailwind CSS'],
       status: 'Hackathon Project',
@@ -80,7 +88,8 @@ export default function ProjectsPage() {
       ]
     },
     {
-      title: 'Client Projects Portfolio',
+      title: 'Enterprise Client Projects Portfolio',
+      image: null,
       description: 'Multiple confidential client projects including e-commerce platforms, business management systems, and custom web applications with advanced features.',
       tech: ['React', 'Next.js', 'Node.js', 'MongoDB', 'TypeScript'],
       status: 'Private Work - NDA',
@@ -113,9 +122,7 @@ export default function ProjectsPage() {
             >
               ← Back to Home
             </Link>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              My <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Projects</span>
-            </h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Projects</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               A comprehensive showcase of my professional work, featuring full-stack applications, 
               mobile apps, and enterprise solutions built with modern technologies.
@@ -127,7 +134,7 @@ export default function ProjectsPage() {
       {/* Projects Grid */}
       <div className="pb-20">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -136,7 +143,17 @@ export default function ProjectsPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300"
               >
-                <div className={`h-32 bg-gradient-to-r ${project.gradient}`}></div>
+                <div className="h-48 relative overflow-hidden">
+                  {project.image ? (
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className={`h-full bg-gradient-to-r ${project.gradient}`}></div>
+                  )}
+                </div>
                 
                 <div className="p-8">
                   <div className="flex justify-between items-start mb-4">
@@ -146,7 +163,38 @@ export default function ProjectsPage() {
                     </span>
                   </div>
                   
-                  <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
+                  <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+                    {expandedProject === index ? project.description : project.description.slice(0, 120) + '...'}
+                  </p>
+                  
+                  <button
+                    onClick={() => setExpandedProject(expandedProject === index ? null : index)}
+                    className="text-purple-400 hover:text-purple-300 text-xs mb-4 flex items-center gap-1 transition-colors duration-200"
+                  >
+                    {expandedProject === index ? (
+                      <>
+                        <span>Show Less</span>
+                        <span className="transform rotate-180 transition-transform duration-200">▼</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>See More</span>
+                        <span className="transition-transform duration-200">▼</span>
+                      </>
+                    )}
+                  </button>
+                  
+                  {expandedProject === index && (
+                    <div className="mb-4">
+                      <h4 className="text-white font-semibold mb-2 text-sm">Additional Details:</h4>
+                      <div className="bg-slate-700/30 rounded-lg p-3">
+                        <p className="text-gray-400 text-xs leading-relaxed">
+                          This project demonstrates advanced full-stack development skills with modern technologies, 
+                          responsive design principles, and production-ready deployment strategies.
+                        </p>
+                      </div>
+                    </div>
+                  )}
                   
                   <div className="mb-6">
                     <h4 className="text-white font-semibold mb-3">Key Features:</h4>

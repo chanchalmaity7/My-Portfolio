@@ -1626,7 +1626,7 @@ function Projects() {
             gradient: 'from-orange-500 to-red-600'
         },
         {
-            title: 'MushroomDelight',
+            title: 'Mushdelight',
             description: 'Modern web application with clean UI/UX and responsive design for food delivery.',
             tech: [
                 'React',

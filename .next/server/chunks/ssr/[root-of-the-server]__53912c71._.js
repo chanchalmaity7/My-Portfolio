@@ -1687,6 +1687,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my_portfolio/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my_portfolio/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my_portfolio/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/my_portfolio/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 'use client';
 ;
@@ -1697,40 +1698,74 @@ function AppShowcase() {
     const apps = [
         {
             name: 'AasPas - Service App',
-            screens: [
-                '/api/placeholder/300/600?text=AasPas+Login',
-                '/api/placeholder/300/600?text=AasPas+Home',
-                '/api/placeholder/300/600?text=AasPas+Services',
-                '/api/placeholder/300/600?text=AasPas+Map',
-                '/api/placeholder/300/600?text=AasPas+Profile'
-            ],
-            description: 'Location-based service platform with dual-role system'
+            icon: '📍',
+            color: 'from-blue-500 to-purple-600',
+            description: 'Location-based service platform with dual-role system',
+            features: [
+                'Real-time Location',
+                'Service Booking',
+                'Dual User Roles',
+                'Payment Gateway'
+            ]
         },
         {
-            name: 'Food Delivery App',
-            screens: [
-                '/api/placeholder/300/600?text=Food+Home',
-                '/api/placeholder/300/600?text=Food+Menu',
-                '/api/placeholder/300/600?text=Food+Cart',
-                '/api/placeholder/300/600?text=Food+Order',
-                '/api/placeholder/300/600?text=Food+Track'
-            ],
-            description: 'Modern food delivery application with real-time tracking'
+            name: 'delivery app',
+            icon: '🍔',
+            color: 'from-orange-500 to-red-600',
+            description: 'Modern food delivery application with real-time tracking',
+            features: [
+                'Live Tracking',
+                'Multiple Restaurants',
+                'Quick Delivery',
+                'Rating System'
+            ]
         },
         {
-            name: 'E-Commerce App',
-            screens: [
-                '/api/placeholder/300/600?text=Shop+Home',
-                '/api/placeholder/300/600?text=Shop+Products',
-                '/api/placeholder/300/600?text=Shop+Details',
-                '/api/placeholder/300/600?text=Shop+Cart',
-                '/api/placeholder/300/600?text=Shop+Checkout'
-            ],
-            description: 'Full-featured e-commerce platform with payment integration'
+            name: 'e-commerce app',
+            icon: '🛍️',
+            color: 'from-green-500 to-teal-600',
+            description: 'Full-featured e-commerce platform with payment integration',
+            features: [
+                'Product Catalog',
+                'Secure Payments',
+                'Order Management',
+                'User Reviews'
+            ]
+        },
+        {
+            name: 'EduQuest',
+            icon: '📚',
+            color: 'from-indigo-500 to-purple-600',
+            description: 'Smart India Hackathon educational platform',
+            features: [
+                'Interactive Learning',
+                'Progress Tracking',
+                'Quizzes & Tests',
+                'Certificates'
+            ]
+        },
+        {
+            name: 'delivery app',
+            color: 'from-gray-500 to-slate-600',
+            description: 'Modern food delivery application with real-time tracking',
+            features: [
+                'Live Tracking',
+                'Multiple Restaurants',
+                'Quick Delivery',
+                'Rating System'
+            ]
         }
     ];
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const interval = setInterval(()=>{
+            setCurrentApp((prev)=>(prev + 1) % apps.length);
+        }, 4000);
+        return ()=>clearInterval(interval);
+    }, [
+        apps.length
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "py-20 bg-slate-800",
+        className: "py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container mx-auto px-6",
             children: [
@@ -1752,320 +1787,294 @@ function AppShowcase() {
                     className: "text-center mb-16",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6",
+                            className: "text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-6",
                             children: "Mobile App Showcase"
                         }, void 0, false, {
                             fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                            lineNumber: 54,
+                            lineNumber: 62,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-24 h-1 bg-purple-500 mx-auto mb-6"
+                            className: "w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6"
                         }, void 0, false, {
                             fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                            lineNumber: 55,
+                            lineNumber: 65,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-gray-300 max-w-2xl mx-auto",
-                            children: "Interactive preview of mobile applications built with React Native and modern technologies"
+                            className: "text-gray-300 max-w-2xl mx-auto text-lg",
+                            children: "Interactive 3D carousel showcasing mobile applications built with modern technologies"
                         }, void 0, false, {
                             fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                            lineNumber: 56,
+                            lineNumber: 66,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                    lineNumber: 47,
+                    lineNumber: 55,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid lg:grid-cols-2 gap-8 lg:gap-12 items-center",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                            initial: {
-                                opacity: 0,
-                                x: -50
-                            },
-                            whileInView: {
-                                opacity: 1,
-                                x: 0
-                            },
-                            transition: {
-                                duration: 0.8
-                            },
-                            viewport: {
-                                once: true
-                            },
-                            className: "flex justify-center",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative",
+                    className: "relative h-[500px] flex items-center justify-center mb-16",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative w-full max-w-6xl",
+                        children: apps.map((app, index)=>{
+                            const offset = index - currentApp;
+                            const absOffset = Math.abs(offset);
+                            const isActive = offset === 0;
+                            const isVisible = absOffset <= 2;
+                            if (!isVisible) return null;
+                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                                className: "absolute left-1/2 top-1/2 cursor-pointer",
+                                style: {
+                                    transform: `translate(-50%, -50%) translateX(${offset * 280}px) scale(${isActive ? 1 : 0.8}) rotateY(${offset * -15}deg)`,
+                                    zIndex: isActive ? 10 : 5 - absOffset,
+                                    opacity: isActive ? 1 : 0.6
+                                },
+                                animate: {
+                                    transform: `translate(-50%, -50%) translateX(${offset * 280}px) scale(${isActive ? 1 : 0.8}) rotateY(${offset * -15}deg)`,
+                                    opacity: isActive ? 1 : 0.6
+                                },
+                                transition: {
+                                    duration: 0.6,
+                                    ease: "easeInOut"
+                                },
+                                onClick: ()=>setCurrentApp(index),
+                                whileHover: {
+                                    scale: isActive ? 1.05 : 0.85
+                                },
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "w-64 sm:w-80 h-[500px] sm:h-[600px] bg-black rounded-[2rem] sm:rounded-[3rem] p-2 shadow-2xl",
+                                    className: `w-64 h-[450px] bg-gradient-to-br ${app.color} p-1 rounded-[2.5rem] shadow-2xl`,
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-10"
-                                            }, void 0, false, {
-                                                fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                lineNumber: 75,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "h-full overflow-hidden",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex transition-transform duration-500 ease-in-out h-full",
-                                                    style: {
-                                                        transform: `translateX(-${currentApp * 100}%)`
-                                                    },
-                                                    children: apps.map((app, appIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "min-w-full h-full",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "h-full overflow-y-auto scrollbar-hide",
-                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "space-y-4 p-4",
-                                                                    children: app.screens.map((screen, screenIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                                                                            initial: {
-                                                                                opacity: 0,
-                                                                                y: 20
-                                                                            },
-                                                                            animate: {
-                                                                                opacity: 1,
-                                                                                y: 0
-                                                                            },
-                                                                            transition: {
-                                                                                delay: screenIndex * 0.1
-                                                                            },
-                                                                            className: "bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 min-h-[120px] flex items-center justify-center",
-                                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                className: "text-center",
-                                                                                children: [
-                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                        className: "w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl mx-auto mb-3 flex items-center justify-center",
-                                                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                            className: "text-white font-bold text-lg",
-                                                                                            children: screenIndex + 1
-                                                                                        }, void 0, false, {
-                                                                                            fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                                                            lineNumber: 97,
-                                                                                            columnNumber: 39
-                                                                                        }, this)
-                                                                                    }, void 0, false, {
-                                                                                        fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                                                        lineNumber: 96,
-                                                                                        columnNumber: 37
-                                                                                    }, this),
-                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                                                        className: "font-semibold text-gray-800 mb-1",
-                                                                                        children: [
-                                                                                            "Screen ",
-                                                                                            screenIndex + 1
-                                                                                        ]
-                                                                                    }, void 0, true, {
-                                                                                        fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                                                        lineNumber: 101,
-                                                                                        columnNumber: 37
-                                                                                    }, this),
-                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                        className: "text-sm text-gray-600",
-                                                                                        children: [
-                                                                                            app.name.split(' ')[0],
-                                                                                            " Feature"
-                                                                                        ]
-                                                                                    }, void 0, true, {
-                                                                                        fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                                                        lineNumber: 104,
-                                                                                        columnNumber: 37
-                                                                                    }, this)
-                                                                                ]
-                                                                            }, void 0, true, {
-                                                                                fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                                                lineNumber: 95,
-                                                                                columnNumber: 35
-                                                                            }, this)
-                                                                        }, screenIndex, false, {
-                                                                            fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                                            lineNumber: 88,
-                                                                            columnNumber: 33
-                                                                        }, this))
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                                    lineNumber: 86,
-                                                                    columnNumber: 29
-                                                                }, this)
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                                lineNumber: 85,
-                                                                columnNumber: 27
-                                                            }, this)
-                                                        }, appIndex, false, {
-                                                            fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                            lineNumber: 84,
-                                                            columnNumber: 25
-                                                        }, this))
+                                        className: "w-full h-full bg-black rounded-[2.2rem] p-2",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "w-full h-full bg-white rounded-[2rem] overflow-hidden relative",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "absolute top-0 left-1/2 transform -translate-x-1/2 w-28 h-5 bg-black rounded-b-2xl z-10"
                                                 }, void 0, false, {
                                                     fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                    lineNumber: 79,
-                                                    columnNumber: 21
+                                                    lineNumber: 104,
+                                                    columnNumber: 25
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "h-full bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden relative",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "absolute inset-0",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                            src: "/img/aaspas.jpeg",
+                                                            alt: `${app.name} Screenshot`,
+                                                            className: "w-full h-full object-cover"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                                                            lineNumber: 110,
+                                                            columnNumber: 29
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                                                        lineNumber: 109,
+                                                        columnNumber: 27
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                                                    lineNumber: 107,
+                                                    columnNumber: 25
                                                 }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                lineNumber: 78,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                                            lineNumber: 102,
+                                            columnNumber: 23
+                                        }, this)
+                                    }, void 0, false, {
                                         fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                        lineNumber: 73,
-                                        columnNumber: 17
+                                        lineNumber: 101,
+                                        columnNumber: 21
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                    lineNumber: 72,
-                                    columnNumber: 15
+                                    lineNumber: 100,
+                                    columnNumber: 19
                                 }, this)
+                            }, index, false, {
+                                fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                                lineNumber: 83,
+                                columnNumber: 17
+                            }, this);
+                        })
+                    }, void 0, false, {
+                        fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                        lineNumber: 73,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                    lineNumber: 72,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                    mode: "wait",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        initial: {
+                            opacity: 0,
+                            y: 30
+                        },
+                        animate: {
+                            opacity: 1,
+                            y: 0
+                        },
+                        exit: {
+                            opacity: 0,
+                            y: -30
+                        },
+                        transition: {
+                            duration: 0.5
+                        },
+                        className: "text-center max-w-4xl mx-auto",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                className: "text-2xl sm:text-3xl font-bold text-white mb-4",
+                                children: apps[currentApp].name
                             }, void 0, false, {
                                 fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                lineNumber: 70,
+                                lineNumber: 136,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-gray-300 text-lg mb-8 leading-relaxed",
+                                children: apps[currentApp].description
+                            }, void 0, false, {
+                                fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                                lineNumber: 139,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "grid grid-cols-2 md:grid-cols-4 gap-4 mb-8",
+                                children: apps[currentApp].features.map((feature, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                                        initial: {
+                                            opacity: 0,
+                                            scale: 0.8
+                                        },
+                                        animate: {
+                                            opacity: 1,
+                                            scale: 1
+                                        },
+                                        transition: {
+                                            delay: idx * 0.1
+                                        },
+                                        className: "bg-slate-700/50 backdrop-blur-sm rounded-xl p-4 border border-slate-600/50",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-purple-400 font-semibold text-sm",
+                                            children: feature
+                                        }, void 0, false, {
+                                            fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                                            lineNumber: 153,
+                                            columnNumber: 19
+                                        }, this)
+                                    }, idx, false, {
+                                        fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                                        lineNumber: 146,
+                                        columnNumber: 17
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                                lineNumber: 144,
                                 columnNumber: 13
                             }, this)
+                        ]
+                    }, currentApp, true, {
+                        fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                        lineNumber: 128,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                    lineNumber: 127,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex justify-center space-x-3 mb-8",
+                    children: apps.map((_, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: ()=>setCurrentApp(index),
+                            className: `w-3 h-3 rounded-full transition-all duration-300 ${currentApp === index ? 'bg-purple-500 scale-125' : 'bg-gray-600 hover:bg-gray-500'}`
+                        }, index, false, {
+                            fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                            lineNumber: 165,
+                            columnNumber: 13
+                        }, this))
+                }, void 0, false, {
+                    fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
+                    lineNumber: 163,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                    initial: {
+                        opacity: 0,
+                        y: 30
+                    },
+                    whileInView: {
+                        opacity: 1,
+                        y: 0
+                    },
+                    transition: {
+                        duration: 0.8
+                    },
+                    viewport: {
+                        once: true
+                    },
+                    className: "text-center",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                            className: "text-white font-semibold mb-6 text-lg",
+                            children: "Technologies Used"
                         }, void 0, false, {
                             fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                            lineNumber: 63,
+                            lineNumber: 185,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                            initial: {
-                                opacity: 0,
-                                x: 50
-                            },
-                            whileInView: {
-                                opacity: 1,
-                                x: 0
-                            },
-                            transition: {
-                                duration: 0.8
-                            },
-                            viewport: {
-                                once: true
-                            },
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-wrap justify-center gap-3",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6",
-                                    children: apps[currentApp].name
-                                }, void 0, false, {
+                                'React Native',
+                                'Flutter',
+                                'TypeScript',
+                                'Expo',
+                                'Node.js',
+                                'MongoDB',
+                                'Firebase',
+                                'Redux'
+                            ].map((tech)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].span, {
+                                    whileHover: {
+                                        scale: 1.1
+                                    },
+                                    className: "bg-gradient-to-r from-purple-600/20 to-pink-600/20 text-purple-300 px-4 py-2 rounded-full text-sm border border-purple-500/30 backdrop-blur-sm",
+                                    children: tech
+                                }, tech, false, {
                                     fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                    lineNumber: 128,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-gray-300 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed",
-                                    children: apps[currentApp].description
-                                }, void 0, false, {
-                                    fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                    lineNumber: 131,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "space-y-4 mb-8",
-                                    children: apps.map((app, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].button, {
-                                            onClick: ()=>setCurrentApp(index),
-                                            whileHover: {
-                                                scale: 1.02
-                                            },
-                                            whileTap: {
-                                                scale: 0.98
-                                            },
-                                            className: `w-full text-left p-4 rounded-xl transition-all duration-300 ${currentApp === index ? 'bg-purple-600 text-white' : 'bg-slate-700 text-gray-300 hover:bg-slate-600'}`,
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "font-semibold mb-1",
-                                                    children: app.name
-                                                }, void 0, false, {
-                                                    fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                    lineNumber: 149,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "text-sm opacity-80",
-                                                    children: app.description
-                                                }, void 0, false, {
-                                                    fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                    lineNumber: 150,
-                                                    columnNumber: 19
-                                                }, this)
-                                            ]
-                                        }, index, true, {
-                                            fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                            lineNumber: 138,
-                                            columnNumber: 17
-                                        }, this))
-                                }, void 0, false, {
-                                    fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                    lineNumber: 136,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                            className: "text-white font-semibold mb-4",
-                                            children: "Technologies Used:"
-                                        }, void 0, false, {
-                                            fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                            lineNumber: 157,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex flex-wrap gap-2",
-                                            children: [
-                                                'React Native',
-                                                'Flutter',
-                                                'TypeScript',
-                                                'Expo',
-                                                'Node.js',
-                                                'MongoDB'
-                                            ].map((tech)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm",
-                                                    children: tech
-                                                }, tech, false, {
-                                                    fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                                    lineNumber: 160,
-                                                    columnNumber: 19
-                                                }, this))
-                                        }, void 0, false, {
-                                            fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                            lineNumber: 158,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                                    lineNumber: 156,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
+                                    lineNumber: 188,
+                                    columnNumber: 15
+                                }, this))
+                        }, void 0, false, {
                             fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                            lineNumber: 122,
+                            lineNumber: 186,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-                    lineNumber: 61,
+                    lineNumber: 178,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-            lineNumber: 46,
+            lineNumber: 54,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/my_portfolio/src/components/AppShowcase.tsx",
-        lineNumber: 45,
+        lineNumber: 53,
         columnNumber: 5
     }, this);
 }
@@ -2089,6 +2098,7 @@ function Projects() {
     const projects = [
         {
             title: 'AasPas - Local Services Aggregator App',
+            image: '/img/aaspas.jpeg',
             shortDescription: 'Advanced React Native app with TypeScript, dual-role system (Customer/Worker), real-time GPS tracking, and Socket.io integration.',
             fullDescription: 'Advanced React Native app with TypeScript, Expo platform, dual-role system (Customer/Worker), geospatial matching engine using MongoDB 2dsphere indexes, real-time GPS tracking, Socket.io live updates, JWT authentication, OTP verification, 3-step worker profile setup, earnings tracking, complex animations with Animated API, AsyncStorage persistence, role-based access control, push notifications (FCM), aggregation pipelines, microservices architecture, and Vercel deployment.',
             tech: [
@@ -2110,6 +2120,7 @@ function Projects() {
         },
         {
             title: 'Lizz-Shop - Full Stack E-commerce Platform',
+            image: '/project/Lizz-Shop.png',
             shortDescription: 'Enterprise-grade e-commerce platform built with Next.js 15 & TypeScript. Complete shopping experience with user authentication, shopping cart, and wishlist.',
             fullDescription: 'Enterprise-grade e-commerce platform built with Next.js 15 & TypeScript. Complete shopping experience with user authentication, shopping cart, wishlist, product search, and admin panel. Features glassmorphism design, mobile-responsive UI, Context API state management, MongoDB Atlas database, JWT authentication, password encryption, real-time updates, 18+ products catalog, BOGO offers, inventory management, order tracking, and Vercel deployment. Demonstrates full-stack development skills with modern tech stack.',
             tech: [
@@ -2130,6 +2141,7 @@ function Projects() {
         },
         {
             title: 'Building Junction - Premium Architectural Consultancy Website',
+            image: '/project/Building Junction.png',
             shortDescription: 'Professional architectural firm website for West Bengal\'s premier consultancy with modern design, portfolio showcase, and client management.',
             fullDescription: 'Complete architectural consultancy website for Building Junction - West Bengal\'s #1 architectural firm. Features: Next.js 15 with TypeScript, responsive glassmorphism design, animated hero sections, service showcase with pricing, portfolio gallery, contact forms, mobile-first approach, intersection observer animations, gradient themes, professional branding, client testimonials, project statistics (300+ projects, 98% satisfaction), multi-page architecture (Home, About, Services, Portfolio, Contact), SEO optimized, and production-ready deployment.',
             tech: [
@@ -2147,7 +2159,8 @@ function Projects() {
             liveUrl: 'https://your-building-junction-link.com'
         },
         {
-            title: 'MushroomDelight - Premium Food Delivery Platform',
+            title: 'Mushdelight - Premium Food Delivery Platform',
+            image: '/project/Mushdelight.png',
             shortDescription: 'Full-stack organic mushroom e-commerce platform with modern UI/UX, payment gateway integration, and comprehensive order management.',
             fullDescription: 'Complete organic mushroom e-commerce platform built with Next.js 15 & TypeScript. Features: Razorpay payment gateway integration, MongoDB database with Mongoose ODM, user authentication with JWT & bcryptjs, shopping cart & checkout system, order tracking & management, admin dashboard for products & settings, email notifications with Nodemailer, responsive design with Framer Motion animations, floating particles & cursor effects, product catalog with dynamic pricing, COD & online payment options, delivery charge calculations, user profiles & order history, contact forms & newsletter subscription, SEO optimized pages, and production-ready deployment.',
             tech: [
@@ -2169,6 +2182,7 @@ function Projects() {
         },
         {
             title: 'EduQuest - Gamified Learning Platform',
+            image: '/project/EduQuest .png',
             shortDescription: 'Smart India Hackathon 2024 winning project - Gamified educational platform with interactive learning, 3D quiz arena, and comprehensive analytics.',
             fullDescription: 'Smart India Hackathon 2024 project - Complete gamified learning platform built with React 18 & TypeScript. Features: XP & leveling system with achievements, interactive 3D quiz arena using React Three Fiber, student & teacher dashboards, quiz builder with multiple question types, real-time leaderboards & analytics, offline PWA support with service workers, Capacitor mobile app integration, local storage client for data persistence, progress tracking & milestone system, learning games & memory challenges, badge collection system, responsive design with Radix UI components, and comprehensive student performance analytics.',
             tech: [
@@ -2190,6 +2204,7 @@ function Projects() {
         },
         {
             title: 'Enterprise Client Projects Portfolio',
+            image: null,
             shortDescription: '10+ confidential enterprise projects including e-commerce platforms, business management systems, and custom web applications.',
             fullDescription: 'Comprehensive portfolio of 10+ enterprise-grade client projects delivered under NDA agreements. Includes: full-stack e-commerce platforms with payment gateways (Razorpay, Stripe), business management systems with role-based access control, custom CRM & ERP solutions, real-time chat applications with Socket.io, inventory management systems, restaurant POS systems, healthcare management platforms, educational portals with video streaming, multi-tenant SaaS applications, API integrations with third-party services, cloud deployment on AWS/Vercel, database optimization & scaling, and mobile-responsive progressive web apps. All projects feature modern UI/UX, secure authentication, performance optimization, and production-ready deployment.',
             tech: [
@@ -2237,20 +2252,20 @@ function Projects() {
                             children: "Projects"
                         }, void 0, false, {
                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                            lineNumber: 75,
+                            lineNumber: 81,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "w-24 h-1 bg-purple-500 mx-auto"
                         }, void 0, false, {
                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                            lineNumber: 76,
+                            lineNumber: 82,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                    lineNumber: 68,
+                    lineNumber: 74,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2279,29 +2294,44 @@ function Projects() {
                             className: "bg-slate-900 rounded-xl overflow-hidden shadow-2xl border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: `h-32 bg-gradient-to-r ${project.gradient}`
+                                    className: "h-48 relative overflow-hidden",
+                                    children: project.image ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                        src: project.image,
+                                        alt: project.title,
+                                        className: "w-full h-full object-cover"
+                                    }, void 0, false, {
+                                        fileName: "[project]/my_portfolio/src/components/Projects.tsx",
+                                        lineNumber: 102,
+                                        columnNumber: 19
+                                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: `h-full bg-gradient-to-r ${project.gradient}`
+                                    }, void 0, false, {
+                                        fileName: "[project]/my_portfolio/src/components/Projects.tsx",
+                                        lineNumber: 108,
+                                        columnNumber: 19
+                                    }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                    lineNumber: 94,
+                                    lineNumber: 100,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "p-6",
+                                    className: "p-4",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3",
+                                            className: "text-base font-bold text-white mb-2",
                                             children: project.title
                                         }, void 0, false, {
                                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                            lineNumber: 97,
+                                            lineNumber: 113,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-gray-400 mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed",
+                                            className: "text-gray-400 mb-3 text-xs leading-relaxed",
                                             children: expandedProject === index ? project.fullDescription : project.shortDescription
                                         }, void 0, false, {
                                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 114,
                                             columnNumber: 17
                                         }, this),
                                         project.shortDescription !== project.fullDescription && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2313,7 +2343,7 @@ function Projects() {
                                                         children: "Show Less"
                                                     }, void 0, false, {
                                                         fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                                        lineNumber: 109,
+                                                        lineNumber: 125,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2321,7 +2351,7 @@ function Projects() {
                                                         children: "▼"
                                                     }, void 0, false, {
                                                         fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                                        lineNumber: 110,
+                                                        lineNumber: 126,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
@@ -2331,7 +2361,7 @@ function Projects() {
                                                         children: "See More"
                                                     }, void 0, false, {
                                                         fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                                        lineNumber: 114,
+                                                        lineNumber: 130,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2339,85 +2369,85 @@ function Projects() {
                                                         children: "▼"
                                                     }, void 0, false, {
                                                         fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                                        lineNumber: 115,
+                                                        lineNumber: 131,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true)
                                         }, void 0, false, {
                                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                            lineNumber: 103,
+                                            lineNumber: 119,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex flex-wrap gap-2 mb-4",
-                                            children: project.tech.map((tech)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "flex flex-wrap gap-1 mb-3",
+                                            children: project.tech.slice(0, 4).map((tech)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "bg-purple-600 text-white px-2 py-1 rounded text-xs",
                                                     children: tech
                                                 }, tech, false, {
                                                     fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                                    lineNumber: 123,
+                                                    lineNumber: 139,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                            lineNumber: 121,
+                                            lineNumber: 137,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex flex-col items-center gap-3",
+                                            className: "flex flex-col items-center gap-2",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-green-400 text-sm font-semibold",
+                                                    className: "text-green-400 text-xs font-semibold",
                                                     children: project.status
                                                 }, void 0, false, {
                                                     fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                                    lineNumber: 130,
+                                                    lineNumber: 146,
                                                     columnNumber: 19
                                                 }, this),
                                                 project.liveUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$my_portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                     href: project.liveUrl,
                                                     target: "_blank",
                                                     rel: "noopener noreferrer",
-                                                    className: "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg",
+                                                    className: "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-3 py-1 rounded-lg text-xs font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg",
                                                     children: "Visit Website"
                                                 }, void 0, false, {
                                                     fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                                    lineNumber: 132,
+                                                    lineNumber: 148,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 145,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                                    lineNumber: 96,
+                                    lineNumber: 112,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, project.title, true, {
                             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                            lineNumber: 81,
+                            lineNumber: 87,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-                    lineNumber: 79,
+                    lineNumber: 85,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-            lineNumber: 67,
+            lineNumber: 73,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/my_portfolio/src/components/Projects.tsx",
-        lineNumber: 66,
+        lineNumber: 72,
         columnNumber: 5
     }, this);
 }

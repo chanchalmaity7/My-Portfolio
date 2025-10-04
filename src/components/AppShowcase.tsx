@@ -1,6 +1,6 @@
 'use client';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export default function AppShowcase() {
   const [currentApp, setCurrentApp] = useState(0);
@@ -8,41 +8,49 @@ export default function AppShowcase() {
   const apps = [
     {
       name: 'AasPas - Service App',
-      screens: [
-        '/api/placeholder/300/600?text=AasPas+Login',
-        '/api/placeholder/300/600?text=AasPas+Home',
-        '/api/placeholder/300/600?text=AasPas+Services',
-        '/api/placeholder/300/600?text=AasPas+Map',
-        '/api/placeholder/300/600?text=AasPas+Profile'
-      ],
-      description: 'Location-based service platform with dual-role system'
+      icon: '📍',
+      color: 'from-blue-500 to-purple-600',
+      description: 'Location-based service platform with dual-role system',
+      features: ['Real-time Location', 'Service Booking', 'Dual User Roles', 'Payment Gateway']
     },
     {
-      name: 'Food Delivery App',
-      screens: [
-        '/api/placeholder/300/600?text=Food+Home',
-        '/api/placeholder/300/600?text=Food+Menu',
-        '/api/placeholder/300/600?text=Food+Cart',
-        '/api/placeholder/300/600?text=Food+Order',
-        '/api/placeholder/300/600?text=Food+Track'
-      ],
-      description: 'Modern food delivery application with real-time tracking'
+      name: 'delivery app',
+      icon: '🍔',
+      color: 'from-orange-500 to-red-600',
+      description: 'Modern food delivery application with real-time tracking',
+      features: ['Live Tracking', 'Multiple Restaurants', 'Quick Delivery', 'Rating System']
     },
     {
-      name: 'E-Commerce App',
-      screens: [
-        '/api/placeholder/300/600?text=Shop+Home',
-        '/api/placeholder/300/600?text=Shop+Products',
-        '/api/placeholder/300/600?text=Shop+Details',
-        '/api/placeholder/300/600?text=Shop+Cart',
-        '/api/placeholder/300/600?text=Shop+Checkout'
-      ],
-      description: 'Full-featured e-commerce platform with payment integration'
+      name: 'e-commerce app',
+      icon: '🛍️',
+      color: 'from-green-500 to-teal-600',
+      description: 'Full-featured e-commerce platform with payment integration',
+      features: ['Product Catalog', 'Secure Payments', 'Order Management', 'User Reviews']
+    },
+    {
+      name: 'EduQuest',
+      icon: '📚',
+      color: 'from-indigo-500 to-purple-600',
+      description: 'Smart India Hackathon educational platform',
+      features: ['Interactive Learning', 'Progress Tracking', 'Quizzes & Tests', 'Certificates']
+    },
+    {
+      name: 'delivery app',
+      color: 'from-gray-500 to-slate-600',
+      description: 'Modern food delivery application with real-time tracking',
+      features: ['Live Tracking', 'Multiple Restaurants', 'Quick Delivery', 'Rating System']
     }
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentApp((prev) => (prev + 1) % apps.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [apps.length]);
+
   return (
-    <section className="py-20 bg-slate-800">
+    <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -51,123 +59,142 @@ export default function AppShowcase() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">Mobile App Showcase</h2>
-          <div className="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Interactive preview of mobile applications built with React Native and modern technologies
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
+            Mobile App Showcase
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6"></div>
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+            Interactive 3D carousel showcasing mobile applications built with modern technologies
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Phone Mockup */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="flex justify-center"
-          >
-            <div className="relative">
-              {/* Phone Frame */}
-              <div className="w-64 sm:w-80 h-[500px] sm:h-[600px] bg-black rounded-[2rem] sm:rounded-[3rem] p-2 shadow-2xl">
-                <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
-                  {/* Notch */}
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-10"></div>
-                  
-                  {/* Screen Content */}
-                  <div className="h-full overflow-hidden">
-                    <div 
-                      className="flex transition-transform duration-500 ease-in-out h-full"
-                      style={{ transform: `translateX(-${currentApp * 100}%)` }}
-                    >
-                      {apps.map((app, appIndex) => (
-                        <div key={appIndex} className="min-w-full h-full">
-                          <div className="h-full overflow-y-auto scrollbar-hide">
-                            <div className="space-y-4 p-4">
-                              {app.screens.map((screen, screenIndex) => (
-                                <motion.div
-                                  key={screenIndex}
-                                  initial={{ opacity: 0, y: 20 }}
-                                  animate={{ opacity: 1, y: 0 }}
-                                  transition={{ delay: screenIndex * 0.1 }}
-                                  className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 min-h-[120px] flex items-center justify-center"
-                                >
-                                  <div className="text-center">
-                                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl mx-auto mb-3 flex items-center justify-center">
-                                      <span className="text-white font-bold text-lg">
-                                        {screenIndex + 1}
-                                      </span>
-                                    </div>
-                                    <h4 className="font-semibold text-gray-800 mb-1">
-                                      Screen {screenIndex + 1}
-                                    </h4>
-                                    <p className="text-sm text-gray-600">
-                                      {app.name.split(' ')[0]} Feature
-                                    </p>
-                                  </div>
-                                </motion.div>
-                              ))}
-                            </div>
+        {/* 3D Carousel */}
+        <div className="relative h-[500px] flex items-center justify-center mb-16">
+          <div className="relative w-full max-w-6xl">
+            {apps.map((app, index) => {
+              const offset = index - currentApp;
+              const absOffset = Math.abs(offset);
+              const isActive = offset === 0;
+              const isVisible = absOffset <= 2;
+              
+              if (!isVisible) return null;
+              
+              return (
+                <motion.div
+                  key={index}
+                  className="absolute left-1/2 top-1/2 cursor-pointer"
+                  style={{
+                    transform: `translate(-50%, -50%) translateX(${offset * 280}px) scale(${isActive ? 1 : 0.8}) rotateY(${offset * -15}deg)`,
+                    zIndex: isActive ? 10 : 5 - absOffset,
+                    opacity: isActive ? 1 : 0.6
+                  }}
+                  animate={{
+                    transform: `translate(-50%, -50%) translateX(${offset * 280}px) scale(${isActive ? 1 : 0.8}) rotateY(${offset * -15}deg)`,
+                    opacity: isActive ? 1 : 0.6
+                  }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  onClick={() => setCurrentApp(index)}
+                  whileHover={{ scale: isActive ? 1.05 : 0.85 }}
+                >
+                  {/* Phone Frame */}
+                  <div className={`w-64 h-[450px] bg-gradient-to-br ${app.color} p-1 rounded-[2.5rem] shadow-2xl`}>
+                    <div className="w-full h-full bg-black rounded-[2.2rem] p-2">
+                      <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden relative">
+                        {/* Notch */}
+                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-28 h-5 bg-black rounded-b-2xl z-10"></div>
+                        
+                        {/* Screen Content */}
+                        <div className="h-full bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden relative">
+                          {/* App Screenshot for all apps */}
+                          <div className="absolute inset-0">
+                            <img 
+                              src="/img/aaspas.jpeg" 
+                              alt={`${app.name} Screenshot`}
+                              className="w-full h-full object-cover"
+                            />
                           </div>
                         </div>
-                      ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
 
-          {/* App Info */}
+        {/* App Details */}
+        <AnimatePresence mode="wait">
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            key={currentApp}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-4xl mx-auto"
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
               {apps[currentApp].name}
             </h3>
-            <p className="text-gray-300 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
               {apps[currentApp].description}
             </p>
-
-            {/* App Selector */}
-            <div className="space-y-4 mb-8">
-              {apps.map((app, index) => (
-                <motion.button
-                  key={index}
-                  onClick={() => setCurrentApp(index)}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className={`w-full text-left p-4 rounded-xl transition-all duration-300 ${
-                    currentApp === index
-                      ? 'bg-purple-600 text-white'
-                      : 'bg-slate-700 text-gray-300 hover:bg-slate-600'
-                  }`}
+            
+            {/* Features Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              {apps[currentApp].features.map((feature, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-4 border border-slate-600/50"
                 >
-                  <div className="font-semibold mb-1">{app.name}</div>
-                  <div className="text-sm opacity-80">{app.description}</div>
-                </motion.button>
+                  <div className="text-purple-400 font-semibold text-sm">
+                    {feature}
+                  </div>
+                </motion.div>
               ))}
             </div>
-
-            {/* Tech Stack */}
-            <div>
-              <h4 className="text-white font-semibold mb-4">Technologies Used:</h4>
-              <div className="flex flex-wrap gap-2">
-                {['React Native', 'Flutter', 'TypeScript', 'Expo', 'Node.js', 'MongoDB'].map((tech) => (
-                  <span
-                    key={tech}
-                    className="bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
           </motion.div>
+        </AnimatePresence>
+
+        {/* Navigation Dots */}
+        <div className="flex justify-center space-x-3 mb-8">
+          {apps.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentApp(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                currentApp === index
+                  ? 'bg-purple-500 scale-125'
+                  : 'bg-gray-600 hover:bg-gray-500'
+              }`}
+            />
+          ))}
         </div>
+
+        {/* Tech Stack */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h4 className="text-white font-semibold mb-6 text-lg">Technologies Used</h4>
+          <div className="flex flex-wrap justify-center gap-3">
+            {['React Native', 'Flutter', 'TypeScript', 'Expo', 'Node.js', 'MongoDB', 'Firebase', 'Redux'].map((tech) => (
+              <motion.span
+                key={tech}
+                whileHover={{ scale: 1.1 }}
+                className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 text-purple-300 px-4 py-2 rounded-full text-sm border border-purple-500/30 backdrop-blur-sm"
+              >
+                {tech}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
