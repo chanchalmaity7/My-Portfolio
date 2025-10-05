@@ -14,7 +14,7 @@ export default function Projects() {
       tech: ['React Native', 'TypeScript', 'Expo', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'JWT', 'bcryptjs', 'Mongoose', 'Vercel'],
       status: 'Backend Live - Production Ready',
       gradient: 'from-blue-500 to-purple-600',
-      liveUrl: 'https://your-aaspas-link.com'
+      liveUrl: null
     },
     {
       title: 'Lizz-Shop - Full Stack E-commerce Platform',
@@ -24,7 +24,7 @@ export default function Projects() {
       tech: ['Next.js 15', 'TypeScript', 'MongoDB Atlas', 'JWT Auth', 'Tailwind CSS', 'Context API', 'Mongoose', 'bcryptjs', 'React Icons', 'Vercel'],
       status: 'Live Demo - Production Ready',
       gradient: 'from-green-500 to-teal-600',
-      liveUrl: 'https://your-lizz-shop-link.com'
+      liveUrl: 'https://lizz-shop.vercel.app/'
     },
     {
       title: 'Building Junction - Premium Architectural Consultancy Website',
@@ -34,7 +34,7 @@ export default function Projects() {
       tech: ['Next.js 15', 'TypeScript', 'Tailwind CSS 4', 'Intersection Observer API', 'Responsive Design', 'Glassmorphism UI', 'Animation Effects', 'SEO Optimization'],
       status: 'Live Demo - Production Ready',
       gradient: 'from-orange-500 to-red-600',
-      liveUrl: 'https://your-building-junction-link.com'
+      liveUrl: 'https://architect-website-teal.vercel.app/'
     },
     {
       title: 'Mushdelight - Premium Food Delivery Platform',
@@ -44,7 +44,7 @@ export default function Projects() {
       tech: ['Next.js 15', 'TypeScript', 'MongoDB', 'Mongoose', 'Razorpay Gateway', 'JWT Auth', 'bcryptjs', 'Nodemailer', 'Framer Motion', 'Tailwind CSS', 'React Icons'],
       status: 'Live Demo - Production Ready',
       gradient: 'from-purple-500 to-pink-600',
-      liveUrl: 'https://your-mushroom-delight-link.com'
+      liveUrl: 'https://mushdelight.vercel.app/'
     },
     {
       title: 'EduQuest - Gamified Learning Platform',
@@ -54,7 +54,7 @@ export default function Projects() {
       tech: ['React 18', 'TypeScript', 'Vite', 'React Three Fiber', 'Radix UI', 'Tailwind CSS', 'Capacitor', 'PWA', 'Service Workers', 'Local Storage', 'Lucide Icons'],
       status: 'Smart India Hackathon 2024 - Award Winner',
       gradient: 'from-cyan-500 to-blue-600',
-      liveUrl: 'https://your-eduquest-link.com'
+      liveUrl: 'https://edu-quest-beta.vercel.app/'
     },
     {
       title: 'Enterprise Client Projects Portfolio',
@@ -97,13 +97,23 @@ export default function Projects() {
               }}
               className="bg-slate-900 rounded-xl overflow-hidden shadow-2xl border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300"
             >
-              <div className="h-48 relative overflow-hidden">
+              <div className="h-48 relative overflow-hidden cursor-pointer group">
                 {project.image ? (
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
+                  <div 
+                    onClick={() => project.liveUrl && window.open(project.liveUrl, '_blank')}
+                    className={`relative w-full h-full ${project.liveUrl ? 'cursor-pointer' : 'cursor-default'}`}
+                  >
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    {project.liveUrl && (
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span className="text-white font-semibold text-lg">Visit Website</span>
+                      </div>
+                    )}
+                  </div>
                 ) : (
                   <div className={`h-full bg-gradient-to-r ${project.gradient}`}></div>
                 )}

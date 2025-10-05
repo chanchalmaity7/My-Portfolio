@@ -25,23 +25,6 @@ export default function ProjectsPage() {
       ]
     },
     {
-      title: 'AasPas - Local Services Aggregator App',
-      image: '/img/aaspas.jpeg',
-      description: 'Full-stack location-based service app with React Native mobile development, real-time GPS tracking, dual-role system (Customer/Worker), JWT authentication, and Socket.io integration.',
-      tech: ['React Native', 'TypeScript', 'Expo', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'JWT', 'bcryptjs', 'Mongoose', 'Vercel'],
-      status: 'Backend Live',
-      gradient: 'from-blue-500 to-purple-600',
-      liveUrl: null,
-      features: [
-        'Real-time GPS tracking and geospatial queries',
-        'Dual-role system (Customer/Worker modes)',
-        'JWT authentication with OTP verification',
-        'Socket.io for live updates and notifications',
-        'Complex animations using Animated API',
-        'MongoDB 2dsphere indexes for location queries'
-      ]
-    },
-    {
       title: 'Lizz-Shop - Full Stack E-commerce Platform',
       image: '/project/Lizz-Shop.png',
       description: 'Full-featured e-commerce platform with complex shopping cart, payment integration, and admin panel.',
@@ -73,6 +56,23 @@ export default function ProjectsPage() {
         'SEO optimized with Next.js',
         'Fast loading and performance optimized',
         'Professional business presentation'
+      ]
+    },
+    {
+      title: 'AasPas - Local Services Aggregator App',
+      image: '/img/aaspas.jpeg',
+      description: 'Full-stack location-based service app with React Native mobile development, real-time GPS tracking, dual-role system (Customer/Worker), JWT authentication, and Socket.io integration.',
+      tech: ['React Native', 'TypeScript', 'Expo', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'JWT', 'bcryptjs', 'Mongoose', 'Vercel'],
+      status: 'Backend Live',
+      gradient: 'from-blue-500 to-purple-600',
+      liveUrl: null,
+      features: [
+        'Real-time GPS tracking and geospatial queries',
+        'Dual-role system (Customer/Worker modes)',
+        'JWT authentication with OTP verification',
+        'Socket.io for live updates and notifications',
+        'Complex animations using Animated API',
+        'MongoDB 2dsphere indexes for location queries'
       ]
     },
     {
