@@ -151,6 +151,30 @@ export default function Hero() {
               >
                 NX
               </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: -200 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
+                className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xs"
+              >
+                PY
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: -200 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.3, duration: 0.8, ease: "easeOut" }}
+                className="w-8 h-8 bg-green-700 rounded-lg flex items-center justify-center text-white font-bold text-xs"
+              >
+                DJ
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: -200 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.4, duration: 0.8, ease: "easeOut" }}
+                className="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center text-white font-bold text-xs"
+              >
+                FL
+              </motion.div>
             </div>
           </motion.div>
           
@@ -189,7 +213,10 @@ export default function Hero() {
                 { name: 'React', color: 'bg-blue-500' },
                 { name: 'Node.js', color: 'bg-green-600' },
                 { name: 'MongoDB', color: 'bg-green-500' },
-                { name: 'Next.js', color: 'bg-black' }
+                { name: 'Next.js', color: 'bg-black' },
+                { name: 'Python', color: 'bg-blue-600' },
+                { name: 'Django', color: 'bg-green-700' },
+                { name: 'Flask', color: 'bg-gray-600' }
               ].map((tech, index) => (
                 <motion.div
                   key={tech.name}
