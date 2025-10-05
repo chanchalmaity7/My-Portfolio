@@ -52,13 +52,13 @@ export default function Navbar() {
           </motion.div>
 
           <div className="hidden md:flex space-x-1">
-            {['Home', 'Apps', 'About', 'Experience', 'Skills', 'Projects', 'Contact'].map((item, index) => (
+            {['Home', 'Apps', 'About', 'Experience', 'Skills', 'Projects', 'Services', 'Contact'].map((item, index) => (
               <motion.a
                 key={item}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 + (0.1 * index), duration: 0.6 }}
-                href={`#${item.toLowerCase()}`}
+                href={item === 'Services' ? '#pricing' : `#${item.toLowerCase()}`}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className={`relative text-gray-300 hover:text-white transition-all duration-300 rounded-xl group ${
@@ -96,13 +96,13 @@ export default function Navbar() {
             transition={{ duration: 0.4, ease: "easeOut" }}
             className="md:hidden mt-4 space-y-2 border-t border-slate-700/50 pt-4"
           >
-            {['Home', 'Apps', 'About', 'Experience', 'Skills', 'Projects', 'Contact'].map((item, index) => (
+            {['Home', 'Apps', 'About', 'Experience', 'Skills', 'Projects', 'Services', 'Contact'].map((item, index) => (
               <motion.a
                 key={item}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.3 }}
-                href={`#${item.toLowerCase()}`}
+                href={item === 'Services' ? '#pricing' : `#${item.toLowerCase()}`}
                 className="block text-gray-300 hover:text-white py-3 px-4 rounded-lg hover:bg-purple-600/20 transition-all duration-300"
                 onClick={() => setIsOpen(false)}
                 whileHover={{ x: 10 }}

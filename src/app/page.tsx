@@ -5,6 +5,7 @@ import Experience from '@/components/Experience';
 import Skills from '@/components/Skills';
 import AppShowcase from '@/components/AppShowcase';
 import Projects from '@/components/Projects';
+import PricingPlan from '@/components/PricingPlan';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -19,6 +20,7 @@ export default function Home() {
         <section id="projects"><Projects /></section>
         <section id="about"><About /></section>
         <section id="experience"><Experience /></section>
+        <section id="pricing"><PricingPlan /></section>
         <section id="contact"><Contact /></section>
       </main>
       <Footer />
