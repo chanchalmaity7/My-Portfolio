@@ -49,10 +49,10 @@ export default function Projects() {
     {
       title: 'EduQuest - Gamified Learning Platform',
       image: '/project/EduQuest .png',
-      shortDescription: 'Smart India Hackathon 2024 winning project - Gamified educational platform with interactive learning, 3D quiz arena, and comprehensive analytics.',
+      shortDescription: 'Smart India Hackathon project - Gamified educational platform with interactive learning, 3D quiz arena, and comprehensive analytics.',
       fullDescription: 'Smart India Hackathon 2024 project - Complete gamified learning platform built with React 18 & TypeScript. Features: XP & leveling system with achievements, interactive 3D quiz arena using React Three Fiber, student & teacher dashboards, quiz builder with multiple question types, real-time leaderboards & analytics, offline PWA support with service workers, Capacitor mobile app integration, local storage client for data persistence, progress tracking & milestone system, learning games & memory challenges, badge collection system, responsive design with Radix UI components, and comprehensive student performance analytics.',
       tech: ['React 18', 'TypeScript', 'Vite', 'React Three Fiber', 'Radix UI', 'Tailwind CSS', 'Capacitor', 'PWA', 'Service Workers', 'Local Storage', 'Lucide Icons'],
-      status: 'Smart India Hackathon 2024 - Award Winner',
+      status: 'Smart India Hackathon Project',
       gradient: 'from-cyan-500 to-blue-600',
       liveUrl: 'https://edu-quest-beta.vercel.app/'
     },

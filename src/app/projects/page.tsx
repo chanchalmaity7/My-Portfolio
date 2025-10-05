@@ -89,7 +89,7 @@ export default function ProjectsPage() {
         'Quiz and assessment system',
         'Teacher dashboard and tools',
         'Real-time collaboration features',
-        'Smart India Hackathon winner'
+        'Smart India Hackathon project'
       ]
     },
     {
