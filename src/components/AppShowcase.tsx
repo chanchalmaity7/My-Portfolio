@@ -93,40 +93,33 @@ export default function AppShowcase() {
   }, [apps.length, isDragging]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    // Only handle horizontal swipes on desktop
-    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-      touchStartX.current = e.touches[0].clientX;
-      setIsDragging(true);
-    }
+    touchStartX.current = e.touches[0].clientX;
+    setIsDragging(true);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-      touchEndX.current = e.touches[0].clientX;
-      // Prevent default only for horizontal swipes
-      const deltaX = Math.abs(e.touches[0].clientX - touchStartX.current);
-      const deltaY = Math.abs(e.touches[0].clientY - touchStartX.current);
-      if (deltaX > deltaY) {
-        e.preventDefault();
-      }
+    touchEndX.current = e.touches[0].clientX;
+    const deltaX = Math.abs(e.touches[0].clientX - touchStartX.current);
+    const deltaY = Math.abs(e.touches[0].clientY - touchStartX.current);
+    // Only prevent default for horizontal swipes
+    if (deltaX > deltaY && deltaX > 30) {
+      e.preventDefault();
     }
   };
 
   const handleTouchEnd = () => {
-    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-      const swipeDistance = touchStartX.current - touchEndX.current;
-      const minSwipeDistance = 50;
-      
-      if (Math.abs(swipeDistance) > minSwipeDistance) {
-        if (swipeDistance > 0) {
-          setCurrentApp((prev) => (prev + 1) % apps.length);
-        } else {
-          setCurrentApp((prev) => (prev - 1 + apps.length) % apps.length);
-        }
+    const swipeDistance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+    
+    if (Math.abs(swipeDistance) > minSwipeDistance) {
+      if (swipeDistance > 0) {
+        setCurrentApp((prev) => (prev + 1) % apps.length);
+      } else {
+        setCurrentApp((prev) => (prev - 1 + apps.length) % apps.length);
       }
-      
-      setTimeout(() => setIsDragging(false), 100);
     }
+    
+    setTimeout(() => setIsDragging(false), 100);
   };
 
   return (
@@ -151,6 +144,9 @@ export default function AppShowcase() {
         {/* 3D Carousel */}
         <div 
           className="relative h-[400px] sm:h-[500px] flex items-center justify-center mb-16"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div className="relative w-full max-w-6xl">
             {apps.map((app, index) => {
