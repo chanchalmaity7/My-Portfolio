@@ -15,7 +15,7 @@ export default function AppShowcase() {
       color: 'from-blue-500 to-purple-600',
       description: 'Location-based service platform with dual-role system',
       features: ['Real-time Location', 'Service Booking', 'Dual User Roles', 'Payment Gateway'],
-      screenshot: '/mobileapp/aaspas.jpeg'
+      image: '/mobileapp/img1.png'
     },
     {
       name: 'Food Delivery App',
@@ -23,7 +23,7 @@ export default function AppShowcase() {
       color: 'from-orange-500 to-red-600',
       description: 'Modern food delivery application with real-time tracking',
       features: ['Live Tracking', 'Multiple Restaurants', 'Quick Delivery', 'Rating System'],
-      screenshot: '/mobileapp/aaspas.jpeg'
+      image: '/mobileapp/img2.png'
     },
     {
       name: 'E-Commerce App',
@@ -31,7 +31,7 @@ export default function AppShowcase() {
       color: 'from-green-500 to-teal-600',
       description: 'Full-featured e-commerce platform with payment integration',
       features: ['Product Catalog', 'Secure Payments', 'Order Management', 'User Reviews'],
-      screenshot: '/mobileapp/aaspas.jpeg'
+      image: '/mobileapp/img3.png'
     },
     {
       name: 'EduQuest Learning',
@@ -39,7 +39,7 @@ export default function AppShowcase() {
       color: 'from-indigo-500 to-purple-600',
       description: 'Smart India Hackathon educational platform',
       features: ['Interactive Learning', 'Progress Tracking', 'Quizzes & Tests', 'Certificates'],
-      screenshot: '/mobileapp/aaspas.jpeg'
+      image: '/mobileapp/img4.png'
     },
     {
       name: 'Social Chat App',
@@ -47,7 +47,7 @@ export default function AppShowcase() {
       color: 'from-purple-500 to-pink-600',
       description: 'Real-time messaging application with modern UI',
       features: ['Real-time Chat', 'Group Messages', 'Media Sharing', 'Push Notifications'],
-      screenshot: '/mobileapp/aaspas.jpeg'
+      image: '/mobileapp/img5.png'
     },
     {
       name: 'Business App',
@@ -55,7 +55,7 @@ export default function AppShowcase() {
       color: 'from-teal-500 to-blue-600',
       description: 'Professional business management application',
       features: ['Task Management', 'Team Collaboration', 'Analytics', 'Reports'],
-      screenshot: '/mobileapp/aaspas.jpeg'
+      image: '/mobileapp/img6.png'
     },
     {
       name: 'Fitness Tracker',
@@ -63,7 +63,7 @@ export default function AppShowcase() {
       color: 'from-red-500 to-orange-600',
       description: 'Health and fitness tracking mobile application',
       features: ['Workout Plans', 'Progress Tracking', 'Nutrition Guide', 'Social Features'],
-      screenshot: '/mobileapp/aaspas.jpeg'
+      image: '/mobileapp/aaspas.jpeg'
     },
     {
       name: 'Travel Guide',
@@ -71,7 +71,7 @@ export default function AppShowcase() {
       color: 'from-cyan-500 to-blue-600',
       description: 'Complete travel companion and guide application',
       features: ['Trip Planning', 'Local Guides', 'Booking System', 'Offline Maps'],
-      screenshot: '/mobileapp/aaspas.jpeg'
+      image: '/mobileapp/img8.png'
     },
     {
       name: 'Music Player',
@@ -79,7 +79,7 @@ export default function AppShowcase() {
       color: 'from-pink-500 to-purple-600',
       description: 'Modern music streaming and player application',
       features: ['Streaming', 'Playlists', 'Offline Mode', 'Social Sharing'],
-      screenshot: '/mobileapp/aaspas.jpeg'
+      image: '/mobileapp/img7.png'
     }
   ];
 
@@ -94,18 +94,18 @@ export default function AppShowcase() {
 
   const handleTouchStart = (e: React.TouchEvent) => {
     // Only handle horizontal swipes on desktop
-    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+    if (window.innerWidth >= 768) {
       touchStartX.current = e.touches[0].clientX;
       setIsDragging(true);
     }
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+    if (window.innerWidth >= 768) {
       touchEndX.current = e.touches[0].clientX;
       // Prevent default only for horizontal swipes
       const deltaX = Math.abs(e.touches[0].clientX - touchStartX.current);
-      const deltaY = Math.abs(e.touches[0].clientY - touchStartX.current);
+      const deltaY = Math.abs(e.touches[0].clientY - (e.touches[0] as any).startY || 0);
       if (deltaX > deltaY) {
         e.preventDefault();
       }
@@ -113,7 +113,7 @@ export default function AppShowcase() {
   };
 
   const handleTouchEnd = () => {
-    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+    if (window.innerWidth >= 768) {
       const swipeDistance = touchStartX.current - touchEndX.current;
       const minSwipeDistance = 50;
       
@@ -166,12 +166,12 @@ export default function AppShowcase() {
                   key={index}
                   className="absolute left-1/2 top-1/2 cursor-pointer"
                   style={{
-                    transform: `translate(-50%, -50%) translateX(${offset * (typeof window !== 'undefined' && window.innerWidth < 768 ? 200 : 280)}px) scale(${isActive ? (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.9 : 1) : (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.7 : 0.8)}) rotateY(${offset * -15}deg)`,
+                    transform: `translate(-50%, -50%) translateX(${offset * (window.innerWidth < 768 ? 200 : 280)}px) scale(${isActive ? (window.innerWidth < 768 ? 0.9 : 1) : (window.innerWidth < 768 ? 0.7 : 0.8)}) rotateY(${offset * -15}deg)`,
                     zIndex: isActive ? 10 : 5 - absOffset,
                     opacity: isActive ? 1 : 0.6
                   }}
                   animate={{
-                    transform: `translate(-50%, -50%) translateX(${offset * (typeof window !== 'undefined' && window.innerWidth < 768 ? 200 : 280)}px) scale(${isActive ? (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.9 : 1) : (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.7 : 0.8)}) rotateY(${offset * -15}deg)`,
+                    transform: `translate(-50%, -50%) translateX(${offset * (window.innerWidth < 768 ? 200 : 280)}px) scale(${isActive ? (window.innerWidth < 768 ? 0.9 : 1) : (window.innerWidth < 768 ? 0.7 : 0.8)}) rotateY(${offset * -15}deg)`,
                     opacity: isActive ? 1 : 0.6
                   }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
@@ -193,7 +193,7 @@ export default function AppShowcase() {
                           {/* App Screenshot */}
                           <div className="absolute inset-0">
                             <img 
-                              src={app.screenshot} 
+                              src={app.image} 
                               alt={`${app.name} Screenshot`}
                               className="w-full h-full object-cover"
                               onError={(e) => {
