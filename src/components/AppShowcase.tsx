@@ -94,14 +94,14 @@ export default function AppShowcase() {
 
   const handleTouchStart = (e: React.TouchEvent) => {
     // Only handle horizontal swipes on desktop
-    if (window.innerWidth >= 768) {
+    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
       touchStartX.current = e.touches[0].clientX;
       setIsDragging(true);
     }
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (window.innerWidth >= 768) {
+    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
       touchEndX.current = e.touches[0].clientX;
       // Prevent default only for horizontal swipes
       const deltaX = Math.abs(e.touches[0].clientX - touchStartX.current);
@@ -113,7 +113,7 @@ export default function AppShowcase() {
   };
 
   const handleTouchEnd = () => {
-    if (window.innerWidth >= 768) {
+    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
       const swipeDistance = touchStartX.current - touchEndX.current;
       const minSwipeDistance = 50;
       
@@ -166,12 +166,12 @@ export default function AppShowcase() {
                   key={index}
                   className="absolute left-1/2 top-1/2 cursor-pointer"
                   style={{
-                    transform: `translate(-50%, -50%) translateX(${offset * (window.innerWidth < 768 ? 200 : 280)}px) scale(${isActive ? (window.innerWidth < 768 ? 0.9 : 1) : (window.innerWidth < 768 ? 0.7 : 0.8)}) rotateY(${offset * -15}deg)`,
+                    transform: `translate(-50%, -50%) translateX(${offset * (typeof window !== 'undefined' && window.innerWidth < 768 ? 200 : 280)}px) scale(${isActive ? (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.9 : 1) : (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.7 : 0.8)}) rotateY(${offset * -15}deg)`,
                     zIndex: isActive ? 10 : 5 - absOffset,
                     opacity: isActive ? 1 : 0.6
                   }}
                   animate={{
-                    transform: `translate(-50%, -50%) translateX(${offset * (window.innerWidth < 768 ? 200 : 280)}px) scale(${isActive ? (window.innerWidth < 768 ? 0.9 : 1) : (window.innerWidth < 768 ? 0.7 : 0.8)}) rotateY(${offset * -15}deg)`,
+                    transform: `translate(-50%, -50%) translateX(${offset * (typeof window !== 'undefined' && window.innerWidth < 768 ? 200 : 280)}px) scale(${isActive ? (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.9 : 1) : (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.7 : 0.8)}) rotateY(${offset * -15}deg)`,
                     opacity: isActive ? 1 : 0.6
                   }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
