@@ -1,6 +1,7 @@
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export default function AppShowcase() {
   const [currentApp, setCurrentApp] = useState(0);
@@ -181,10 +182,11 @@ export default function AppShowcase() {
                         <div className="h-full bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden relative">
                           {/* App Screenshot */}
                           <div className="absolute inset-0">
-                            <img 
+                            <Image 
                               src={app.screenshot} 
                               alt={`${app.name} Screenshot`}
-                              className="w-full h-full object-cover"
+                              fill
+                              className="object-cover"
                               onError={(e) => {
                                 const target = e.target as HTMLImageElement;
                                 target.src = '/mobileapp/aaspas.jpeg';
