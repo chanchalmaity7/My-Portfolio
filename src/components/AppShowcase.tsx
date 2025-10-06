@@ -1,53 +1,122 @@
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function AppShowcase() {
   const [currentApp, setCurrentApp] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
   
   const apps = [
     {
       name: 'AasPas - Service App',
-      icon: '📍',
+      icon: '📱📍',
       color: 'from-blue-500 to-purple-600',
       description: 'Location-based service platform with dual-role system',
-      features: ['Real-time Location', 'Service Booking', 'Dual User Roles', 'Payment Gateway']
+      features: ['Real-time Location', 'Service Booking', 'Dual User Roles', 'Payment Gateway'],
+      screenshot: '/mobileapp/Gemini_Generated_Image_vcbhsvcbhsvcbhsv.png'
     },
     {
-      name: 'delivery app',
-      icon: '🍔',
+      name: 'Food Delivery App',
+      icon: '📱🍔',
       color: 'from-orange-500 to-red-600',
       description: 'Modern food delivery application with real-time tracking',
-      features: ['Live Tracking', 'Multiple Restaurants', 'Quick Delivery', 'Rating System']
+      features: ['Live Tracking', 'Multiple Restaurants', 'Quick Delivery', 'Rating System'],
+      screenshot: '/mobileapp/Gemini_Generated_Image_idxh5ridxh5ridxh.png'
     },
     {
-      name: 'e-commerce app',
-      icon: '🛍️',
+      name: 'E-Commerce App',
+      icon: '📱🛍️',
       color: 'from-green-500 to-teal-600',
       description: 'Full-featured e-commerce platform with payment integration',
-      features: ['Product Catalog', 'Secure Payments', 'Order Management', 'User Reviews']
+      features: ['Product Catalog', 'Secure Payments', 'Order Management', 'User Reviews'],
+      screenshot: '/mobileapp/Gemini_Generated_Image_bo1ts9bo1ts9bo1t.png'
     },
     {
-      name: 'EduQuest',
-      icon: '📚',
+      name: 'EduQuest Learning',
+      icon: '📱📚',
       color: 'from-indigo-500 to-purple-600',
       description: 'Smart India Hackathon educational platform',
-      features: ['Interactive Learning', 'Progress Tracking', 'Quizzes & Tests', 'Certificates']
+      features: ['Interactive Learning', 'Progress Tracking', 'Quizzes & Tests', 'Certificates'],
+      screenshot: '/mobileapp/Gemini_Generated_Image_e1vw19e1vw19e1vw.png'
     },
     {
-      name: 'delivery app',
-      color: 'from-gray-500 to-slate-600',
-      description: 'Modern food delivery application with real-time tracking',
-      features: ['Live Tracking', 'Multiple Restaurants', 'Quick Delivery', 'Rating System']
+      name: 'Social Chat App',
+      icon: '📱💬',
+      color: 'from-purple-500 to-pink-600',
+      description: 'Real-time messaging application with modern UI',
+      features: ['Real-time Chat', 'Group Messages', 'Media Sharing', 'Push Notifications'],
+      screenshot: '/mobileapp/Screenshot_20251002-231853.png'
+    },
+    {
+      name: 'Business App',
+      icon: '📱💼',
+      color: 'from-teal-500 to-blue-600',
+      description: 'Professional business management application',
+      features: ['Task Management', 'Team Collaboration', 'Analytics', 'Reports'],
+      screenshot: '/mobileapp/Gemini_Generated_Image_abpzn1abpzn1abpz.png'
+    },
+    {
+      name: 'Fitness Tracker',
+      icon: '📱💪',
+      color: 'from-red-500 to-orange-600',
+      description: 'Health and fitness tracking mobile application',
+      features: ['Workout Plans', 'Progress Tracking', 'Nutrition Guide', 'Social Features'],
+      screenshot: '/mobileapp/aaspas.jpeg'
+    },
+    {
+      name: 'Travel Guide',
+      icon: '📱✈️',
+      color: 'from-cyan-500 to-blue-600',
+      description: 'Complete travel companion and guide application',
+      features: ['Trip Planning', 'Local Guides', 'Booking System', 'Offline Maps'],
+      screenshot: '/mobileapp/Gemini_Generated_Image_y6yi64y6yi64y6yi.png'
+    },
+    {
+      name: 'Music Player',
+      icon: '📱🎵',
+      color: 'from-pink-500 to-purple-600',
+      description: 'Modern music streaming and player application',
+      features: ['Streaming', 'Playlists', 'Offline Mode', 'Social Sharing'],
+      screenshot: '/mobileapp/Gemini_Generated_Image_z7zt6wz7zt6wz7zt.png'
     }
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentApp((prev) => (prev + 1) % apps.length);
-    }, 4000);
+      if (!isDragging) {
+        setCurrentApp((prev) => (prev + 1) % apps.length);
+      }
+    }, 3000);
     return () => clearInterval(interval);
-  }, [apps.length]);
+  }, [apps.length, isDragging]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const swipeDistance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+    
+    if (Math.abs(swipeDistance) > minSwipeDistance) {
+      if (swipeDistance > 0) {
+        // Swipe left - next app
+        setCurrentApp((prev) => (prev + 1) % apps.length);
+      } else {
+        // Swipe right - previous app
+        setCurrentApp((prev) => (prev - 1 + apps.length) % apps.length);
+      }
+    }
+    
+    setTimeout(() => setIsDragging(false), 100);
+  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
@@ -69,13 +138,18 @@ export default function AppShowcase() {
         </motion.div>
 
         {/* 3D Carousel */}
-        <div className="relative h-[500px] flex items-center justify-center mb-16">
+        <div 
+          className="relative h-[500px] flex items-center justify-center mb-16 touch-pan-x"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <div className="relative w-full max-w-6xl">
             {apps.map((app, index) => {
               const offset = index - currentApp;
               const absOffset = Math.abs(offset);
               const isActive = offset === 0;
-              const isVisible = absOffset <= 2;
+              const isVisible = absOffset <= 3;
               
               if (!isVisible) return null;
               
@@ -92,7 +166,7 @@ export default function AppShowcase() {
                     transform: `translate(-50%, -50%) translateX(${offset * 280}px) scale(${isActive ? 1 : 0.8}) rotateY(${offset * -15}deg)`,
                     opacity: isActive ? 1 : 0.6
                   }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
                   onClick={() => setCurrentApp(index)}
                   whileHover={{ scale: isActive ? 1.05 : 0.85 }}
                 >
@@ -105,12 +179,16 @@ export default function AppShowcase() {
                         
                         {/* Screen Content */}
                         <div className="h-full bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden relative">
-                          {/* App Screenshot for all apps */}
+                          {/* App Screenshot */}
                           <div className="absolute inset-0">
                             <img 
-                              src="/img/aaspas.jpeg" 
+                              src={app.screenshot} 
                               alt={`${app.name} Screenshot`}
                               className="w-full h-full object-cover"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.src = '/mobileapp/aaspas.jpeg';
+                              }}
                             />
                           </div>
                         </div>
