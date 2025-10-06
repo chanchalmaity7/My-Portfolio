@@ -15,7 +15,7 @@ export default function AppShowcase() {
       color: 'from-blue-500 to-purple-600',
       description: 'Location-based service platform with dual-role system',
       features: ['Real-time Location', 'Service Booking', 'Dual User Roles', 'Payment Gateway'],
-      image: '/mobileapp/img1.png',
+      image: '/scc/img1.png',
     },
     {
       name: 'Food Delivery App',
@@ -23,7 +23,7 @@ export default function AppShowcase() {
       color: 'from-orange-500 to-red-600',
       description: 'Modern food delivery application with real-time tracking',
       features: ['Live Tracking', 'Multiple Restaurants', 'Quick Delivery', 'Rating System'],
-      image: '/mobileapp/img2.png',
+      image: '/scc/img2.png',
     },
     {
       name: 'E-Commerce App',
@@ -31,7 +31,7 @@ export default function AppShowcase() {
       color: 'from-green-500 to-teal-600',
       description: 'Full-featured e-commerce platform with payment integration',
       features: ['Product Catalog', 'Secure Payments', 'Order Management', 'User Reviews'],
-      image: '/mobileapp/img3.png',
+      image: '/scc/img3.png',
     },
     {
       name: 'EduQuest Learning',
