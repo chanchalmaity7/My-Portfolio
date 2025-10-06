@@ -1,7 +1,7 @@
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
+import OptimizedImage from './OptimizedImage';
 
 export default function AppShowcase() {
   const [currentApp, setCurrentApp] = useState(0);
@@ -182,15 +182,14 @@ export default function AppShowcase() {
                         <div className="h-full bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden relative">
                           {/* App Screenshot */}
                           <div className="absolute inset-0">
-                            <Image 
+                            <OptimizedImage 
                               src={app.screenshot} 
                               alt={`${app.name} Screenshot`}
                               fill
                               className="object-cover"
-                              onError={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                target.src = '/mobileapp/aaspas.jpeg';
-                              }}
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                              priority={isActive}
+                              fallbackSrc="/mobileapp/aaspas.jpeg"
                             />
                           </div>
                         </div>
