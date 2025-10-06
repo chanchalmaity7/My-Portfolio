@@ -39,7 +39,7 @@ export default function AppShowcase() {
       color: 'from-indigo-500 to-purple-600',
       description: 'Smart India Hackathon educational platform',
       features: ['Interactive Learning', 'Progress Tracking', 'Quizzes & Tests', 'Certificates'],
-      image: '/mobileapp/img4.png',
+      image: '/scc/img4.png',
     },
     {
       name: 'Social Chat App',
@@ -47,7 +47,7 @@ export default function AppShowcase() {
       color: 'from-purple-500 to-pink-600',
       description: 'Real-time messaging application with modern UI',
       features: ['Real-time Chat', 'Group Messages', 'Media Sharing', 'Push Notifications'],
-      image: '/mobileapp/img5.png',
+      image: '/scc/img5.png',
     },
     {
       name: 'Business App',
@@ -55,7 +55,7 @@ export default function AppShowcase() {
       color: 'from-teal-500 to-blue-600',
       description: 'Professional business management application',
       features: ['Task Management', 'Team Collaboration', 'Analytics', 'Reports'],
-      image: '/mobileapp/img6.png',
+      image: '/scc/img6.png',
     },
     {
       name: 'Fitness Tracker',
@@ -63,7 +63,7 @@ export default function AppShowcase() {
       color: 'from-red-500 to-orange-600',
       description: 'Health and fitness tracking mobile application',
       features: ['Workout Plans', 'Progress Tracking', 'Nutrition Guide', 'Social Features'],
-      image: '/mobileapp/aaspas.jpeg',
+      image: '/scc/aaspas.jpeg',
     },
     {
       name: 'Travel Guide',
@@ -71,7 +71,7 @@ export default function AppShowcase() {
       color: 'from-cyan-500 to-blue-600',
       description: 'Complete travel companion and guide application',
       features: ['Trip Planning', 'Local Guides', 'Booking System', 'Offline Maps'],
-      image: '/mobileapp/img8.png'
+      image: '/scc/img8.png'
     },
     {
       name: 'Music Player',
@@ -79,7 +79,7 @@ export default function AppShowcase() {
       color: 'from-pink-500 to-purple-600',
       description: 'Modern music streaming and player application',
       features: ['Streaming', 'Playlists', 'Offline Mode', 'Social Sharing'],
-      image: '/mobileapp/img7.png',
+      image: '/scc/img7.png',
     }
   ];
 
@@ -177,9 +177,9 @@ export default function AppShowcase() {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   onClick={() => setCurrentApp(index)}
                   whileHover={{ scale: isActive ? 1.05 : 0.85 }}
-                  onTouchStart={handleTouchStart}
-                  onTouchMove={handleTouchMove}
-                  onTouchEnd={handleTouchEnd}
+                  onTouchStart={typeof window !== 'undefined' && window.innerWidth >= 768 ? handleTouchStart : undefined}
+                  onTouchMove={typeof window !== 'undefined' && window.innerWidth >= 768 ? handleTouchMove : undefined}
+                  onTouchEnd={typeof window !== 'undefined' && window.innerWidth >= 768 ? handleTouchEnd : undefined}
                 >
                   {/* Phone Frame */}
                   <div className={`w-64 h-[450px] bg-gradient-to-br ${app.color} p-1 rounded-[2.5rem] shadow-2xl`}>
