@@ -15,7 +15,7 @@ export default function AppShowcase() {
       color: 'from-blue-500 to-purple-600',
       description: 'Location-based service platform with dual-role system',
       features: ['Real-time Location', 'Service Booking', 'Dual User Roles', 'Payment Gateway'],
-      screenshot: '/mobileapp/img1.png'
+      screenshot: '/mobileapp/aaspas.jpeg'
     },
     {
       name: 'Food Delivery App',
@@ -23,7 +23,7 @@ export default function AppShowcase() {
       color: 'from-orange-500 to-red-600',
       description: 'Modern food delivery application with real-time tracking',
       features: ['Live Tracking', 'Multiple Restaurants', 'Quick Delivery', 'Rating System'],
-      screenshot: '/mobileapp/img2.png'
+      screenshot: '/mobileapp/aaspas.jpeg'
     },
     {
       name: 'E-Commerce App',
@@ -31,7 +31,7 @@ export default function AppShowcase() {
       color: 'from-green-500 to-teal-600',
       description: 'Full-featured e-commerce platform with payment integration',
       features: ['Product Catalog', 'Secure Payments', 'Order Management', 'User Reviews'],
-      screenshot: '/mobileapp/img3.png'
+      screenshot: '/mobileapp/aaspas.jpeg'
     },
     {
       name: 'EduQuest Learning',
@@ -39,7 +39,7 @@ export default function AppShowcase() {
       color: 'from-indigo-500 to-purple-600',
       description: 'Smart India Hackathon educational platform',
       features: ['Interactive Learning', 'Progress Tracking', 'Quizzes & Tests', 'Certificates'],
-      screenshot: '/mobileapp/img4.png'
+      screenshot: '/mobileapp/aaspas.jpeg'
     },
     {
       name: 'Social Chat App',
@@ -47,7 +47,7 @@ export default function AppShowcase() {
       color: 'from-purple-500 to-pink-600',
       description: 'Real-time messaging application with modern UI',
       features: ['Real-time Chat', 'Group Messages', 'Media Sharing', 'Push Notifications'],
-      screenshot: '/mobileapp/img5.png'
+      screenshot: '/mobileapp/aaspas.jpeg'
     },
     {
       name: 'Business App',
@@ -55,7 +55,7 @@ export default function AppShowcase() {
       color: 'from-teal-500 to-blue-600',
       description: 'Professional business management application',
       features: ['Task Management', 'Team Collaboration', 'Analytics', 'Reports'],
-      screenshot: '/mobileapp/img6.png'
+      screenshot: '/mobileapp/aaspas.jpeg'
     },
     {
       name: 'Fitness Tracker',
@@ -71,7 +71,7 @@ export default function AppShowcase() {
       color: 'from-cyan-500 to-blue-600',
       description: 'Complete travel companion and guide application',
       features: ['Trip Planning', 'Local Guides', 'Booking System', 'Offline Maps'],
-      screenshot: '/mobileapp/img8.png'
+      screenshot: '/mobileapp/aaspas.jpeg'
     },
     {
       name: 'Music Player',
@@ -79,7 +79,7 @@ export default function AppShowcase() {
       color: 'from-pink-500 to-purple-600',
       description: 'Modern music streaming and player application',
       features: ['Streaming', 'Playlists', 'Offline Mode', 'Social Sharing'],
-      screenshot: '/mobileapp/img7.png'
+      screenshot: '/mobileapp/aaspas.jpeg'
     }
   ];
 
