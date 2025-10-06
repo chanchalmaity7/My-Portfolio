@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -47,10 +48,12 @@ export default function Hero() {
           >
             <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-purple-400 to-pink-400 p-1 bg-gradient-to-r from-purple-400 to-pink-400 shadow-2xl">
               <div className="w-full h-full rounded-full overflow-hidden bg-gray-800">
-                <img 
+                <Image 
                   src="/img/chanchal.jpg" 
                   alt="Chanchal Maity" 
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 128px, 160px"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = `data:image/svg+xml;base64,${btoa(`
