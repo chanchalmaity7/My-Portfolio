@@ -1,7 +1,6 @@
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
-import OptimizedImage from './OptimizedImage';
 
 export default function AppShowcase() {
   const [currentApp, setCurrentApp] = useState(0);
@@ -16,7 +15,7 @@ export default function AppShowcase() {
       color: 'from-blue-500 to-purple-600',
       description: 'Location-based service platform with dual-role system',
       features: ['Real-time Location', 'Service Booking', 'Dual User Roles', 'Payment Gateway'],
-      screenshot: '/mobileapp/Gemini_Generated_Image_vcbhsvcbhsvcbhsv.png'
+      screenshot: '/mobileapp/img1.png'
     },
     {
       name: 'Food Delivery App',
@@ -24,7 +23,7 @@ export default function AppShowcase() {
       color: 'from-orange-500 to-red-600',
       description: 'Modern food delivery application with real-time tracking',
       features: ['Live Tracking', 'Multiple Restaurants', 'Quick Delivery', 'Rating System'],
-      screenshot: '/mobileapp/Gemini_Generated_Image_idxh5ridxh5ridxh.png'
+      screenshot: '/mobileapp/img2.png'
     },
     {
       name: 'E-Commerce App',
@@ -32,7 +31,7 @@ export default function AppShowcase() {
       color: 'from-green-500 to-teal-600',
       description: 'Full-featured e-commerce platform with payment integration',
       features: ['Product Catalog', 'Secure Payments', 'Order Management', 'User Reviews'],
-      screenshot: '/mobileapp/Gemini_Generated_Image_bo1ts9bo1ts9bo1t.png'
+      screenshot: '/mobileapp/img3.png'
     },
     {
       name: 'EduQuest Learning',
@@ -40,7 +39,7 @@ export default function AppShowcase() {
       color: 'from-indigo-500 to-purple-600',
       description: 'Smart India Hackathon educational platform',
       features: ['Interactive Learning', 'Progress Tracking', 'Quizzes & Tests', 'Certificates'],
-      screenshot: '/mobileapp/Gemini_Generated_Image_e1vw19e1vw19e1vw.png'
+      screenshot: '/mobileapp/img4.png'
     },
     {
       name: 'Social Chat App',
@@ -48,7 +47,7 @@ export default function AppShowcase() {
       color: 'from-purple-500 to-pink-600',
       description: 'Real-time messaging application with modern UI',
       features: ['Real-time Chat', 'Group Messages', 'Media Sharing', 'Push Notifications'],
-      screenshot: '/mobileapp/Screenshot_20251002-231853.png'
+      screenshot: '/mobileapp/img5.png'
     },
     {
       name: 'Business App',
@@ -56,7 +55,7 @@ export default function AppShowcase() {
       color: 'from-teal-500 to-blue-600',
       description: 'Professional business management application',
       features: ['Task Management', 'Team Collaboration', 'Analytics', 'Reports'],
-      screenshot: '/mobileapp/Gemini_Generated_Image_abpzn1abpzn1abpz.png'
+      screenshot: '/mobileapp/img6.png'
     },
     {
       name: 'Fitness Tracker',
@@ -72,7 +71,7 @@ export default function AppShowcase() {
       color: 'from-cyan-500 to-blue-600',
       description: 'Complete travel companion and guide application',
       features: ['Trip Planning', 'Local Guides', 'Booking System', 'Offline Maps'],
-      screenshot: '/mobileapp/Gemini_Generated_Image_y6yi64y6yi64y6yi.png'
+      screenshot: '/mobileapp/img8.png'
     },
     {
       name: 'Music Player',
@@ -80,7 +79,7 @@ export default function AppShowcase() {
       color: 'from-pink-500 to-purple-600',
       description: 'Modern music streaming and player application',
       features: ['Streaming', 'Playlists', 'Offline Mode', 'Social Sharing'],
-      screenshot: '/mobileapp/Gemini_Generated_Image_z7zt6wz7zt6wz7zt.png'
+      screenshot: '/mobileapp/img7.png'
     }
   ];
 
@@ -94,29 +93,40 @@ export default function AppShowcase() {
   }, [apps.length, isDragging]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-    setIsDragging(true);
+    // Only handle horizontal swipes on desktop
+    if (window.innerWidth >= 768) {
+      touchStartX.current = e.touches[0].clientX;
+      setIsDragging(true);
+    }
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX;
+    if (window.innerWidth >= 768) {
+      touchEndX.current = e.touches[0].clientX;
+      // Prevent default only for horizontal swipes
+      const deltaX = Math.abs(e.touches[0].clientX - touchStartX.current);
+      const deltaY = Math.abs(e.touches[0].clientY - (e.touches[0] as any).startY || 0);
+      if (deltaX > deltaY) {
+        e.preventDefault();
+      }
+    }
   };
 
   const handleTouchEnd = () => {
-    const swipeDistance = touchStartX.current - touchEndX.current;
-    const minSwipeDistance = 50;
-    
-    if (Math.abs(swipeDistance) > minSwipeDistance) {
-      if (swipeDistance > 0) {
-        // Swipe left - next app
-        setCurrentApp((prev) => (prev + 1) % apps.length);
-      } else {
-        // Swipe right - previous app
-        setCurrentApp((prev) => (prev - 1 + apps.length) % apps.length);
+    if (window.innerWidth >= 768) {
+      const swipeDistance = touchStartX.current - touchEndX.current;
+      const minSwipeDistance = 50;
+      
+      if (Math.abs(swipeDistance) > minSwipeDistance) {
+        if (swipeDistance > 0) {
+          setCurrentApp((prev) => (prev + 1) % apps.length);
+        } else {
+          setCurrentApp((prev) => (prev - 1 + apps.length) % apps.length);
+        }
       }
+      
+      setTimeout(() => setIsDragging(false), 100);
     }
-    
-    setTimeout(() => setIsDragging(false), 100);
   };
 
   return (
@@ -140,10 +150,7 @@ export default function AppShowcase() {
 
         {/* 3D Carousel */}
         <div 
-          className="relative h-[500px] flex items-center justify-center mb-16 touch-pan-x"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
+          className="relative h-[400px] sm:h-[500px] flex items-center justify-center mb-16"
         >
           <div className="relative w-full max-w-6xl">
             {apps.map((app, index) => {
@@ -159,17 +166,20 @@ export default function AppShowcase() {
                   key={index}
                   className="absolute left-1/2 top-1/2 cursor-pointer"
                   style={{
-                    transform: `translate(-50%, -50%) translateX(${offset * 280}px) scale(${isActive ? 1 : 0.8}) rotateY(${offset * -15}deg)`,
+                    transform: `translate(-50%, -50%) translateX(${offset * (window.innerWidth < 768 ? 200 : 280)}px) scale(${isActive ? (window.innerWidth < 768 ? 0.9 : 1) : (window.innerWidth < 768 ? 0.7 : 0.8)}) rotateY(${offset * -15}deg)`,
                     zIndex: isActive ? 10 : 5 - absOffset,
                     opacity: isActive ? 1 : 0.6
                   }}
                   animate={{
-                    transform: `translate(-50%, -50%) translateX(${offset * 280}px) scale(${isActive ? 1 : 0.8}) rotateY(${offset * -15}deg)`,
+                    transform: `translate(-50%, -50%) translateX(${offset * (window.innerWidth < 768 ? 200 : 280)}px) scale(${isActive ? (window.innerWidth < 768 ? 0.9 : 1) : (window.innerWidth < 768 ? 0.7 : 0.8)}) rotateY(${offset * -15}deg)`,
                     opacity: isActive ? 1 : 0.6
                   }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   onClick={() => setCurrentApp(index)}
                   whileHover={{ scale: isActive ? 1.05 : 0.85 }}
+                  onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={handleTouchEnd}
                 >
                   {/* Phone Frame */}
                   <div className={`w-64 h-[450px] bg-gradient-to-br ${app.color} p-1 rounded-[2.5rem] shadow-2xl`}>
@@ -182,14 +192,14 @@ export default function AppShowcase() {
                         <div className="h-full bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden relative">
                           {/* App Screenshot */}
                           <div className="absolute inset-0">
-                            <OptimizedImage 
+                            <img 
                               src={app.screenshot} 
                               alt={`${app.name} Screenshot`}
-                              fill
-                              className="object-cover"
-                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                              priority={isActive}
-                              fallbackSrc="/mobileapp/aaspas.jpeg"
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.src = '/mobileapp/aaspas.jpeg';
+                              }}
                             />
                           </div>
                         </div>

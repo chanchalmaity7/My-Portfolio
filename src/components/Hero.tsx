@@ -75,19 +75,20 @@ export default function Hero() {
             Chanchal <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Maity</span>
           </motion.h1>
           
+          {/* Mobile: Stack vertically, Desktop: Horizontal layout */}
           <motion.div 
-            className="flex items-center justify-center gap-4 mb-2 sm:mb-3"
+            className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-2 sm:mb-3"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {/* Tech Icons */}
-            <div className="flex items-center gap-3">
+            {/* Tech Icons Row 1 - Mobile: All 10, Desktop: Left 5 */}
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-center sm:justify-start">
               <motion.div 
                 initial={{ opacity: 0, y: -200 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-                className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xs"
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xs"
               >
                 R
               </motion.div>
@@ -95,7 +96,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: -200 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
-                className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center text-white font-bold text-xs"
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-cyan-500 rounded-lg flex items-center justify-center text-white font-bold text-xs"
               >
                 RN
               </motion.div>
@@ -103,7 +104,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: -200 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
-                className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center text-white font-bold text-xs"
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-yellow-500 rounded-lg flex items-center justify-center text-white font-bold text-xs"
               >
                 JS
               </motion.div>
@@ -111,14 +112,63 @@ export default function Hero() {
                 initial={{ opacity: 0, y: -200 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
-                className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-xs"
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-xs"
               >
                 TS
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: -200 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.85, duration: 0.8, ease: "easeOut" }}
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-800 rounded-lg flex items-center justify-center text-white font-bold text-xs"
+              >
+                EX
+              </motion.div>
+              {/* Mobile: Show all 10 icons in one row */}
+              <motion.div 
+                initial={{ opacity: 0, y: -200 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xs sm:hidden"
+              >
+                M
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: -200 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.0, duration: 0.8, ease: "easeOut" }}
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-black rounded-lg flex items-center justify-center text-white font-bold text-xs sm:hidden"
+              >
+                NX
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: -200 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.1, duration: 0.8, ease: "easeOut" }}
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xs sm:hidden"
+              >
+                PY
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: -200 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-green-700 rounded-lg flex items-center justify-center text-white font-bold text-xs sm:hidden"
+              >
+                DJ
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: -200 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.3, duration: 0.8, ease: "easeOut" }}
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-600 rounded-lg flex items-center justify-center text-white font-bold text-xs sm:hidden"
+              >
+                FL
               </motion.div>
             </div>
             
             <motion.p 
-              className="text-lg sm:text-xl md:text-2xl text-gray-300"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 order-first sm:order-none"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
@@ -126,19 +176,12 @@ export default function Hero() {
               Senior Full Stack Developer
             </motion.p>
             
-            <div className="flex items-center gap-3">
+            {/* Desktop: Right Tech Icons - 5 items (hidden on mobile) */}
+            <div className="hidden sm:flex items-center gap-3">
               <motion.div 
                 initial={{ opacity: 0, y: -200 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
-                className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center text-white font-bold text-xs"
-              >
-                EX
-              </motion.div>
-              <motion.div 
-                initial={{ opacity: 0, y: -200 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.0, duration: 0.8, ease: "easeOut" }}
                 className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xs"
               >
                 M
@@ -146,7 +189,7 @@ export default function Hero() {
               <motion.div 
                 initial={{ opacity: 0, y: -200 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.1, duration: 0.8, ease: "easeOut" }}
+                transition={{ delay: 1.0, duration: 0.8, ease: "easeOut" }}
                 className="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white font-bold text-xs"
               >
                 NX
@@ -154,7 +197,7 @@ export default function Hero() {
               <motion.div 
                 initial={{ opacity: 0, y: -200 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
+                transition={{ delay: 1.1, duration: 0.8, ease: "easeOut" }}
                 className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xs"
               >
                 PY
@@ -162,7 +205,7 @@ export default function Hero() {
               <motion.div 
                 initial={{ opacity: 0, y: -200 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.3, duration: 0.8, ease: "easeOut" }}
+                transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
                 className="w-8 h-8 bg-green-700 rounded-lg flex items-center justify-center text-white font-bold text-xs"
               >
                 DJ
@@ -170,7 +213,7 @@ export default function Hero() {
               <motion.div 
                 initial={{ opacity: 0, y: -200 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.4, duration: 0.8, ease: "easeOut" }}
+                transition={{ delay: 1.3, duration: 0.8, ease: "easeOut" }}
                 className="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center text-white font-bold text-xs"
               >
                 FL
