@@ -105,7 +105,7 @@ export default function AppShowcase() {
       touchEndX.current = e.touches[0].clientX;
       // Prevent default only for horizontal swipes
       const deltaX = Math.abs(e.touches[0].clientX - touchStartX.current);
-      const deltaY = Math.abs(e.touches[0].clientY - (e.touches[0] as any).startY || 0);
+      const deltaY = Math.abs(e.touches[0].clientY - touchStartX.current);
       if (deltaX > deltaY) {
         e.preventDefault();
       }
