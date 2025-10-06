@@ -177,11 +177,7 @@ export default function AppShowcase() {
                   transition={{ duration: 1.2, ease: "easeInOut" }}
                   onClick={typeof window !== 'undefined' && window.innerWidth >= 768 ? () => setCurrentApp(index) : undefined}
                   whileHover={{ scale: isActive ? 1.05 : 0.85 }}
-                  {...(typeof window !== 'undefined' && window.innerWidth >= 768 && {
-                    onTouchStart: handleTouchStart,
-                    onTouchMove: handleTouchMove,
-                    onTouchEnd: handleTouchEnd
-                  })}
+
                 >
                   {/* Phone Frame */}
                   <div className={`w-64 h-[450px] bg-gradient-to-br ${app.color} p-1 rounded-[2.5rem] shadow-2xl`}>
