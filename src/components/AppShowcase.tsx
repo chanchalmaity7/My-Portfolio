@@ -101,8 +101,8 @@ export default function AppShowcase() {
     touchEndX.current = e.touches[0].clientX;
     const deltaX = Math.abs(e.touches[0].clientX - touchStartX.current);
     const deltaY = Math.abs(e.touches[0].clientY - touchStartX.current);
-    // Only prevent default for horizontal swipes
-    if (deltaX > deltaY && deltaX > 30) {
+    // Only prevent default for clear horizontal swipes
+    if (deltaX > deltaY && deltaX > 50) {
       e.preventDefault();
     }
   };
@@ -144,6 +144,9 @@ export default function AppShowcase() {
         {/* 3D Carousel */}
         <div 
           className="relative h-[400px] sm:h-[500px] flex items-center justify-center mb-16"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div className="relative w-full max-w-6xl">
             {apps.map((app, index) => {
@@ -167,7 +170,7 @@ export default function AppShowcase() {
                     transform: `translate(-50%, -50%) translateX(${offset * (typeof window !== 'undefined' && window.innerWidth < 768 ? 200 : 280)}px) scale(${isActive ? (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.9 : 1) : (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.7 : 0.8)}) rotateY(${offset * -15}deg)`,
                     opacity: isActive ? 1 : 0.6
                   }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  transition={{ duration: isDragging ? 0.3 : 1.2, ease: isDragging ? "easeOut" : "easeInOut" }}
                   onClick={typeof window !== 'undefined' && window.innerWidth >= 768 ? () => setCurrentApp(index) : undefined}
                   whileHover={{ scale: isActive ? 1.05 : 0.85 }}
 
