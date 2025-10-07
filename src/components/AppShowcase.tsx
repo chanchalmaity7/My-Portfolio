@@ -144,9 +144,6 @@ export default function AppShowcase() {
         {/* 3D Carousel */}
         <div 
           className="relative h-[400px] sm:h-[500px] flex items-center justify-center mb-16"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
         >
           <div className="relative w-full max-w-6xl">
             {apps.map((app, index) => {
@@ -160,7 +157,7 @@ export default function AppShowcase() {
               return (
                 <motion.div
                   key={index}
-                  className={`absolute left-1/2 top-1/2 ${typeof window !== 'undefined' && window.innerWidth < 768 ? 'pointer-events-none' : 'cursor-pointer'}`}
+                  className="absolute left-1/2 top-1/2 pointer-events-none sm:pointer-events-auto sm:cursor-pointer"
                   style={{
                     transform: `translate(-50%, -50%) translateX(${offset * (typeof window !== 'undefined' && window.innerWidth < 768 ? 200 : 280)}px) scale(${isActive ? (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.9 : 1) : (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.7 : 0.8)}) rotateY(${offset * -15}deg)`,
                     zIndex: isActive ? 10 : 5 - absOffset,
