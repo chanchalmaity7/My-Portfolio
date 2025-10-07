@@ -10,11 +10,12 @@ export default function AppShowcase() {
   
   const apps = [
     {
-      name: 'AasPas - Service App',
-      icon: '📱📍',
-      color: 'from-blue-500 to-purple-600',
-      description: 'Location-based service platform with dual-role system',
-      features: ['Real-time Location', 'Service Booking', 'Dual User Roles', 'Payment Gateway'],
+      name: 'Food Delivery App',
+       icon: '📱🍔',
+      color: 'from-orange-500 to-red-600',
+      description: 'Modern food delivery application with real-time tracking',
+      features: ['Live Tracking', 'Multiple Restaurants', 'Quick Delivery', 'Rating System'],
+
       image: '/scc/img1.png',
     },
     {
@@ -26,31 +27,32 @@ export default function AppShowcase() {
       image: '/scc/img2.png',
     },
     {
-      name: 'E-Commerce App',
-      icon: '📱🛍️',
-      color: 'from-green-500 to-teal-600',
-      description: 'Full-featured e-commerce platform with payment integration',
-      features: ['Product Catalog', 'Secure Payments', 'Order Management', 'User Reviews'],
+      name: 'Fitness Tracker',
+      icon: '📱💪',
+      color: 'from-red-500 to-orange-600',
+      description: 'Health and fitness tracking mobile application',
+      features: ['Workout Plans', 'Progress Tracking', 'Nutrition Guide', 'Social Features'],
       image: '/scc/img3.png',
     },
     {
-      name: 'EduQuest Learning',
+      name: 'delivery boy app',
       icon: '📱📚',
       color: 'from-indigo-500 to-purple-600',
-      description: 'Smart India Hackathon educational platform',
-      features: ['Interactive Learning', 'Progress Tracking', 'Quizzes & Tests', 'Certificates'],
+      description: 'Live oder tracking and delivery management application',
+      features: ['Order Management', 'Route Optimization', 'Real-time Updates', 'Earnings Tracking'],
       image: '/scc/img4.png',
     },
     {
-      name: 'Social Chat App',
-      icon: '📱💬',
-      color: 'from-purple-500 to-pink-600',
-      description: 'Real-time messaging application with modern UI',
-      features: ['Real-time Chat', 'Group Messages', 'Media Sharing', 'Push Notifications'],
+      name: 'AasPas - Service App',
+      icon: '📱📍',
+      color: 'from-blue-500 to-purple-600',
+      description: 'Location-based service platform with dual-role system',
+      features: ['Real-time Location', 'Service Booking', 'Dual User Roles', 'Payment Gateway'],
+
       image: '/scc/img5.png',
     },
     {
-      name: 'Business App',
+      name: 'Seller App',
       icon: '📱💼',
       color: 'from-teal-500 to-blue-600',
       description: 'Professional business management application',
@@ -58,27 +60,28 @@ export default function AppShowcase() {
       image: '/scc/img6.png',
     },
     {
-      name: 'Fitness Tracker',
-      icon: '📱💪',
+     name: 'AasPas - Service App',
+      icon: '📱📍',
       color: 'from-red-500 to-orange-600',
-      description: 'Health and fitness tracking mobile application',
-      features: ['Workout Plans', 'Progress Tracking', 'Nutrition Guide', 'Social Features'],
+      description: 'Location-based service platform with dual-role system',
+      features: ['Real-time Location', 'Service Booking', 'Dual User Roles', 'Payment Gateway'],
       image: '/scc/aaspas.jpeg',
     },
     {
-      name: 'Travel Guide',
-      icon: '📱✈️',
-      color: 'from-cyan-500 to-blue-600',
-      description: 'Complete travel companion and guide application',
-      features: ['Trip Planning', 'Local Guides', 'Booking System', 'Offline Maps'],
+      name: 'E-commerce App',
+      icon: '📱🛍️',
+      color: 'from-green-500 to-teal-600',
+      description: 'Full-featured e-commerce platform with payment integration',
+      features: ['Product Catalog', 'Secure Payments', 'Order Management', 'User Reviews'],
+
       image: '/scc/img8.png'
     },
     {
-      name: 'Music Player',
-      icon: '📱🎵',
+      name: 'Fitness Tracker',
+      icon: '📱💪',
       color: 'from-pink-500 to-purple-600',
-      description: 'Modern music streaming and player application',
-      features: ['Streaming', 'Playlists', 'Offline Mode', 'Social Sharing'],
+      description: 'Health and fitness tracking mobile application',
+      features: ['Workout Plans', 'Progress Tracking', 'Nutrition Guide', 'Social Features'],
       image: '/scc/img7.png',
     }
   ];
@@ -88,7 +91,7 @@ export default function AppShowcase() {
       if (!isDragging) {
         setCurrentApp((prev) => (prev + 1) % apps.length);
       }
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [apps.length, isDragging]);
 
