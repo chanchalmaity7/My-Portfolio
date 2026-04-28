@@ -75,7 +75,13 @@ export default function ConsultancyPage() {
                   <p className="text-gray-300 text-sm mb-4">Fill the form below to get in touch</p>
                 </div>
                 
-                <form className="space-y-4">
+                <form
+                  className="space-y-4"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    handleEmail();
+                  }}
+                >
                   <div>
                     <input
                       type="text"

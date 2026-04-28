@@ -1,60 +1,80 @@
 'use client';
+
 import { motion } from 'framer-motion';
 
-export default function Skills() {
-  const skills = [
-    { name: 'MongoDB', level: 90, color: 'bg-green-500' },
-    { name: 'Express.js', level: 85, color: 'bg-gray-500' },
-    { name: 'React.js', level: 95, color: 'bg-blue-500' },
-    { name: 'React Native', level: 80, color: 'bg-cyan-500' },
-    { name: 'Flutter', level: 75, color: 'bg-sky-500' },
-    { name: 'Node.js', level: 90, color: 'bg-green-600' },
-    { name: 'Python', level: 88, color: 'bg-yellow-500' },
-    { name: 'Django', level: 82, color: 'bg-green-700' },
-    { name: 'Flask', level: 80, color: 'bg-gray-600' },
-    { name: 'Next.js', level: 92, color: 'bg-black' },
-    { name: 'TypeScript', level: 88, color: 'bg-blue-600' },
-    { name: 'Tailwind CSS', level: 95, color: 'bg-teal-500' },
-    { name: 'REST API', level: 85, color: 'bg-orange-500' },
-    { name: 'Git & GitHub', level: 90, color: 'bg-purple-500' }
-  ];
+const skillGroups = [
+  {
+    title: 'Mobile engineering',
+    summary: 'Mobile products with native Android behavior, background services, notifications, maps, payments, and cross-platform implementation breadth.',
+    items: ['React Native', 'Expo', 'Flutter', 'Native Android modules', 'Firebase FCM', 'Google Maps', 'Agora calls'],
+  },
+  {
+    title: 'Backend systems',
+    summary: 'API, realtime, database, auth, payments, cache, and operational flows for production products across JavaScript and Python ecosystems.',
+    items: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Socket.IO', 'Redis patterns', 'Django', 'Flask'],
+  },
+  {
+    title: 'Web products',
+    summary: 'Modern websites and dashboards with strong UI, SEO, responsiveness, and deployment readiness.',
+    items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'SEO structure', 'HTML5', 'CSS3'],
+  },
+  {
+    title: 'Product architecture',
+    summary: 'Designing reliable user journeys across booking, payment, tracking, recovery, and admin operations.',
+    items: ['Payment flows', 'Role-based UX', 'Realtime rooms', 'Recovery logic', 'i18n', 'Admin tooling'],
+  },
+  {
+    title: 'Languages and foundations',
+    summary: 'Strong implementation comfort across modern product languages, lower-level foundations, markup, styling, and core application logic.',
+    items: ['TypeScript', 'JavaScript', 'Java', 'Python', 'C', 'C++', 'HTML5', 'CSS3', 'SQL'],
+  },
+  {
+    title: 'AI collaboration and prompt engineering',
+    summary: 'Advanced use of GPT, Claude, and Gemini for architecture breakdown, verification loops, hallucination control, and faster production delivery.',
+    items: ['Prompt orchestration', 'Hallucination control', 'Multi-step verification', 'Architecture prompting', 'AI-assisted debugging', 'Spec refinement'],
+  },
+];
 
+export default function Skills() {
   return (
-    <section className="py-20 bg-slate-900">
+    <section className="bg-[#07111f] py-24 text-white">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mx-auto mb-14 max-w-3xl text-center"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">Skills</h2>
-          <div className="w-24 h-1 bg-purple-500 mx-auto"></div>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.26em] text-cyan-200">Skill map</p>
+          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">Engineering range</h2>
+          <p className="mt-5 text-base leading-8 text-slate-300">
+            I focus on building complete products: frontend, backend, native mobile behavior, realtime infrastructure,
+            payments, and operational reliability.
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-          {skills.map((skill, index) => (
+        <div className="grid gap-5 md:grid-cols-2">
+          {skillGroups.map((group, index) => (
             <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              key={group.title}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="bg-slate-800 p-4 sm:p-6 rounded-xl"
+              className="rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl"
             >
-              <div className="flex justify-between items-center mb-3">
-                <h3 className="text-sm sm:text-base text-white font-semibold">{skill.name}</h3>
-                <span className="text-xs sm:text-sm text-purple-400 font-bold">{skill.level}%</span>
-              </div>
-              <div className="w-full bg-slate-700 rounded-full h-3">
-                <motion.div
-                  className={`h-3 rounded-full ${skill.color}`}
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
-                  viewport={{ once: true }}
-                ></motion.div>
+              <h3 className="text-2xl font-black text-white">{group.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-300">{group.summary}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-xs font-semibold text-cyan-100"
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
             </motion.div>
           ))}

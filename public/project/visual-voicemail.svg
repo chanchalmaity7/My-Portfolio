@@ -1,0 +1,39 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="#07111F"/>
+  <rect width="1200" height="900" rx="48" fill="url(#bg)"/>
+  <circle cx="198" cy="176" r="218" fill="#2563EB" fill-opacity="0.18"/>
+  <circle cx="1014" cy="182" r="254" fill="#10B981" fill-opacity="0.16"/>
+  <circle cx="944" cy="760" r="278" fill="#9333EA" fill-opacity="0.12"/>
+  <rect x="132" y="108" width="936" height="688" rx="42" fill="#0A1220" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="180" y="158" width="352" height="590" rx="38" fill="#F8FAFC"/>
+  <rect x="310" y="176" width="94" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="212" y="220" width="288" height="68" rx="22" fill="#EFF6FF"/>
+  <rect x="236" y="244" width="128" height="14" rx="7" fill="#111827"/>
+  <rect x="236" y="268" width="186" height="10" rx="5" fill="#64748B"/>
+  <circle cx="468" cy="254" r="12" fill="#2563EB"/>
+  <rect x="212" y="308" width="288" height="68" rx="22" fill="white"/>
+  <rect x="236" y="332" width="132" height="14" rx="7" fill="#111827"/>
+  <rect x="236" y="356" width="174" height="10" rx="5" fill="#64748B"/>
+  <circle cx="468" cy="342" r="8" fill="#E11D48"/>
+  <rect x="212" y="396" width="288" height="68" rx="22" fill="white"/>
+  <rect x="236" y="420" width="118" height="14" rx="7" fill="#111827"/>
+  <rect x="236" y="444" width="190" height="10" rx="5" fill="#64748B"/>
+  <rect x="212" y="496" width="288" height="200" rx="28" fill="#111827"/>
+  <circle cx="356" cy="562" r="62" fill="#1D4ED8" fill-opacity="0.18"/>
+  <path d="M337 532V592L392 562L337 532Z" fill="#60A5FA"/>
+  <rect x="572" y="182" width="444" height="256" rx="30" fill="#0F172A" stroke="rgba(255,255,255,0.08)"/>
+  <text x="608" y="246" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Incoming Call Flow</text>
+  <text x="608" y="300" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="24">Ring timeout → Twilio webhook → Greeting → Record → Save → Inbox</text>
+  <rect x="572" y="486" width="444" height="210" rx="30" fill="#0F172A" stroke="rgba(255,255,255,0.08)"/>
+  <text x="608" y="548" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Visual Voicemail UX</text>
+  <text x="608" y="602" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="24">Unread badges, greeting upload, playback list, and Hindi-first call handling</text>
+  <text x="132" y="78" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Visual Voicemail System</text>
+  <text x="132" y="844" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="28">Telephony webhook workflow, MongoDB storage, Twilio call routing, and Android inbox playback</text>
+  <defs>
+    <linearGradient id="bg" x1="110" y1="86" x2="1110" y2="818" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111F"/>
+      <stop offset="0.52" stop-color="#101827"/>
+      <stop offset="1" stop-color="#08111F"/>
+    </linearGradient>
+  </defs>
+</svg>

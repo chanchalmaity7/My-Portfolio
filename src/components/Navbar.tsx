@@ -1,118 +1,109 @@
 'use client';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useState, useEffect } from 'react';
+
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+
+const navItems = [
+  { label: 'Home', href: '#home' },
+  { label: 'Apps', href: '#apps' },
+  { label: 'AI-Native', href: '#ai-native' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Contact', href: '#contact' },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { scrollY } = useScroll();
-  
-  const navbarScale = useTransform(scrollY, [0, 100], [1, 0.9]);
-  const navbarOpacity = useTransform(scrollY, [0, 100], [0.9, 0.7]);
-  const navbarPadding = useTransform(scrollY, [0, 100], [16, 8]);
 
   useEffect(() => {
-    const updateScrolled = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', updateScrolled);
-    return () => window.removeEventListener('scroll', updateScrolled);
+    let ticking = false;
+
+    const updateScrolled = () => {
+      const next = window.scrollY > 50;
+      setScrolled((prev) => (prev === next ? prev : next));
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    updateScrolled();
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-      style={{ 
-        scale: navbarScale,
-        opacity: navbarOpacity
-      }}
-      className={`fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl backdrop-blur-lg z-50 rounded-2xl border shadow-2xl transition-all duration-500 ${
-        scrolled 
-          ? 'bg-slate-900/60 border-slate-700/30' 
-          : 'bg-slate-900/90 border-slate-700/50'
+      transition={{ duration: 0.75, ease: 'easeOut' }}
+      className={`fixed left-1/2 top-4 z-50 w-[94%] max-w-7xl -translate-x-1/2 rounded-2xl border shadow-2xl backdrop-blur-2xl transition-all duration-500 ${
+        scrolled
+          ? 'border-white/10 bg-slate-950/72 shadow-slate-950/35'
+          : 'border-white/15 bg-slate-950/82 shadow-slate-950/45'
       }`}
     >
-      <motion.div 
-        style={{ padding: navbarPadding }}
-        className="px-6"
-      >
-        <div className="flex justify-between items-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className={`font-bold text-white transition-all duration-300 ${
-              scrolled ? 'text-xl' : 'text-2xl'
-            }`}
-          >
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              ChaNchaL
+      <div className="px-4 py-3 sm:px-6">
+        <div className="flex items-center justify-between gap-4">
+          <a href="#home" className="text-xl font-black tracking-tight text-white sm:text-2xl">
+            <span className="bg-gradient-to-r from-cyan-300 to-emerald-300 bg-clip-text text-transparent">
+              Chanchal
             </span>
-            <span className="text-purple-400">.</span>
-          </motion.div>
+            <span className="text-cyan-300">.</span>
+          </a>
 
-          <div className="hidden md:flex space-x-1">
-            {['Home', 'Apps', 'About', 'Experience', 'Skills', 'Projects', 'Services', 'Contact'].map((item, index) => (
+          <div className="hidden items-center gap-1 md:flex">
+            {navItems.map((item, index) => (
               <motion.a
-                key={item}
-                initial={{ opacity: 0, y: -20 }}
+                key={item.href}
+                href={item.href}
+                initial={{ opacity: 0, y: -12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 + (0.1 * index), duration: 0.6 }}
-                href={item === 'Services' ? '#pricing' : `#${item.toLowerCase()}`}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className={`relative text-gray-300 hover:text-white transition-all duration-300 rounded-xl group ${
-                  scrolled ? 'px-3 py-1 text-sm' : 'px-4 py-2'
-                }`}
+                transition={{ delay: 0.25 + index * 0.04, duration: 0.35 }}
+                whileHover={{ y: -2 }}
+                className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-300 transition-colors duration-300 hover:bg-cyan-300/10 hover:text-white"
               >
-                <span className="relative z-10">{item}</span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  whileHover={{ scale: 1.1 }}
-                />
+                {item.label}
               </motion.a>
             ))}
           </div>
 
-          <motion.button
-            onClick={() => setIsOpen(!isOpen)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className={`md:hidden text-white bg-purple-600/20 rounded-lg backdrop-blur-sm transition-all duration-300 ${
-              scrolled ? 'p-1.5' : 'p-2'
-            }`}
+          <button
+            onClick={() => setIsOpen((value) => !value)}
+            className="rounded-xl border border-white/10 bg-white/8 px-4 py-2 text-sm font-bold text-white md:hidden"
           >
-            <div className="transition-transform duration-300">
-              {isOpen ? '✕' : '☰'}
-            </div>
-          </motion.button>
+            {isOpen ? 'Close' : 'Menu'}
+          </button>
         </div>
 
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0, y: -20 }}
-            animate={{ opacity: 1, height: 'auto', y: 0 }}
-            exit={{ opacity: 0, height: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="md:hidden mt-4 space-y-2 border-t border-slate-700/50 pt-4"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25 }}
+            className="mt-4 grid gap-2 border-t border-white/10 pt-4 md:hidden"
           >
-            {['Home', 'Apps', 'About', 'Experience', 'Skills', 'Projects', 'Services', 'Contact'].map((item, index) => (
-              <motion.a
-                key={item}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.3 }}
-                href={item === 'Services' ? '#pricing' : `#${item.toLowerCase()}`}
-                className="block text-gray-300 hover:text-white py-3 px-4 rounded-lg hover:bg-purple-600/20 transition-all duration-300"
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
                 onClick={() => setIsOpen(false)}
-                whileHover={{ x: 10 }}
+                className="rounded-xl px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-cyan-300/10 hover:text-white"
               >
-                {item}
-              </motion.a>
+                {item.label}
+              </a>
             ))}
           </motion.div>
         )}
-      </motion.div>
+      </div>
     </motion.nav>
   );
 }

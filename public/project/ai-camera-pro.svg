@@ -1,0 +1,35 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="#060E19"/>
+  <rect width="1200" height="900" rx="48" fill="url(#bg)"/>
+  <circle cx="204" cy="190" r="228" fill="#22C55E" fill-opacity="0.15"/>
+  <circle cx="1002" cy="178" r="260" fill="#06B6D4" fill-opacity="0.18"/>
+  <circle cx="922" cy="742" r="282" fill="#2563EB" fill-opacity="0.14"/>
+  <rect x="148" y="108" width="904" height="688" rx="44" fill="#0B1220" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="202" y="160" width="340" height="584" rx="38" fill="#050A13"/>
+  <rect x="226" y="188" width="292" height="410" rx="26" fill="url(#preview)"/>
+  <circle cx="372" cy="660" r="54" fill="#111827" stroke="#334155"/>
+  <circle cx="372" cy="660" r="38" fill="#E2E8F0"/>
+  <circle cx="372" cy="660" r="24" fill="#94A3B8"/>
+  <rect x="226" y="618" width="74" height="22" rx="11" fill="#0EA5E9"/>
+  <rect x="444" y="618" width="74" height="22" rx="11" fill="#22C55E"/>
+  <rect x="590" y="176" width="414" height="254" rx="30" fill="#0F172A" stroke="rgba(255,255,255,0.08)"/>
+  <text x="626" y="238" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">AI-style Camera Modes</text>
+  <text x="626" y="292" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="24">Photo, Portrait, Night, Macro, and Pro presets with quality selection</text>
+  <rect x="590" y="468" width="414" height="238" rx="30" fill="#0F172A" stroke="rgba(255,255,255,0.08)"/>
+  <text x="626" y="530" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Mobile Processing Flow</text>
+  <text x="626" y="584" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="24">Permission gating, gallery import, image resize, enhancement pipeline, and preview modal</text>
+  <text x="148" y="78" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">AI Camera Pro</text>
+  <text x="148" y="844" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="28">React Native imaging UX with photo capture, gallery import, mode presets, and client-side enhancement behavior</text>
+  <defs>
+    <linearGradient id="bg" x1="96" y1="72" x2="1108" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#050B14"/>
+      <stop offset="0.48" stop-color="#0E1726"/>
+      <stop offset="1" stop-color="#07111F"/>
+    </linearGradient>
+    <linearGradient id="preview" x1="226" y1="188" x2="518" y2="598" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0EA5E9"/>
+      <stop offset="0.52" stop-color="#1D4ED8"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+</svg>

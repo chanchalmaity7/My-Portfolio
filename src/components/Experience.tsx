@@ -1,85 +1,84 @@
 'use client';
+
 import { motion } from 'framer-motion';
 
-export default function Experience() {
-  const experiences = [
-    {
-      title: 'Senior Full Stack Developer',
-      company: 'Freelance & Contract Work',
-      period: '2022 - Present',
-      description: 'Leading development of enterprise-grade web and mobile applications. Specialized in MERN stack with TypeScript, delivering scalable solutions for diverse clients.',
-      achievements: [
-        'Delivered 15+ successful client projects',
-        'Built complex e-commerce and business management systems',
-        'Implemented real-time features with Socket.io',
-        'Deployed applications on cloud platforms'
-      ]
-    },
-    {
-      title: 'Full Stack Developer',
-      company: 'Various Client Projects',
-      period: '2021 - 2022',
-      description: 'Developed modern web applications using React, Node.js, and MongoDB. Focused on creating responsive, user-friendly interfaces and robust backend systems.',
-      achievements: [
-        'Mastered MERN stack development',
-        'Implemented JWT authentication systems',
-        'Created RESTful APIs and database designs',
-        'Collaborated with clients on project requirements'
-      ]
-    }
-  ];
+const experiences = [
+  {
+    title: 'Full-Stack & Mobile Product Engineer',
+    company: 'Independent product development',
+    period: '2022 - Present',
+    description:
+      'Built production-grade mobile and web products end-to-end for more than three years, including AasPas, a large service marketplace with native Android calling, live tracking, payments, sockets, AI-assisted booking support, worker operations, and admin-ready backend logic.',
+    achievements: [
+      'Designed complete booking, tracking, payment, wallet, review, and support workflows',
+      'Built custom native Android modules for call screens, notifications, location, and background behavior',
+      'Implemented realtime Socket.IO architecture with customer, worker, booking, and admin rooms',
+      'Integrated Razorpay, Firebase FCM, Agora, Google Maps, MongoDB, and Redis-style active state flows',
+      'Used high-control AI collaboration and prompt orchestration to accelerate complex implementation while preserving production correctness',
+    ],
+  },
+  {
+    title: 'Full-Stack Web Developer',
+    company: 'Client and portfolio projects',
+    period: '2021 - 2022',
+    description:
+      'Delivered modern web applications and business websites using React, Next.js, Node.js, MongoDB, authentication, payment integrations, and responsive UI systems.',
+    achievements: [
+      'Shipped e-commerce, food commerce, architecture, and learning platform projects',
+      'Built JWT authentication, database models, admin flows, forms, and deployment pipelines',
+      'Created responsive interfaces with Tailwind CSS, animation, and SEO-friendly page structure',
+      'Worked directly from business requirements to production-ready implementation',
+    ],
+  },
+];
 
+export default function Experience() {
   return (
-    <section className="py-20 bg-slate-900">
+    <section className="bg-[#07111f] py-24 text-white">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mx-auto mb-14 max-w-3xl text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Professional Experience</h2>
-          <div className="w-24 h-1 bg-purple-500 mx-auto"></div>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.26em] text-cyan-200">Experience</p>
+          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">How I have been building</h2>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="mx-auto max-w-5xl">
           {experiences.map((exp, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              key={exp.title}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.12 }}
               viewport={{ once: true }}
-              className="relative mb-12 last:mb-0"
+              className="relative mb-8 last:mb-0"
             >
-              <div className="bg-slate-800 rounded-xl p-8 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div className="rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl sm:p-8">
+                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
-                    <p className="text-purple-400 font-semibold">{exp.company}</p>
+                    <h3 className="text-2xl font-black text-white">{exp.title}</h3>
+                    <p className="mt-2 font-semibold text-cyan-200">{exp.company}</p>
                   </div>
-                  <div className="bg-purple-600/20 text-purple-400 px-4 py-2 rounded-full text-sm font-semibold mt-2 md:mt-0">
+                  <span className="w-fit rounded-full border border-white/10 bg-slate-950/50 px-4 py-2 text-sm font-bold text-slate-200">
                     {exp.period}
-                  </div>
+                  </span>
                 </div>
-                
-                <p className="text-gray-300 mb-6 leading-relaxed">{exp.description}</p>
-                
-                <div className="grid md:grid-cols-2 gap-3">
-                  {exp.achievements.map((achievement, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-400 text-sm">{achievement}</span>
+
+                <p className="mt-5 text-base leading-8 text-slate-300">{exp.description}</p>
+
+                <div className="mt-6 grid gap-3 md:grid-cols-2">
+                  {exp.achievements.map((achievement) => (
+                    <div key={achievement} className="flex items-start gap-3 rounded-2xl bg-slate-950/35 p-4">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-300" />
+                      <span className="text-sm leading-7 text-slate-300">{achievement}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              
-              {/* Timeline connector */}
-              {index < experiences.length - 1 && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-6 w-px h-12 bg-gradient-to-b from-purple-500 to-transparent"></div>
-              )}
             </motion.div>
           ))}
         </div>

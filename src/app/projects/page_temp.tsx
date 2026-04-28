@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -155,10 +156,12 @@ export default function ProjectsPage() {
                       onClick={() => project.liveUrl && window.open(project.liveUrl, '_blank')}
                       className={`relative w-full h-full ${project.liveUrl ? 'cursor-pointer' : 'cursor-default'}`}
                     >
-                      <img 
+                      <Image
                         src={project.image} 
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        fill
+                        sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                       {project.liveUrl && (
                         <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

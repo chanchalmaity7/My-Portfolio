@@ -1,76 +1,84 @@
 'use client';
+
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+const principles = [
+  'I prefer shipping complete user journeys, not isolated screens.',
+  'I design backend truth first for payments, booking state, and recovery.',
+  'I use native mobile code when React Native alone cannot deliver the right UX.',
+  'I care about reliability on real Android devices, poor networks, and background app states.',
+];
+
 export default function About() {
   return (
-    <section className="py-20 bg-slate-800">
+    <section className="bg-[#0b1220] py-24 text-white">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mx-auto mb-14 max-w-3xl text-center"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">About Me</h2>
-          <div className="w-24 h-1 bg-purple-500 mx-auto"></div>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.26em] text-cyan-200">About me</p>
+          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">A builder who connects product and engineering</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -32 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
+            className="relative mx-auto w-full max-w-sm"
           >
-            <div className="relative w-80 h-80 mx-auto rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/img/chanchal.jpg"
-                alt="Chanchal Maity"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent"></div>
+            <div className="absolute -inset-5 rounded-[2.2rem] bg-cyan-400/10 blur-3xl" />
+            <div className="relative h-[420px] overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-slate-950/40">
+              <Image src="/img/chanchal.jpg" alt="Chanchal Maity" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 32 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="text-gray-300"
+            className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-slate-950/25 backdrop-blur-xl sm:p-8"
           >
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Senior Full Stack Developer</h3>
-            <div className="mb-6">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                <span className="text-green-400 font-semibold">Available for Freelance Projects</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
-                <span className="text-blue-400 font-semibold">3+ Years Professional Experience</span>
-              </div>
+            <div className="mb-6 flex flex-wrap gap-3">
+              <span className="rounded-full bg-emerald-300/10 px-4 py-2 text-sm font-bold text-emerald-200">
+                Available for remote roles
+              </span>
+              <span className="rounded-full bg-violet-300/10 px-4 py-2 text-sm font-bold text-violet-200">
+                Three-plus years building products
+              </span>
+              <span className="rounded-full bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-200">
+                Full-stack + mobile + AI-native
+              </span>
             </div>
-            <p className="text-lg mb-6">
-              Hi! I&apos;m Chanchal Maity, a seasoned Full Stack Developer with <span className="text-purple-400 font-semibold">3+ years</span> of professional experience. 
-              I specialize in building enterprise-grade web and mobile applications using the MERN stack with TypeScript.
+
+            <h3 className="text-3xl font-black text-white">Chanchal Maity</h3>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              I build applications where mobile UX, backend correctness, realtime state, and business workflows all need
+              to work together. My strongest work is AasPas, a full-stack service marketplace that includes native Android
+              call screens, live tracking, booking workflows, payments, worker earnings, localization, AI booking assistance,
+              and admin operations.
             </p>
-            <p className="text-lg mb-6">
-              My expertise lies in architecting scalable, high-performance applications with clean code practices. 
-              I have successfully delivered <span className="text-purple-400 font-semibold">15+ client projects</span> ranging from e-commerce platforms to complex business management systems.
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              I am now positioning my work for serious interviews and remote opportunities, especially where teams value
+              ownership, product thinking, AI-native execution speed, and the ability to debug across frontend, backend,
+              native mobile, and production flows.
             </p>
-            <p className="text-lg mb-6">
-              Proficient in modern development workflows including CI/CD, cloud deployment, and agile methodologies. 
-              I excel at translating business requirements into robust technical solutions.
-            </p>
-            <div className="flex flex-wrap gap-2 sm:gap-3">
-              <span className="bg-purple-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm">Senior Developer</span>
-              <span className="bg-blue-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm">MERN Expert</span>
-              <span className="bg-green-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm">React Native</span>
-              <span className="bg-orange-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm">TypeScript Pro</span>
-              <span className="bg-indigo-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm">Cloud Deploy</span>
+
+            <div className="mt-7 grid gap-3">
+              {principles.map((item) => (
+                <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-950/40 p-4">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />
+                  <span className="text-sm leading-7 text-slate-300">{item}</span>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>

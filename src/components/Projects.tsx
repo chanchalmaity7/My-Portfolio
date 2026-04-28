@@ -1,173 +1,499 @@
 'use client';
+
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useState } from 'react';
+import { DetailsIcon, ExternalArrowIcon, PlayStoreIcon } from '@/components/ActionIcons';
+import PlayStoreSoonButton from '@/components/PlayStoreSoonButton';
+import ProjectBannerVisual from '@/components/ProjectBannerVisual';
+import { AASPAS_PLAY_STORE_URL, aaspasCaseStudy } from '@/data/aaspas';
+import { aaspasSmartBoxCaseStudy } from '@/data/aaspasSmartBox';
+import { aiCameraProjectCaseStudy } from '@/data/aiCameraProject';
+import { LIZZ_SHOP_LIVE_URL, lizzShopProjectCaseStudy } from '@/data/lizzShopProject';
+import { MUSHDELIGHT_LIVE_URL, mushdelightProjectCaseStudy } from '@/data/mushdelightProject';
+import { PRIVATE_THEATER_LIVE_URL, streamingProjectCaseStudy } from '@/data/streamingProject';
+import { voicemailProjectCaseStudy } from '@/data/voicemailProject';
+
+type Project = {
+  title: string;
+  image: string | null;
+  imageClassName?: string;
+  visualVariant?: 'aaspasLottie' | 'smartBoxPhone';
+  description: string;
+  impact: string;
+  tech: string[];
+  status: string;
+  gradient: string;
+  liveUrl: string | null;
+  detailHref?: string;
+  playStoreUrl?: string;
+  playStoreComingSoon?: boolean;
+  imageContain?: boolean;
+  deepDive: Array<{
+    title: string;
+    detail: string;
+  }>;
+};
 
 export default function Projects() {
-  const [expandedProject, setExpandedProject] = useState<number | null>(null);
-  
-  const projects = [
+  const [expandedProject, setExpandedProject] = useState<number | null>(0);
+
+  const projects: Project[] = [
     {
-      title: 'AasPas - Local Services Aggregator App',
-      image: '/img/aaspas.jpeg',
-      shortDescription: 'Advanced React Native app with TypeScript, dual-role system (Customer/Worker), real-time GPS tracking, and Socket.io integration.',
-      fullDescription: 'Advanced React Native app with TypeScript, Expo platform, dual-role system (Customer/Worker), geospatial matching engine using MongoDB 2dsphere indexes, real-time GPS tracking, Socket.io live updates, JWT authentication, OTP verification, 3-step worker profile setup, earnings tracking, complex animations with Animated API, AsyncStorage persistence, role-based access control, push notifications (FCM), aggregation pipelines, microservices architecture, and Vercel deployment.',
-      tech: ['React Native', 'TypeScript', 'Expo', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'JWT', 'bcryptjs', 'Mongoose', 'Vercel'],
-      status: 'Backend Live - Production Ready',
-      gradient: 'from-blue-500 to-purple-600',
-      liveUrl: null
+      title: 'AasPas - Hyperlocal Service Marketplace',
+      image: aaspasCaseStudy.assets.heroCard,
+      visualVariant: 'aaspasLottie',
+      description:
+        'A full-stack React Native and Node.js platform for service booking, multilingual AI booking help, worker operations, native calling, live tracking, payment automation, wallet settlement, multilingual UX, and admin workflows.',
+      impact:
+        'Flagship proof of mobile engineering, backend architecture, native Android modules, realtime sockets, Redis and Mongo recovery, AI-guided booking support, payment correctness, live location systems, and business-facing operational tooling built solo.',
+      tech: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'MongoDB', 'Socket.IO', 'Redis', 'Firebase FCM', 'Agora', 'Razorpay'],
+      status: 'Flagship product',
+      gradient: 'from-cyan-500 to-blue-700',
+      liveUrl: null,
+      detailHref: '/projects/aaspas',
+      playStoreUrl: AASPAS_PLAY_STORE_URL,
+      deepDive: [
+        {
+          title: 'Money and wallet automation',
+          detail:
+            'Advance booking fee, remaining balance, worker earnings, commission, cash collection, wallet visibility, and settlement-oriented flow are handled as one connected marketplace payment system.',
+        },
+        {
+          title: 'Tracking and geo logic',
+          detail:
+            'Worker radius, availability, live location, route cache, latest-location recovery, ETA awareness, and controlled rerouting make tracking behave like a serious logistics-style flow.',
+        },
+        {
+          title: 'Native Android depth',
+          detail:
+            'Incoming booking popup, full-screen call UX, ongoing-call notification, lock-screen actions, background-safe flows, and return-to-call behavior were built natively where JS-only UX was not enough.',
+        },
+        {
+          title: 'Operational completeness',
+          detail:
+            'Customer app, worker app, admin tooling, support flows, review handling, version control, and notification routing make the project feel like a full business system, not a prototype.',
+        },
+        {
+          title: 'AI-guided booking support',
+          detail:
+            'A multilingual assistant layer helps users express service needs naturally, route them to the right worker flow, and reduce friction during discovery and booking.',
+        },
+      ],
     },
     {
-      title: 'Lizz-Shop - Full Stack E-commerce Platform',
-      image: '/project/Lizz-Shop.png',
-      shortDescription: 'Enterprise-grade e-commerce platform built with Next.js 15 & TypeScript. Complete shopping experience with user authentication, shopping cart, and wishlist.',
-      fullDescription: 'Enterprise-grade e-commerce platform built with Next.js 15 & TypeScript. Complete shopping experience with user authentication, shopping cart, wishlist, product search, and admin panel. Features glassmorphism design, mobile-responsive UI, Context API state management, MongoDB Atlas database, JWT authentication, password encryption, real-time updates, 18+ products catalog, BOGO offers, inventory management, order tracking, and Vercel deployment. Demonstrates full-stack development skills with modern tech stack.',
-      tech: ['Next.js 15', 'TypeScript', 'MongoDB Atlas', 'JWT Auth', 'Tailwind CSS', 'Context API', 'Mongoose', 'bcryptjs', 'React Icons', 'Vercel'],
-      status: 'Live Demo - Production Ready',
-      gradient: 'from-green-500 to-teal-600',
-      liveUrl: 'https://lizz-shop.vercel.app/'
+      title: 'AasPas Smart Box - Connected IoT Control Platform',
+      image: aaspasSmartBoxCaseStudy.assets.phonePreview,
+      visualVariant: 'smartBoxPhone',
+      description:
+        'A full-stack smart-switch platform built around ESP32 hardware, cloud APIs, a web dashboard, a mobile app, relay automation, energy analytics, and device-recovery behavior.',
+      impact:
+        'Strong proof of end-to-end IoT product engineering across device identity, backend automation, realtime transport, energy logic, mobile UX, web control surfaces, and power-loss handling.',
+      tech: ['ESP32', 'Expo', 'React Native', 'Next.js', 'Node.js', 'MongoDB', 'Socket.IO', 'JWT', 'Render'],
+      status: 'IoT product system',
+      gradient: 'from-sky-500 to-blue-700',
+      liveUrl: null,
+      detailHref: '/projects/aaspas-smart-box',
+      playStoreComingSoon: true,
+      deepDive: [
+        {
+          title: 'Connected device architecture',
+          detail:
+            'ESP32 firmware, web dashboard, mobile app, and cloud backend stay in sync through authenticated APIs, realtime transport, and persistence.',
+        },
+        {
+          title: 'Automation and scheduling',
+          detail:
+            'Each relay supports timers, daily schedules, and one-time schedules, making the system feel like a practical home-automation platform.',
+        },
+        {
+          title: 'Energy intelligence',
+          detail:
+            'Relay-level watt, unit, cost, monthly usage, and all-time history turn the switch into a monitoring product, not just a remote toggle.',
+        },
+        {
+          title: 'Power-loss resilience',
+          detail:
+            'Heartbeats, offline detection, power-loss pause/resume, outage history, and fallback communication paths show production-minded IoT thinking.',
+        },
+      ],
     },
     {
-      title: 'Building Junction - Premium Architectural Consultancy Website',
+      title: 'Mushdelight - Premium Food Commerce',
+      image: mushdelightProjectCaseStudy.assets.poster,
+      description:
+        'A premium food-commerce website with customer auth, OTP verification, order lifecycle handling, reviews, subscriber communication, and admin-side product operations.',
+      impact:
+        'Shows deeper commerce execution across customer accounts, Mongo-backed products and orders, review systems, email communication, and brand-ready operational tooling.',
+      tech: ['Next.js 15', 'React 19', 'TypeScript', 'MongoDB', 'Mongoose', 'JWT patterns', 'Brevo', 'Nodemailer', 'Framer Motion'],
+      status: 'Commerce product',
+      gradient: 'from-emerald-500 to-lime-600',
+      liveUrl: MUSHDELIGHT_LIVE_URL,
+      detailHref: '/projects/mushdelight',
+      deepDive: [
+        {
+          title: 'Customer account lifecycle',
+          detail:
+            'Signup, login, OTP verification, forgot password, reset password, order visibility, and review participation make the product feel like a real commerce account system.',
+        },
+        {
+          title: 'Order and post-purchase flow',
+          detail:
+            'Cart, checkout, order placement, tracking, and cancellation are connected so the product covers more than just the pre-payment part of ecommerce.',
+        },
+        {
+          title: 'Business communication',
+          detail:
+            'Contact flows, subscriber capture, and email-oriented infrastructure make the site useful for brand retention and customer communication as well as checkout.',
+        },
+        {
+          title: 'Admin operations',
+          detail:
+            'Product controls, settings, reorder handling, and data-backed business models show there is a usable operational layer behind the storefront.',
+        },
+      ],
+    },
+    {
+      title: 'Lizz-Shop - Retail E-commerce Platform',
+      image: lizzShopProjectCaseStudy.assets.poster,
+      description:
+        'A full-stack retail storefront with category browsing, search, variant-aware product pages, cookie-authenticated sessions, wishlist, cart persistence, and merchandising sections.',
+      impact:
+        'Demonstrates practical ecommerce engineering through JWT-backed sessions, MongoDB user state, size and color variants, persistent shopping intent, and curated retail presentation.',
+      tech: ['Next.js 15', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB Atlas', 'Mongoose', 'JWT', 'cookies-next', 'Axios'],
+      status: 'Retail commerce system',
+      gradient: 'from-pink-500 to-rose-600',
+      liveUrl: LIZZ_SHOP_LIVE_URL,
+      detailHref: '/projects/lizz-shop',
+      deepDive: [
+        {
+          title: 'Auth and session depth',
+          detail:
+            'The storefront uses JWT plus cookies so shopping state is tied to actual user sessions rather than fragile local-only browser memory.',
+        },
+        {
+          title: 'Persistent shopping state',
+          detail:
+            'Cart and wishlist data are stored per user in MongoDB-backed models, which makes revisit behavior and multi-step shopping more realistic.',
+        },
+        {
+          title: 'Variant-aware retail behavior',
+          detail:
+            'Size and color selection on product detail pages makes the purchase flow feel closer to an actual fashion or retail storefront.',
+        },
+        {
+          title: 'Merchandising systems',
+          detail:
+            'Trending, new-arrivals, and BOGO sections show that the project includes merchandising logic, not only product CRUD and static pages.',
+        },
+      ],
+    },
+    {
+      title: 'AasPas Private Theater - Realtime Watch Party Website',
+      image: streamingProjectCaseStudy.assets.poster,
+      description:
+        'A collaborative watch-party website with host-controlled playback, join-link room entry, WebRTC voice, live chat, emoji reactions, and multi-source video support.',
+      impact:
+        'Strong proof of collaborative media engineering across playback authority, player abstraction, Socket.IO room sync, Mongo-backed recovery, and WebRTC communication.',
+      tech: ['Next.js', 'React 19', 'TypeScript', 'Node.js', 'MongoDB', 'Socket.IO', 'WebRTC', 'SimplePeer', 'ReactPlayer', 'react-youtube'],
+      status: 'Realtime web product',
+      gradient: 'from-red-500 to-fuchsia-700',
+      liveUrl: PRIVATE_THEATER_LIVE_URL,
+      detailHref: '/projects/aaspas-private-theater',
+      imageContain: true,
+      deepDive: [
+        {
+          title: 'Shared playback authority',
+          detail:
+            'The room owner controls shared play, pause, and seek while guests receive versioned state updates, drift correction, and recovery sync after reload or buffering.',
+        },
+        {
+          title: 'Media compatibility engine',
+          detail:
+            'The product parses YouTube, Google Drive, HLS, direct media files, Streamable, and embed-style URLs so different source types can still fit into one room experience.',
+        },
+        {
+          title: 'Room collaboration layer',
+          detail:
+            'WebRTC voice, live chat, emoji reactions, fullscreen overlays, and join-link workflows make the room feel like a real shared social product instead of a solo player.',
+        },
+        {
+          title: 'Persistence and lifecycle',
+          detail:
+            'MongoDB stores playback state, activity, chat, and member identity hints while TTL cleanup keeps inactive rooms temporary and manageable.',
+        },
+      ],
+    },
+    {
+      title: 'Visual Voicemail System',
+      image: voicemailProjectCaseStudy.assets.poster,
+      description:
+        'An Android-first visual voicemail product with Twilio call forwarding flow, voicemail inbox, unread state, greeting setup, and audio playback.',
+      impact:
+        'Shows cross-layer product thinking across telephony webhooks, Mongo-backed voicemail storage, greeting handling, and mobile inbox UX.',
+      tech: ['React Native', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Twilio', 'TwiML', 'Multer', 'React Native Sound'],
+      status: 'Telephony workflow app',
+      gradient: 'from-blue-500 to-emerald-600',
+      liveUrl: null,
+      detailHref: '/projects/visual-voicemail',
+      imageContain: true,
+      deepDive: voicemailProjectCaseStudy.homeProofBlocks,
+    },
+    {
+      title: 'AI Camera Pro',
+      image: aiCameraProjectCaseStudy.assets.poster,
+      description:
+        'A premium camera-style React Native app with capture modes, gallery import, permission UX, device-side enhancement flow, quality selection, and polished preview behavior.',
+      impact:
+        'Highlights mobile-product craftsmanship around permissions, processing flow, animation polish, and richer camera interactions beyond a basic utility screen.',
+      tech: ['React Native', 'TypeScript', 'Image Picker', 'Image Resizer', 'react-native-permissions', 'Animated API'],
+      status: 'Mobile imaging product',
+      gradient: 'from-sky-500 to-indigo-700',
+      liveUrl: null,
+      detailHref: '/projects/ai-camera-pro',
+      imageContain: true,
+      deepDive: aiCameraProjectCaseStudy.homeProofBlocks,
+    },
+    {
+      title: 'Building Junction - Architecture Consultancy',
       image: '/project/Building Junction.png',
-      shortDescription: 'Professional architectural firm website for West Bengal\'s premier consultancy with modern design, portfolio showcase, and client management.',
-      fullDescription: 'Complete architectural consultancy website for Building Junction - West Bengal\'s #1 architectural firm. Features: Next.js 15 with TypeScript, responsive glassmorphism design, animated hero sections, service showcase with pricing, portfolio gallery, contact forms, mobile-first approach, intersection observer animations, gradient themes, professional branding, client testimonials, project statistics (300+ projects, 98% satisfaction), multi-page architecture (Home, About, Services, Portfolio, Contact), SEO optimized, and production-ready deployment.',
-      tech: ['Next.js 15', 'TypeScript', 'Tailwind CSS 4', 'Intersection Observer API', 'Responsive Design', 'Glassmorphism UI', 'Animation Effects', 'SEO Optimization'],
-      status: 'Live Demo - Production Ready',
+      description:
+        'A premium business website for an architecture consultancy with service storytelling, portfolio presentation, responsive sections, and lead-generation structure.',
+      impact:
+        'Demonstrates brand positioning, responsive design, SEO-friendly content hierarchy, and business-focused website execution.',
+      tech: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Responsive Design', 'SEO', 'Framer Motion'],
+      status: 'Live demo',
       gradient: 'from-orange-500 to-red-600',
-      liveUrl: 'https://architect-website-teal.vercel.app/'
-    },
-    {
-      title: 'Mushdelight - Premium Food Delivery Platform',
-      image: '/project/Mushdelight.png',
-      shortDescription: 'Full-stack organic mushroom e-commerce platform with modern UI/UX, payment gateway integration, and comprehensive order management.',
-      fullDescription: 'Complete organic mushroom e-commerce platform built with Next.js 15 & TypeScript. Features: Razorpay payment gateway integration, MongoDB database with Mongoose ODM, user authentication with JWT & bcryptjs, shopping cart & checkout system, order tracking & management, admin dashboard for products & settings, email notifications with Nodemailer, responsive design with Framer Motion animations, floating particles & cursor effects, product catalog with dynamic pricing, COD & online payment options, delivery charge calculations, user profiles & order history, contact forms & newsletter subscription, SEO optimized pages, and production-ready deployment.',
-      tech: ['Next.js 15', 'TypeScript', 'MongoDB', 'Mongoose', 'Razorpay Gateway', 'JWT Auth', 'bcryptjs', 'Nodemailer', 'Framer Motion', 'Tailwind CSS', 'React Icons'],
-      status: 'Live Demo - Production Ready',
-      gradient: 'from-purple-500 to-pink-600',
-      liveUrl: 'https://mushdelight.vercel.app/'
+      liveUrl: 'https://architect-website-teal.vercel.app/',
+      deepDive: [
+        {
+          title: 'Trust-building visual system',
+          detail:
+            'The design language was shaped to feel premium and credible for a client-facing consultancy business.',
+        },
+        {
+          title: 'Business conversion structure',
+          detail:
+            'Service narratives, portfolio sections, and CTA placement were planned to support enquiry generation.',
+        },
+        {
+          title: 'Professional web execution',
+          detail:
+            'Responsive sections, SEO-friendly layout, and consistent content hierarchy give the project commercial credibility.',
+        },
+      ],
     },
     {
       title: 'EduQuest - Gamified Learning Platform',
       image: '/project/EduQuest .png',
-      shortDescription: 'Smart India Hackathon project - Gamified educational platform with interactive learning, 3D quiz arena, and comprehensive analytics.',
-      fullDescription: 'Smart India Hackathon 2024 project - Complete gamified learning platform built with React 18 & TypeScript. Features: XP & leveling system with achievements, interactive 3D quiz arena using React Three Fiber, student & teacher dashboards, quiz builder with multiple question types, real-time leaderboards & analytics, offline PWA support with service workers, Capacitor mobile app integration, local storage client for data persistence, progress tracking & milestone system, learning games & memory challenges, badge collection system, responsive design with Radix UI components, and comprehensive student performance analytics.',
-      tech: ['React 18', 'TypeScript', 'Vite', 'React Three Fiber', 'Radix UI', 'Tailwind CSS', 'Capacitor', 'PWA', 'Service Workers', 'Local Storage', 'Lucide Icons'],
-      status: 'Smart India Hackathon Project',
-      gradient: 'from-cyan-500 to-blue-600',
-      liveUrl: 'https://edu-quest-beta.vercel.app/'
+      description:
+        'A gamified learning product with quiz flows, progress mechanics, role-based learning ideas, PWA thinking, and interactive frontend architecture.',
+      impact:
+        'Highlights product creativity with learning loops, gamification, responsive UX, and ambitious hackathon-style execution.',
+      tech: ['React', 'TypeScript', 'Vite', 'React Three Fiber', 'PWA', 'Tailwind CSS'],
+      status: 'Hackathon project',
+      gradient: 'from-sky-500 to-cyan-600',
+      liveUrl: 'https://edu-quest-beta.vercel.app/',
+      deepDive: [
+        {
+          title: 'Gamification systems',
+          detail:
+            'XP, progression, and challenge loops were used to make the learning experience more motivating than a plain quiz flow.',
+        },
+        {
+          title: 'Interactive learning UX',
+          detail:
+            'The product explores how responsive interaction and visual feedback can improve educational product engagement.',
+        },
+        {
+          title: 'Rapid execution under pressure',
+          detail:
+            'It also shows the ability to ship ambitious frontend ideas quickly in a hackathon-style environment.',
+        },
+      ],
     },
     {
-      title: 'Enterprise Client Projects Portfolio',
+      title: 'Private Client Systems',
       image: null,
-      shortDescription: '10+ confidential enterprise projects including e-commerce platforms, business management systems, and custom web applications.',
-      fullDescription: 'Comprehensive portfolio of 10+ enterprise-grade client projects delivered under NDA agreements. Includes: full-stack e-commerce platforms with payment gateways (Razorpay, Stripe), business management systems with role-based access control, custom CRM & ERP solutions, real-time chat applications with Socket.io, inventory management systems, restaurant POS systems, healthcare management platforms, educational portals with video streaming, multi-tenant SaaS applications, API integrations with third-party services, cloud deployment on AWS/Vercel, database optimization & scaling, and mobile-responsive progressive web apps. All projects feature modern UI/UX, secure authentication, performance optimization, and production-ready deployment.',
-      tech: ['React', 'Next.js', 'Flutter', 'Node.js', 'MongoDB', 'TypeScript', 'Socket.io', 'Payment Gateways', 'AWS', 'PostgreSQL', 'Redis'],
-      status: 'Private Enterprise Work - NDA Protected',
-      gradient: 'from-indigo-500 to-purple-600',
-      liveUrl: null
-    }
+      description:
+        'Confidential client projects across commerce, management dashboards, booking systems, realtime workflows, payment integrations, and business websites.',
+      impact:
+        'Shows ability to deliver under client constraints, handle NDA work, and translate business requirements into reliable software.',
+      tech: ['React', 'Next.js', 'Node.js', 'MongoDB', 'TypeScript', 'Socket.IO', 'Payments', 'Cloud Deployment'],
+      status: 'NDA protected',
+      gradient: 'from-indigo-500 to-violet-700',
+      liveUrl: null,
+      deepDive: [
+        {
+          title: 'Client-focused execution',
+          detail:
+            'These systems were delivered around business requirements, deadlines, and stakeholder constraints instead of public demo goals.',
+        },
+        {
+          title: 'Broad problem coverage',
+          detail:
+            'Work includes dashboards, workflows, payments, realtime patterns, and role-based business tools across different domains.',
+        },
+        {
+          title: 'Professional trust',
+          detail:
+            'Keeping parts of the portfolio under NDA also reflects real client responsibility and production discipline.',
+        },
+      ],
+    },
   ];
 
   return (
-    <section className="py-20 bg-slate-800">
-      <div className="container mx-auto px-6">
+    <section className="relative overflow-hidden bg-[#0b1220] py-24 text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(34,211,238,0.14),transparent_32%),linear-gradient(180deg,#0b1220_0%,#111827_100%)]" />
+      <div className="container relative z-10 mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mx-auto mb-14 max-w-4xl text-center"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">Projects</h2>
-          <div className="w-24 h-1 bg-purple-500 mx-auto"></div>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.26em] text-cyan-200">Selected work</p>
+          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">Projects with visible engineering depth</h2>
+          <p className="mt-5 text-base leading-8 text-slate-300">
+            Each project is presented as a product system: what it solves, how it behaves, and what
+            level of engineering ownership it demonstrates.
+          </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                y: -10, 
-                scale: 1.02,
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
-              }}
-              className="bg-slate-900 rounded-xl overflow-hidden shadow-2xl border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300"
-            >
-              <div className="h-48 relative overflow-hidden cursor-pointer group">
-                {project.image ? (
-                  <div 
-                    onClick={() => project.liveUrl && window.open(project.liveUrl, '_blank')}
-                    className={`relative w-full h-full ${project.liveUrl ? 'cursor-pointer' : 'cursor-default'}`}
-                  >
-                    <img 
-                      src={project.image} 
+        <div className="mb-8 rounded-[1.8rem] border border-cyan-300/20 bg-cyan-300/10 p-6 text-slate-100">
+          <p className="text-sm leading-8">
+            AasPas is the strongest proof of solo product ownership in this portfolio. It combines
+            maps, payments, wallet logic, realtime booking state, native Android, worker operations,
+            and business-side controls in one connected system.
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-3">
+          {projects.map((project, index) => {
+            const expanded = expandedProject === index;
+
+            return (
+              <motion.article
+                key={project.title}
+                initial={{ opacity: 0, y: 36 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: index * 0.08 }}
+                viewport={{ once: true }}
+                className={`group overflow-hidden rounded-[1.8rem] border bg-white/[0.05] shadow-2xl shadow-slate-950/30 backdrop-blur-xl transition-all duration-300 ${
+                  index === 0 ? 'border-cyan-300/35 lg:col-span-2' : 'border-white/10 hover:border-cyan-300/30'
+                }`}
+              >
+                <div className="relative h-56 overflow-hidden">
+                  {project.image ? (
+                    <ProjectBannerVisual
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      image={project.image}
+                      imageClassName={project.imageClassName}
+                      imageContain={project.imageContain}
+                      variant={project.visualVariant}
+                      sizes="(min-width: 1024px) 50vw, 100vw"
                     />
-                    {project.liveUrl && (
-                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="text-white font-semibold text-lg">Visit Website</span>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div className={`h-full bg-gradient-to-r ${project.gradient}`}></div>
-                )}
-              </div>
-              
-              <div className="p-4">
-                <h3 className="text-base font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-3 text-xs leading-relaxed">
-                  {expandedProject === index ? project.fullDescription : project.shortDescription}
-                </p>
-                
-                {project.shortDescription !== project.fullDescription && (
-                  <button
-                    onClick={() => setExpandedProject(expandedProject === index ? null : index)}
-                    className="text-purple-400 hover:text-purple-300 text-xs mb-3 flex items-center gap-1 transition-colors duration-200"
-                  >
-                    {expandedProject === index ? (
-                      <>
-                        <span>Show Less</span>
-                        <span className="transform rotate-180 transition-transform duration-200">▼</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>See More</span>
-                        <span className="transition-transform duration-200">▼</span>
-                      </>
-                    )}
-                  </button>
-                )}
-                
-                <div className="flex flex-wrap gap-1 mb-3">
-                  {project.tech.slice(0, 4).map((tech) => (
-                    <span key={tech} className="bg-purple-600 text-white px-2 py-1 rounded text-xs">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex flex-col items-center gap-2">
-                  <span className="text-green-400 text-xs font-semibold">{project.status}</span>
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-3 py-1 rounded-lg text-xs font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-                    >
-                      Visit Website
-                    </a>
+                  ) : (
+                    <div className={`h-full bg-gradient-to-br ${project.gradient}`} />
                   )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                  <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-slate-950/60 px-3 py-1 text-xs font-bold text-white backdrop-blur-md">
+                    {project.status}
+                  </span>
+                  {index === 0 ? (
+                    <span className="absolute right-5 top-5 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-xs font-bold text-emerald-100 backdrop-blur-md">
+                      {aaspasCaseStudy.heroMetrics[0].value}
+                    </span>
+                  ) : null}
                 </div>
-              </div>
-            </motion.div>
-          ))}
+
+                <div className="p-6">
+                  <h3 className="text-2xl font-black tracking-tight text-white">{project.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-300">{project.description}</p>
+
+                  <div className="mt-4 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 p-4 text-sm leading-7 text-emerald-100">
+                    {project.impact}
+                  </div>
+
+                  <button
+                    onClick={() => setExpandedProject(expanded ? null : index)}
+                    className="mt-4 text-sm font-bold text-cyan-200 transition-colors hover:text-white"
+                  >
+                    {expanded ? 'Hide system detail' : 'Open system detail'}
+                  </button>
+
+                  {expanded ? (
+                    <motion.div
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-5 grid gap-3 sm:grid-cols-2"
+                    >
+                      {project.deepDive.map((item) => (
+                        <div key={item.title} className="rounded-2xl border border-white/10 bg-slate-950/50 p-4">
+                          <h4 className="text-sm font-black uppercase tracking-[0.18em] text-cyan-100">{item.title}</h4>
+                          <p className="mt-3 text-sm leading-7 text-slate-300">{item.detail}</p>
+                        </div>
+                      ))}
+                    </motion.div>
+                  ) : null}
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {project.tech.slice(0, index === 0 ? 10 : 6).map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full border border-white/10 bg-slate-950/50 px-3 py-1 text-xs font-semibold text-slate-200"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {project.playStoreUrl ? (
+                      <a
+                        href={project.playStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-black text-slate-950 transition-transform hover:-translate-y-0.5"
+                      >
+                        <PlayStoreIcon className="h-4 w-4" />
+                        <span>Play Store</span>
+                        <ExternalArrowIcon className="h-4 w-4" />
+                      </a>
+                    ) : null}
+
+                    {!project.playStoreUrl && project.playStoreComingSoon ? (
+                      <PlayStoreSoonButton label="Play Store" className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-black text-slate-950 transition-transform hover:-translate-y-0.5" />
+                    ) : null}
+
+                    {project.detailHref ? (
+                      <Link
+                        href={project.detailHref}
+                        className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-5 py-2.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5"
+                      >
+                        <DetailsIcon className="h-4 w-4" />
+                        <span>View details</span>
+                      </Link>
+                    ) : null}
+
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-black text-slate-950 transition-transform hover:-translate-y-0.5"
+                      >
+                        <span>Visit live project</span>
+                        <ExternalArrowIcon className="h-4 w-4" />
+                      </a>
+                    ) : null}
+                  </div>
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

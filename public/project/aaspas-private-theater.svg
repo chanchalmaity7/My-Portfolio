@@ -1,0 +1,48 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="#07111F"/>
+  <rect width="1200" height="900" rx="48" fill="url(#bg)"/>
+  <circle cx="208" cy="188" r="220" fill="#E50914" fill-opacity="0.16"/>
+  <circle cx="1004" cy="176" r="240" fill="#7C3AED" fill-opacity="0.18"/>
+  <circle cx="924" cy="728" r="264" fill="#06B6D4" fill-opacity="0.14"/>
+  <rect x="106" y="118" width="988" height="664" rx="34" fill="#050A13" fill-opacity="0.9" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="146" y="158" width="648" height="404" rx="24" fill="url(#screen)"/>
+  <path d="M458 295.5C472.667 286.84 491 297.419 491 314.463V405.537C491 422.581 472.667 433.16 458 424.5L381 379.963C366.333 371.303 366.333 348.697 381 340.037L458 295.5Z" fill="white"/>
+  <rect x="146" y="586" width="648" height="54" rx="18" fill="#0F172A"/>
+  <rect x="178" y="608" width="414" height="10" rx="5" fill="url(#progress)"/>
+  <circle cx="568" cy="613" r="14" fill="#F8FAFC"/>
+  <rect x="838" y="158" width="216" height="238" rx="24" fill="#0D1625" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="862" y="190" width="168" height="18" rx="9" fill="#1E293B"/>
+  <rect x="862" y="228" width="126" height="14" rx="7" fill="#334155"/>
+  <rect x="862" y="270" width="144" height="14" rx="7" fill="#334155"/>
+  <rect x="862" y="312" width="154" height="14" rx="7" fill="#334155"/>
+  <rect x="838" y="420" width="216" height="142" rx="24" fill="#0D1625" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="895" cy="490" r="32" fill="#10B981" fill-opacity="0.16"/>
+  <path d="M895 470C885.611 470 878 477.611 878 487C878 496.389 885.611 504 895 504C904.389 504 912 496.389 912 487C912 477.611 904.389 470 895 470ZM890.75 495.5V478.5L904.75 487L890.75 495.5Z" fill="#34D399"/>
+  <rect x="946" y="474" width="74" height="12" rx="6" fill="#E2E8F0"/>
+  <rect x="946" y="500" width="52" height="10" rx="5" fill="#64748B"/>
+  <rect x="838" y="586" width="216" height="86" rx="24" fill="#0D1625" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="886" cy="628" r="13" fill="#F59E0B"/>
+  <circle cx="924" cy="628" r="13" fill="#F97316"/>
+  <circle cx="962" cy="628" r="13" fill="#A855F7"/>
+  <rect x="146" y="694" width="188" height="54" rx="27" fill="#E50914"/>
+  <rect x="352" y="694" width="196" height="54" rx="27" fill="#101826" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="566" y="694" width="228" height="54" rx="27" fill="#101826" stroke="rgba(255,255,255,0.10)"/>
+  <text x="146" y="90" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">AasPas Private Theater</text>
+  <text x="146" y="818" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="28">Synced watch rooms, voice chat, room persistence, source compatibility, and host-controlled playback</text>
+  <defs>
+    <linearGradient id="bg" x1="91" y1="74" x2="1108" y2="812" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08111F"/>
+      <stop offset="0.48" stop-color="#111827"/>
+      <stop offset="1" stop-color="#050814"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="146" y1="158" x2="794" y2="562" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B91C1C"/>
+      <stop offset="0.52" stop-color="#7C2D12"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="progress" x1="178" y1="613" x2="592" y2="613" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06B6D4"/>
+      <stop offset="1" stop-color="#E50914"/>
+    </linearGradient>
+  </defs>
+</svg>
