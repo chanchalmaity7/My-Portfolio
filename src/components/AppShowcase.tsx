@@ -33,6 +33,9 @@ type ShowcaseApp = {
 };
 
 const flagshipMetrics = aaspasCaseStudy.heroMetrics;
+const mobileCardWidth = 250;
+const mobileCardGap = 16;
+const mobileCardStep = mobileCardWidth + mobileCardGap;
 
 export default function AppShowcase() {
   const [currentApp, setCurrentApp] = useState(0);
@@ -478,23 +481,44 @@ export default function AppShowcase() {
             </div>
           </motion.div>
 
-          <div className="lg:hidden">
-            <div className="-mx-6 flex gap-4 overflow-x-auto px-6 pb-3 pt-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-              {apps.map((app, index) => {
-                const isActive = index === currentApp;
+          <div className="relative mx-auto min-h-[520px] w-full max-w-[310px] lg:hidden">
+            <div className="absolute inset-x-0 top-0 mx-auto h-[500px] w-[250px] rounded-[2.5rem] bg-cyan-300/10 blur-3xl" />
+            <div className="relative mx-auto h-[500px] w-[250px] overflow-hidden rounded-[2.5rem]">
+              <motion.div
+                drag="x"
+                dragConstraints={{
+                  left: -Math.max(0, (apps.length - 1) * mobileCardStep),
+                  right: 0,
+                }}
+                dragElastic={0.06}
+                dragMomentum={false}
+                onDragStart={() => setIsDragging(true)}
+                onDragEnd={(_, info) => {
+                  const swipePower = info.offset.x + info.velocity.x * 0.35;
 
-                return (
+                  if (swipePower < -60) {
+                    setCurrentApp((prev) => Math.min(prev + 1, apps.length - 1));
+                  } else if (swipePower > 60) {
+                    setCurrentApp((prev) => Math.max(prev - 1, 0));
+                  }
+
+                  setTimeout(() => setIsDragging(false), 80);
+                }}
+                animate={{ x: -(currentApp * mobileCardStep) }}
+                transition={{ type: 'spring', stiffness: 260, damping: 28, mass: 0.9 }}
+                className="flex gap-4"
+                style={{ width: apps.length * mobileCardStep }}
+              >
+                {apps.map((app) => (
                   <button
                     key={app.name}
                     type="button"
-                    onClick={() => setCurrentApp(index)}
-                    className={`shrink-0 text-left outline-none transition-transform duration-300 ${
-                      isActive ? 'scale-[1.01]' : 'scale-[0.985]'
-                    }`}
+                    onClick={() => setCurrentApp(apps.findIndex((item) => item.name === app.name))}
+                    className="w-[250px] shrink-0 text-left outline-none"
                     aria-label={`Show ${app.name}`}
                   >
                     <div
-                      className={`h-[440px] w-[238px] rounded-[2.3rem] bg-gradient-to-br ${app.gradient} p-1 shadow-2xl shadow-black/35`}
+                      className={`h-[500px] w-[250px] rounded-[2.3rem] bg-gradient-to-br ${app.gradient} p-1 shadow-2xl shadow-black/40`}
                     >
                       <div className="h-full rounded-[2rem] bg-slate-950 p-2">
                         <div className="relative h-full overflow-hidden rounded-[1.7rem] bg-slate-900">
@@ -503,7 +527,7 @@ export default function AppShowcase() {
                             src={app.image}
                             alt={`${app.name} screenshot`}
                             fill
-                            sizes="238px"
+                            sizes="250px"
                             className={app.imageContain ? 'object-contain p-7' : 'object-cover'}
                           />
                           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-transparent p-5 pt-20">
@@ -514,8 +538,8 @@ export default function AppShowcase() {
                       </div>
                     </div>
                   </button>
-                );
-              })}
+                ))}
+              </motion.div>
             </div>
           </div>
 
