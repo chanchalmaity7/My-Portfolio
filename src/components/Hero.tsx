@@ -42,12 +42,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(34,211,238,0.20),transparent_32%),radial-gradient(circle_at_80%_8%,rgba(16,185,129,0.18),transparent_30%),linear-gradient(135deg,#07111f_0%,#101827_52%,#08111f_100%)]" />
       <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,.7)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.7)_1px,transparent_1px)] [background-size:80px_80px]" />
 
-      <div className="container relative z-10 mx-auto grid min-h-[calc(100vh-6rem)] items-center gap-8 px-6 lg:min-h-[calc(100vh-7rem)] lg:gap-12 lg:grid-cols-[1.08fr_0.92fr]">
+      <div className="container relative z-10 mx-auto flex min-h-[calc(100vh-6rem)] flex-col items-stretch gap-6 px-6 lg:grid lg:min-h-[calc(100vh-7rem)] lg:items-center lg:gap-12 lg:grid-cols-[1.08fr_0.92fr]">
         <motion.div
           initial={{ opacity: 0, scale: 0.94, x: 24 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="order-1 mx-auto w-full max-w-sm lg:order-2 lg:max-w-md"
+          className="relative order-1 mx-auto w-full min-w-0 max-w-[22rem] self-center lg:order-2 lg:max-w-md"
         >
           <div className="absolute -inset-8 rounded-[3rem] bg-cyan-400/10 blur-3xl" />
           <div className="relative rounded-[2rem] border border-white/10 bg-white/[0.07] p-4 shadow-2xl shadow-slate-950/50 backdrop-blur-xl sm:p-5">
@@ -109,7 +109,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
-          className="order-2 max-w-4xl lg:order-1"
+          className="order-2 w-full min-w-0 max-w-4xl lg:order-1"
         >
           <p className="mb-5 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
             Three-plus years of building AI-native mobile, realtime, IoT, and web products

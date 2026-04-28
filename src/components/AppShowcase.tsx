@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -37,8 +37,11 @@ const flagshipMetrics = aaspasCaseStudy.heroMetrics;
 export default function AppShowcase() {
   const [currentApp, setCurrentApp] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(true);
+  const sectionRef = useRef<HTMLElement | null>(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+  const isShowcaseInView = useInView(sectionRef, { amount: 0.2 });
 
   const apps = useMemo<ShowcaseApp[]>(
     () => [
@@ -312,6 +315,17 @@ export default function AppShowcase() {
   const activeApp = apps[currentApp];
 
   useEffect(() => {
+    const applyScreenMode = () => setIsLargeScreen(window.innerWidth >= 1024);
+    applyScreenMode();
+    window.addEventListener('resize', applyScreenMode, { passive: true });
+    return () => window.removeEventListener('resize', applyScreenMode);
+  }, []);
+
+  useEffect(() => {
+    if (!isLargeScreen || !isShowcaseInView) {
+      return;
+    }
+
     const interval = setInterval(() => {
       if (!isDragging) {
         setCurrentApp((prev) => (prev + 1) % apps.length);
@@ -319,7 +333,7 @@ export default function AppShowcase() {
     }, 6500);
 
     return () => clearInterval(interval);
-  }, [apps.length, isDragging]);
+  }, [apps.length, isDragging, isLargeScreen, isShowcaseInView]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -345,7 +359,7 @@ export default function AppShowcase() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#07111f] py-24 text-white" id="apps">
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#07111f] py-24 text-white" id="apps">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(14,165,233,0.22),transparent_34%),radial-gradient(circle_at_82%_10%,rgba(16,185,129,0.18),transparent_28%),linear-gradient(135deg,#07111f_0%,#0f172a_48%,#08111f_100%)]" />
       <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,.7)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.7)_1px,transparent_1px)] [background-size:72px_72px]" />
 
@@ -493,7 +507,7 @@ export default function AppShowcase() {
                       opacity: isActive ? 1 : 0.45,
                       zIndex: isActive ? 20 : 10 - Math.abs(offset),
                     }}
-                    transition={{ duration: isDragging ? 0.22 : 0.7, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: isDragging ? 0.18 : 0.45, ease: [0.22, 1, 0.36, 1] }}
                     whileHover={{ y: isActive ? -8 : Math.abs(offset) * 18 - 4 }}
                     aria-label={`Show ${app.name}`}
                   >
