@@ -478,8 +478,49 @@ export default function AppShowcase() {
             </div>
           </motion.div>
 
+          <div className="lg:hidden">
+            <div className="-mx-6 flex gap-4 overflow-x-auto px-6 pb-3 pt-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+              {apps.map((app, index) => {
+                const isActive = index === currentApp;
+
+                return (
+                  <button
+                    key={app.name}
+                    type="button"
+                    onClick={() => setCurrentApp(index)}
+                    className={`shrink-0 text-left outline-none transition-transform duration-300 ${
+                      isActive ? 'scale-[1.01]' : 'scale-[0.985]'
+                    }`}
+                    aria-label={`Show ${app.name}`}
+                  >
+                    <div
+                      className={`h-[440px] w-[238px] rounded-[2.3rem] bg-gradient-to-br ${app.gradient} p-1 shadow-2xl shadow-black/35`}
+                    >
+                      <div className="h-full rounded-[2rem] bg-slate-950 p-2">
+                        <div className="relative h-full overflow-hidden rounded-[1.7rem] bg-slate-900">
+                          <div className="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-950" />
+                          <Image
+                            src={app.image}
+                            alt={`${app.name} screenshot`}
+                            fill
+                            sizes="238px"
+                            className={app.imageContain ? 'object-contain p-7' : 'object-cover'}
+                          />
+                          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-transparent p-5 pt-20">
+                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">{app.label}</p>
+                            <h4 className="mt-2 text-xl font-black text-white">{app.name}</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
           <div
-            className="relative min-h-[560px]"
+            className="relative hidden min-h-[560px] lg:block"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
