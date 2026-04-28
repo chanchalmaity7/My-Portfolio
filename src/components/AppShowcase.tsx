@@ -33,6 +33,14 @@ type ShowcaseApp = {
 };
 
 const flagshipMetrics = aaspasCaseStudy.heroMetrics;
+const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
+
+const getCircularOffset = (index: number, activeIndex: number, total: number) => {
+  let diff = index - activeIndex;
+  if (diff > total / 2) diff -= total;
+  if (diff < -total / 2) diff += total;
+  return diff;
+};
 
 export default function AppShowcase() {
   const [currentApp, setCurrentApp] = useState(0);
@@ -490,9 +498,19 @@ export default function AppShowcase() {
           >
             <div className="absolute inset-x-0 top-0 mx-auto h-[500px] max-w-[310px]">
               {apps.map((app, index) => {
-                const offset = index - currentApp;
-                const isActive = offset === 0;
-                const isNear = Math.abs(offset) <= 2;
+                const offset = getCircularOffset(index, currentApp, apps.length);
+                const dragProgress = clamp(-mobileDragOffset / 120, -1.2, 1.2);
+                const virtualPosition = offset - dragProgress;
+                const distance = Math.abs(virtualPosition);
+                const isNear = distance <= 1.7;
+
+                const angle = virtualPosition * 0.9;
+                const x = Math.sin(angle) * 92;
+                const y = (1 - Math.cos(angle)) * 34;
+                const scale = 1 - Math.min(distance, 1.4) * 0.18;
+                const opacity = 1 - Math.min(distance, 1.4) * 0.32;
+                const rotate = virtualPosition * 7;
+                const zIndex = Math.round(30 - distance * 10);
 
                 if (!isNear) return null;
 
@@ -504,14 +522,14 @@ export default function AppShowcase() {
                     className="absolute left-1/2 top-1/2 block -translate-x-1/2 -translate-y-1/2 text-left outline-none"
                     initial={false}
                     animate={{
-                      x: offset * 68 + mobileDragOffset,
-                      y: Math.abs(offset) * 16,
-                      rotate: offset * 4,
-                      scale: isActive ? 1 : 0.84,
-                      opacity: isActive ? 1 : 0.48,
-                      zIndex: isActive ? 20 : 10 - Math.abs(offset),
+                      x,
+                      y,
+                      rotate,
+                      scale,
+                      opacity,
+                      zIndex,
                     }}
-                    transition={{ duration: isDragging ? 0.12 : 0.28, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: isDragging ? 0.08 : 0.24, ease: [0.22, 1, 0.36, 1] }}
                     aria-label={`Show ${app.name}`}
                   >
                     <div

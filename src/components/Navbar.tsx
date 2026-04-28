@@ -44,7 +44,7 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.75, ease: 'easeOut' }}
-      className={`fixed left-1/2 top-4 z-50 w-[94%] max-w-7xl -translate-x-1/2 rounded-2xl border shadow-2xl backdrop-blur-2xl transition-all duration-500 ${
+      className={`fixed left-1/2 top-4 z-50 w-[94%] max-w-7xl -translate-x-1/2 rounded-2xl border shadow-2xl backdrop-blur-lg transition-colors duration-500 transform-gpu ${
         scrolled
           ? 'border-white/10 bg-slate-950/72 shadow-slate-950/35'
           : 'border-white/15 bg-slate-950/82 shadow-slate-950/45'

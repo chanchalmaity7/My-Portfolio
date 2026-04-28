@@ -15,15 +15,15 @@ export default function Home() {
     <>
       <HomeIntroSplash />
       <Navbar />
-      <main>
-        <section id="home"><Hero /></section>
-        <section id="ai-native"><AINativeDeveloper /></section>
-        <section id="apps"><AppShowcase /></section>
-        <section id="skills"><Skills /></section>
-        <section id="projects"><Projects /></section>
-        <section id="about"><About /></section>
-        <section id="experience"><Experience /></section>
-        <section id="contact"><Contact /></section>
+      <main className="overflow-x-hidden">
+        <section id="home" className="render-section hero-shell"><Hero /></section>
+        <section id="ai-native" className="render-section deferred-section"><AINativeDeveloper /></section>
+        <section id="apps" className="render-section deferred-section"><AppShowcase /></section>
+        <section id="skills" className="render-section deferred-section"><Skills /></section>
+        <section id="projects" className="render-section deferred-section"><Projects /></section>
+        <section id="about" className="render-section deferred-section"><About /></section>
+        <section id="experience" className="render-section deferred-section"><Experience /></section>
+        <section id="contact" className="render-section deferred-section"><Contact /></section>
       </main>
       <Footer />
     </>
