@@ -38,19 +38,19 @@ const coreStack = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#07111f] pt-24 text-white sm:pt-28 lg:pt-32">
+    <section className="relative min-h-screen overflow-hidden bg-[#07111f] pt-20 text-white sm:pt-28 lg:pt-32">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(34,211,238,0.20),transparent_32%),radial-gradient(circle_at_80%_8%,rgba(16,185,129,0.18),transparent_30%),linear-gradient(135deg,#07111f_0%,#101827_52%,#08111f_100%)]" />
       <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,.7)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.7)_1px,transparent_1px)] [background-size:80px_80px]" />
 
-      <div className="container relative z-10 mx-auto flex min-h-[calc(100vh-6rem)] flex-col items-stretch gap-6 px-6 lg:grid lg:min-h-[calc(100vh-7rem)] lg:items-center lg:gap-12 lg:grid-cols-[1.08fr_0.92fr]">
+      <div className="container relative z-10 mx-auto flex min-h-[calc(100vh-6rem)] flex-col items-stretch gap-4 px-4 sm:gap-6 sm:px-6 lg:grid lg:min-h-[calc(100vh-7rem)] lg:items-center lg:gap-12 lg:grid-cols-[1.08fr_0.92fr]">
         <motion.div
           initial={{ opacity: 0, scale: 0.94, x: 24 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="relative order-1 mx-auto w-full min-w-0 max-w-[22rem] self-center lg:order-2 lg:max-w-md"
+          className="relative order-1 mx-auto w-full min-w-0 max-w-[24rem] self-center lg:order-2 lg:max-w-md"
         >
           <div className="absolute -inset-8 rounded-[3rem] bg-cyan-400/10 blur-3xl" />
-          <div className="relative rounded-[2rem] border border-white/10 bg-white/[0.07] p-4 shadow-2xl shadow-slate-950/50 backdrop-blur-xl sm:p-5">
+          <div className="relative rounded-[2rem] border border-white/10 bg-white/[0.07] p-3.5 shadow-2xl shadow-slate-950/50 backdrop-blur-xl sm:p-5">
             <div className="relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-[radial-gradient(circle_at_20%_18%,rgba(34,211,238,0.16),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(16,185,129,0.14),transparent_30%),linear-gradient(180deg,#07111f_0%,#0c1730_100%)]">
               <div className="absolute inset-0 opacity-15 [background-image:linear-gradient(rgba(255,255,255,.6)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.6)_1px,transparent_1px)] [background-size:36px_36px]" />
               <div className="relative h-[280px] sm:h-[320px]">
@@ -77,7 +77,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="mt-3 grid gap-3.5 sm:mt-4 sm:gap-4 sm:grid-cols-2">
               <div className="rounded-3xl border border-emerald-300/20 bg-emerald-300/10 p-5">
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-200">
                   Now featuring

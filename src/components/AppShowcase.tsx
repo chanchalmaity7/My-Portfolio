@@ -637,20 +637,41 @@ export default function AppShowcase() {
                 </p>
 
                 {activeApp.name === 'AasPas' ? (
-                  <div className="mt-6 grid grid-cols-3 gap-3">
-                    {aaspasCaseStudy.homePhoneScreens.slice(0, 3).map((shot) => (
-                      <div key={shot.title} className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/50">
-                        <div className="relative aspect-[3/4]">
-                          <Image
-                            src={shot.src}
-                            alt={shot.title}
-                            fill
-                            sizes="(min-width: 1024px) 12vw, 28vw"
-                            className="object-cover"
-                          />
+                  <div className="mt-6">
+                    <div className="mb-3 flex items-center justify-between gap-3">
+                      <h4 className="text-sm font-bold uppercase tracking-[0.22em] text-slate-300">
+                        Real app screens
+                      </h4>
+                      <span className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-100">
+                        One screen per phone
+                      </span>
+                    </div>
+                    <div className="flex gap-4 overflow-x-auto pb-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                      {aaspasCaseStudy.homePhoneScreens.map((shot) => (
+                        <div key={shot.title} className="w-[176px] shrink-0">
+                          <div className="rounded-[2rem] bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-1 shadow-2xl shadow-black/35">
+                            <div className="rounded-[1.75rem] bg-slate-950 p-2">
+                              <div className="relative h-[320px] overflow-hidden rounded-[1.45rem] bg-slate-900">
+                                <div className="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-950" />
+                                <Image
+                                  src={shot.src}
+                                  alt={shot.title}
+                                  fill
+                                  sizes="176px"
+                                  className="object-cover object-top"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="px-2 pt-3">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-200">
+                              {shot.accent}
+                            </p>
+                            <p className="mt-1 text-sm font-bold text-white">{shot.title}</p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 ) : null}
 

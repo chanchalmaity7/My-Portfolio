@@ -31,6 +31,13 @@ export const aaspasCaseStudy = {
         'The customer app opens with category discovery, search, and a clean service-selection surface designed for quick booking intent.',
     },
     {
+      src: '/aaspas-showcase/app-screens/beauty-services.png',
+      title: 'Package selection',
+      accent: 'Service combos',
+      caption:
+        'Category-specific package screens make the marketplace feel richer by supporting bundled and themed service selection instead of a flat list.',
+    },
+    {
       src: '/aaspas-showcase/app-screens/payment-flow.jpg',
       title: 'Payment automation',
       accent: 'Secure checkout',
@@ -52,6 +59,13 @@ export const aaspasCaseStudy = {
         'Customers can follow worker motion, elapsed work timer, distance, and current cost inside a tracking-first live job experience.',
     },
     {
+      src: '/aaspas-showcase/app-screens/worker-active-job.png',
+      title: 'Active job operations',
+      accent: 'Field workflow',
+      caption:
+        'The worker app exposes map-based active-job handling with live route context, arrival actions, and operational controls during a running booking.',
+    },
+    {
       src: '/aaspas-showcase/app-screens/worker-dashboard.png',
       title: 'Worker operations',
       accent: 'Daily control',
@@ -64,6 +78,13 @@ export const aaspasCaseStudy = {
       accent: 'Earnings layer',
       caption:
         'Workers get wallet visibility, payout setup, commission awareness, and earnings state instead of opaque payment summaries.',
+    },
+    {
+      src: '/aaspas-showcase/app-screens/earnings-breakdown.png',
+      title: 'Per-job breakdown',
+      accent: 'Money correctness',
+      caption:
+        'Detailed per-job earnings screens expose work amount, paid-online value, commission deduction, and final credited payout for clear settlement proof.',
     },
   ],
   showcaseGallery: [
