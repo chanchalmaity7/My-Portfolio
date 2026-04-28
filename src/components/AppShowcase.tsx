@@ -33,14 +33,12 @@ type ShowcaseApp = {
 };
 
 const flagshipMetrics = aaspasCaseStudy.heroMetrics;
-const mobileCardWidth = 250;
-const mobileCardGap = 16;
-const mobileCardStep = mobileCardWidth + mobileCardGap;
 
 export default function AppShowcase() {
   const [currentApp, setCurrentApp] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(true);
+  const [mobileDragOffset, setMobileDragOffset] = useState(0);
   const sectionRef = useRef<HTMLElement | null>(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -342,10 +340,12 @@ export default function AppShowcase() {
     touchStartX.current = e.touches[0].clientX;
     touchEndX.current = e.touches[0].clientX;
     setIsDragging(true);
+    setMobileDragOffset(0);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
     touchEndX.current = e.touches[0].clientX;
+    setMobileDragOffset(touchEndX.current - touchStartX.current);
   };
 
   const handleTouchEnd = () => {
@@ -358,6 +358,7 @@ export default function AppShowcase() {
       );
     }
 
+    setMobileDragOffset(0);
     setTimeout(() => setIsDragging(false), 120);
   };
 
@@ -481,40 +482,36 @@ export default function AppShowcase() {
             </div>
           </motion.div>
 
-          <div className="relative mx-auto min-h-[520px] w-full max-w-[310px] lg:hidden">
-            <div className="absolute inset-x-0 top-0 mx-auto h-[500px] w-[250px] rounded-[2.5rem] bg-cyan-300/10 blur-3xl" />
-            <div className="relative mx-auto h-[500px] w-[250px] overflow-hidden rounded-[2.5rem]">
-              <motion.div
-                drag="x"
-                dragConstraints={{
-                  left: -Math.max(0, (apps.length - 1) * mobileCardStep),
-                  right: 0,
-                }}
-                dragElastic={0.06}
-                dragMomentum={false}
-                onDragStart={() => setIsDragging(true)}
-                onDragEnd={(_, info) => {
-                  const swipePower = info.offset.x + info.velocity.x * 0.35;
+          <div
+            className="relative min-h-[520px] lg:hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div className="absolute inset-x-0 top-0 mx-auto h-[500px] max-w-[310px]">
+              {apps.map((app, index) => {
+                const offset = index - currentApp;
+                const isActive = offset === 0;
+                const isNear = Math.abs(offset) <= 2;
 
-                  if (swipePower < -60) {
-                    setCurrentApp((prev) => Math.min(prev + 1, apps.length - 1));
-                  } else if (swipePower > 60) {
-                    setCurrentApp((prev) => Math.max(prev - 1, 0));
-                  }
+                if (!isNear) return null;
 
-                  setTimeout(() => setIsDragging(false), 80);
-                }}
-                animate={{ x: -(currentApp * mobileCardStep) }}
-                transition={{ type: 'spring', stiffness: 260, damping: 28, mass: 0.9 }}
-                className="flex gap-4"
-                style={{ width: apps.length * mobileCardStep }}
-              >
-                {apps.map((app) => (
-                  <button
+                return (
+                  <motion.button
                     key={app.name}
                     type="button"
-                    onClick={() => setCurrentApp(apps.findIndex((item) => item.name === app.name))}
-                    className="w-[250px] shrink-0 text-left outline-none"
+                    onClick={() => setCurrentApp(index)}
+                    className="absolute left-1/2 top-1/2 block -translate-x-1/2 -translate-y-1/2 text-left outline-none"
+                    initial={false}
+                    animate={{
+                      x: offset * 68 + mobileDragOffset,
+                      y: Math.abs(offset) * 16,
+                      rotate: offset * 4,
+                      scale: isActive ? 1 : 0.84,
+                      opacity: isActive ? 1 : 0.48,
+                      zIndex: isActive ? 20 : 10 - Math.abs(offset),
+                    }}
+                    transition={{ duration: isDragging ? 0.12 : 0.28, ease: [0.22, 1, 0.36, 1] }}
                     aria-label={`Show ${app.name}`}
                   >
                     <div
@@ -537,9 +534,9 @@ export default function AppShowcase() {
                         </div>
                       </div>
                     </div>
-                  </button>
-                ))}
-              </motion.div>
+                  </motion.button>
+                );
+              })}
             </div>
           </div>
 
