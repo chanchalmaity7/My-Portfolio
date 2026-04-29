@@ -15,6 +15,11 @@ type ShowcaseApp = {
   name: string;
   label: string;
   image: string;
+  phoneScreens?: Array<{
+    src: string;
+    title: string;
+    accent: string;
+  }>;
   gradient: string;
   description: string;
   proof: string;
@@ -44,6 +49,7 @@ const getCircularOffset = (index: number, activeIndex: number, total: number) =>
 
 export default function AppShowcase() {
   const [currentApp, setCurrentApp] = useState(0);
+  const [currentAaspasPhoneScreen, setCurrentAaspasPhoneScreen] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(true);
   const [mobileDragOffset, setMobileDragOffset] = useState(0);
@@ -58,6 +64,11 @@ export default function AppShowcase() {
         name: 'AasPas',
         label: 'Flagship product',
         image: aaspasCaseStudy.homePhoneScreens[0].src,
+        phoneScreens: aaspasCaseStudy.homePhoneScreens.map((screen) => ({
+          src: screen.src,
+          title: screen.title,
+          accent: screen.accent,
+        })),
         gradient: 'from-cyan-400 via-blue-500 to-indigo-600',
         description:
           'A production-grade hyperlocal service platform with customer booking, worker operations, multilingual AI booking help, React Native StyleSheet-driven screens, live tracking, native calls, payment automation, wallet settlement, support, reviews, and admin workflows.',
@@ -344,6 +355,18 @@ export default function AppShowcase() {
     return () => clearInterval(interval);
   }, [apps.length, isDragging, isLargeScreen, isShowcaseInView]);
 
+  useEffect(() => {
+    if (!isShowcaseInView || apps[currentApp]?.name !== 'AasPas') {
+      return;
+    }
+
+    const interval = window.setInterval(() => {
+      setCurrentAaspasPhoneScreen((prev) => (prev + 1) % aaspasCaseStudy.homePhoneScreens.length);
+    }, 1850);
+
+    return () => window.clearInterval(interval);
+  }, [apps, currentApp, isShowcaseInView]);
+
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
     touchEndX.current = e.touches[0].clientX;
@@ -503,6 +526,11 @@ export default function AppShowcase() {
                 const virtualPosition = offset - dragProgress;
                 const distance = Math.abs(virtualPosition);
                 const isNear = distance <= 1.7;
+                const activePhoneScreen =
+                  app.name === 'AasPas' && app.phoneScreens
+                    ? app.phoneScreens[currentAaspasPhoneScreen]
+                    : undefined;
+                const previewImage = activePhoneScreen?.src ?? app.image;
 
                 const angle = virtualPosition * 0.9;
                 const x = Math.sin(angle) * 92;
@@ -539,8 +567,8 @@ export default function AppShowcase() {
                         <div className="relative h-full overflow-hidden rounded-[1.7rem] bg-slate-900">
                           <div className="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-950" />
                           <Image
-                            src={app.image}
-                            alt={`${app.name} screenshot`}
+                            src={previewImage}
+                            alt={activePhoneScreen?.title ?? `${app.name} screenshot`}
                             fill
                             sizes="250px"
                             className={app.imageContain ? 'object-contain p-7' : 'object-cover'}
@@ -569,6 +597,11 @@ export default function AppShowcase() {
                 const offset = index - currentApp;
                 const isActive = offset === 0;
                 const isNear = Math.abs(offset) <= 2;
+                const activePhoneScreen =
+                  app.name === 'AasPas' && app.phoneScreens
+                    ? app.phoneScreens[currentAaspasPhoneScreen]
+                    : undefined;
+                const previewImage = activePhoneScreen?.src ?? app.image;
 
                 if (!isNear) return null;
 
@@ -598,8 +631,8 @@ export default function AppShowcase() {
                         <div className="relative h-full overflow-hidden rounded-[1.7rem] bg-slate-900">
                           <div className="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-950" />
                           <Image
-                            src={app.image}
-                            alt={`${app.name} screenshot`}
+                            src={previewImage}
+                            alt={activePhoneScreen?.title ?? `${app.name} screenshot`}
                             fill
                             sizes="250px"
                             className={app.imageContain ? 'object-contain p-7' : 'object-cover'}

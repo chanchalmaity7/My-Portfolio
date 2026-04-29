@@ -37,10 +37,12 @@ html {
   contain: none;
 }
 
-@supports (content-visibility: auto) {
-  .deferred-section {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 1100px;
+@media (max-width: 767px) {
+  @supports (content-visibility: auto) {
+    .deferred-section {
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 1100px;
+    }
   }
 }
 
