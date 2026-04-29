@@ -147,13 +147,9 @@ export default function AINativeDeveloper() {
           </motion.div>
 
           <div className="grid gap-4">
-            {capabilityCards.map((card, index) => (
-              <motion.article
+            {capabilityCards.map((card) => (
+              <article
                 key={card.title}
-                initial={{ opacity: 0, x: 28 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.55, delay: index * 0.06 }}
-                viewport={{ once: true }}
                 className="rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-6 shadow-xl shadow-slate-950/15 backdrop-blur-sm md:backdrop-blur-md"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -163,7 +159,7 @@ export default function AINativeDeveloper() {
                   </span>
                 </div>
                 <p className="mt-4 text-sm leading-7 text-slate-300">{card.detail}</p>
-              </motion.article>
+              </article>
             ))}
           </div>
         </div>

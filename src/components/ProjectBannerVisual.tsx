@@ -100,7 +100,8 @@ export default function ProjectBannerVisual({
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="relative h-[88%] w-[176px] rounded-[2rem] border border-white/12 bg-slate-950/82 p-2 shadow-[0_18px_44px_rgba(0,0,0,0.42)]"
             >
-              <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-950" />
+              <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-slate-950 via-slate-950/96 to-slate-950/70" />
+              <div className="pointer-events-none absolute left-1/2 top-1 z-20 h-7 w-28 -translate-x-1/2 rounded-b-[1.2rem] rounded-t-[0.9rem] bg-slate-950 shadow-[0_10px_18px_rgba(0,0,0,0.35)]" />
               <div className="relative h-full overflow-hidden rounded-[1.55rem]">
                 <Image
                   src={currentScreen.src}
@@ -142,7 +143,8 @@ export default function ProjectBannerVisual({
           Energy analytics
         </div>
         <div className="relative h-[92%] w-[175px] rounded-[2rem] border border-white/12 bg-slate-950/80 p-2 shadow-[0_0_40px_rgba(14,165,233,0.18)]">
-          <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-950" />
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-slate-950 via-slate-950/96 to-slate-950/70" />
+          <div className="pointer-events-none absolute left-1/2 top-1 z-20 h-7 w-28 -translate-x-1/2 rounded-b-[1.2rem] rounded-t-[0.9rem] bg-slate-950 shadow-[0_10px_18px_rgba(0,0,0,0.35)]" />
           <div className="relative h-full overflow-hidden rounded-[1.6rem]">
             <Image
               src={image}

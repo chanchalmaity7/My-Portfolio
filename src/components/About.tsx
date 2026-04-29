@@ -26,27 +26,15 @@ export default function About() {
         </motion.div>
 
         <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <motion.div
-            initial={{ opacity: 0, x: -32 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="relative mx-auto w-full max-w-sm"
-          >
-            <div className="absolute -inset-5 rounded-[2.2rem] bg-cyan-400/10 blur-3xl" />
-            <div className="relative h-[420px] overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-slate-950/40">
+          <div className="relative mx-auto w-full max-w-sm">
+            <div className="absolute -inset-5 rounded-[2.2rem] bg-cyan-400/10 blur-2xl" />
+            <div className="relative h-[420px] overflow-hidden rounded-[2rem] border border-white/10 shadow-xl shadow-slate-950/28">
               <Image src="/img/chanchal.jpg" alt="Chanchal Maity" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 32 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-slate-950/25 backdrop-blur-xl sm:p-8"
-          >
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-xl shadow-slate-950/18 backdrop-blur-sm sm:p-8 md:backdrop-blur-md">
             <div className="mb-6 flex flex-wrap gap-3">
               <span className="rounded-full bg-emerald-300/10 px-4 py-2 text-sm font-bold text-emerald-200">
                 Available for remote roles
@@ -80,7 +68,7 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

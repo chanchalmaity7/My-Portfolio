@@ -55,14 +55,10 @@ export default function Skills() {
         </motion.div>
 
         <div className="grid gap-5 md:grid-cols-2">
-          {skillGroups.map((group, index) => (
-            <motion.div
+          {skillGroups.map((group) => (
+            <div
               key={group.title}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: index * 0.08 }}
-              viewport={{ once: true }}
-              className="rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl"
+              className="rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-6 shadow-xl shadow-slate-950/15 backdrop-blur-sm md:backdrop-blur-md"
             >
               <h3 className="text-2xl font-black text-white">{group.title}</h3>
               <p className="mt-3 text-sm leading-7 text-slate-300">{group.summary}</p>
@@ -76,7 +72,7 @@ export default function Skills() {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

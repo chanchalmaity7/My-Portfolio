@@ -375,12 +375,8 @@ export default function Projects() {
             const expanded = expandedProject === index;
 
             return (
-              <motion.article
+              <article
                 key={project.title}
-                initial={{ opacity: 0, y: 36 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: index * 0.08 }}
-                viewport={{ once: true }}
                 className={`group overflow-hidden rounded-[1.8rem] border bg-white/[0.05] shadow-xl shadow-slate-950/22 backdrop-blur-sm transition-all duration-300 md:backdrop-blur-md transform-gpu will-change-transform ${
                   index === 0 ? 'border-cyan-300/35 lg:col-span-2' : 'border-white/10 hover:border-cyan-300/30'
                 }`}
@@ -425,18 +421,14 @@ export default function Projects() {
                   </button>
 
                   {expanded ? (
-                    <motion.div
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="mt-5 grid gap-3 sm:grid-cols-2"
-                    >
+                    <div className="mt-5 grid gap-3 sm:grid-cols-2">
                       {project.deepDive.map((item) => (
                         <div key={item.title} className="rounded-2xl border border-white/10 bg-slate-950/50 p-4">
                           <h4 className="text-sm font-black uppercase tracking-[0.18em] text-cyan-100">{item.title}</h4>
                           <p className="mt-3 text-sm leading-7 text-slate-300">{item.detail}</p>
                         </div>
                       ))}
-                    </motion.div>
+                    </div>
                   ) : null}
 
                   <div className="mt-5 flex flex-wrap gap-2">
@@ -491,7 +483,7 @@ export default function Projects() {
                     ) : null}
                   </div>
                 </div>
-              </motion.article>
+              </article>
             );
           })}
         </div>

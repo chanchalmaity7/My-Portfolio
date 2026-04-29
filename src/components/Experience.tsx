@@ -48,16 +48,12 @@ export default function Experience() {
         </motion.div>
 
         <div className="mx-auto max-w-5xl">
-          {experiences.map((exp, index) => (
-            <motion.div
+          {experiences.map((exp) => (
+            <div
               key={exp.title}
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.12 }}
-              viewport={{ once: true }}
               className="relative mb-8 last:mb-0"
             >
-              <div className="rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl sm:p-8">
+              <div className="rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-6 shadow-xl shadow-slate-950/15 backdrop-blur-sm sm:p-8 md:backdrop-blur-md">
                 <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                   <div>
                     <h3 className="text-2xl font-black text-white">{exp.title}</h3>
@@ -79,7 +75,7 @@ export default function Experience() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

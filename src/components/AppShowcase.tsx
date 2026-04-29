@@ -52,6 +52,7 @@ export default function AppShowcase() {
   const [currentAaspasPhoneScreen, setCurrentAaspasPhoneScreen] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(true);
+  const [isWindowScrolling, setIsWindowScrolling] = useState(false);
   const [mobileDragOffset, setMobileDragOffset] = useState(0);
   const sectionRef = useRef<HTMLElement | null>(null);
   const touchStartX = useRef(0);
@@ -343,18 +344,40 @@ export default function AppShowcase() {
   }, []);
 
   useEffect(() => {
+    let scrollTimer: number | null = null;
+
+    const onScroll = () => {
+      setIsWindowScrolling(true);
+      if (scrollTimer) {
+        window.clearTimeout(scrollTimer);
+      }
+      scrollTimer = window.setTimeout(() => {
+        setIsWindowScrolling(false);
+      }, 140);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (scrollTimer) {
+        window.clearTimeout(scrollTimer);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     if (!isLargeScreen || !isShowcaseInView) {
       return;
     }
 
     const interval = setInterval(() => {
-      if (!isDragging) {
+      if (!isDragging && !isWindowScrolling) {
         setCurrentApp((prev) => (prev + 1) % apps.length);
       }
     }, 6500);
 
     return () => clearInterval(interval);
-  }, [apps.length, isDragging, isLargeScreen, isShowcaseInView]);
+  }, [apps.length, isDragging, isLargeScreen, isShowcaseInView, isWindowScrolling]);
 
   useEffect(() => {
     if (!isShowcaseInView) {
@@ -362,11 +385,13 @@ export default function AppShowcase() {
     }
 
     const interval = window.setInterval(() => {
-      setCurrentAaspasPhoneScreen((prev) => (prev + 1) % aaspasCaseStudy.homePhoneScreens.length);
+      if (!isWindowScrolling && !isDragging) {
+        setCurrentAaspasPhoneScreen((prev) => (prev + 1) % aaspasCaseStudy.homePhoneScreens.length);
+      }
     }, 2400);
 
     return () => window.clearInterval(interval);
-  }, [isShowcaseInView]);
+  }, [isDragging, isShowcaseInView, isWindowScrolling]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -562,7 +587,8 @@ export default function AppShowcase() {
                     <div className="h-[500px] w-[250px] rounded-[2.3rem] bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-1 shadow-2xl shadow-black/40">
                       <div className="h-full rounded-[2rem] bg-slate-950 p-2">
                         <div className="relative h-full overflow-hidden rounded-[1.7rem] bg-slate-900">
-                          <div className="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-950" />
+                          <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-slate-950 via-slate-950/96 to-slate-950/70" />
+                          <div className="pointer-events-none absolute left-1/2 top-1 z-20 h-7 w-28 -translate-x-1/2 rounded-b-[1.2rem] rounded-t-[0.9rem] bg-slate-950 shadow-[0_10px_18px_rgba(0,0,0,0.35)]" />
                           <Image
                             src={screen.src}
                             alt={screen.title}
@@ -620,7 +646,8 @@ export default function AppShowcase() {
                     <div className="h-[500px] w-[250px] rounded-[2.3rem] bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-1 shadow-2xl shadow-black/40">
                       <div className="h-full rounded-[2rem] bg-slate-950 p-2">
                         <div className="relative h-full overflow-hidden rounded-[1.7rem] bg-slate-900">
-                          <div className="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-950" />
+                          <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-slate-950 via-slate-950/96 to-slate-950/70" />
+                          <div className="pointer-events-none absolute left-1/2 top-1 z-20 h-7 w-28 -translate-x-1/2 rounded-b-[1.2rem] rounded-t-[0.9rem] bg-slate-950 shadow-[0_10px_18px_rgba(0,0,0,0.35)]" />
                           <Image
                             src={screen.src}
                             alt={screen.title}
@@ -676,7 +703,8 @@ export default function AppShowcase() {
                           <div className="rounded-[2rem] bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-1 shadow-2xl shadow-black/35">
                             <div className="rounded-[1.75rem] bg-slate-950 p-2">
                               <div className="relative h-[320px] overflow-hidden rounded-[1.45rem] bg-slate-900">
-                                <div className="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-950" />
+                                <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-slate-950 via-slate-950/96 to-slate-950/70" />
+                                <div className="pointer-events-none absolute left-1/2 top-1 z-20 h-7 w-28 -translate-x-1/2 rounded-b-[1.2rem] rounded-t-[0.9rem] bg-slate-950 shadow-[0_10px_18px_rgba(0,0,0,0.35)]" />
                                 <Image
                                   src={shot.src}
                                   alt={shot.title}

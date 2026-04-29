@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 const contactOptions = [
   {
     title: 'Email',
@@ -30,13 +28,7 @@ export default function Contact() {
     <section className="relative overflow-hidden bg-[#07111f] py-24 text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(34,211,238,0.14),transparent_30%),radial-gradient(circle_at_80%_60%,rgba(16,185,129,0.13),transparent_32%)]" />
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="mx-auto max-w-5xl rounded-[2.2rem] border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-slate-950/30 backdrop-blur-xl sm:p-10"
-        >
+        <div className="mx-auto max-w-5xl rounded-[2.2rem] border border-white/10 bg-white/[0.06] p-6 shadow-xl shadow-slate-950/22 backdrop-blur-sm sm:p-10 md:backdrop-blur-md">
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.26em] text-cyan-200">Contact</p>
@@ -83,7 +75,7 @@ export default function Contact() {
               })}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
