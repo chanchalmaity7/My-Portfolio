@@ -658,10 +658,10 @@ export default function AppShowcase() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.35 }}
-            className="mt-10 rounded-[2rem] border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-slate-950/30 backdrop-blur-xl lg:p-8"
+            className="mt-10 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] p-4 shadow-2xl shadow-slate-950/30 backdrop-blur-xl sm:p-6 lg:p-8"
           >
             <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
-              <div>
+              <div className="min-w-0">
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200">{activeApp.label}</p>
                 <h3 className="mt-2 text-3xl font-black text-white">{activeApp.name}</h3>
                 <p className="mt-4 text-base leading-8 text-slate-300">{activeApp.description}</p>
@@ -679,7 +679,7 @@ export default function AppShowcase() {
                         One screen per phone
                       </span>
                     </div>
-                    <div className="flex gap-4 overflow-x-auto pb-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                    <div className="flex max-w-full gap-4 overflow-x-auto pb-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
                       {aaspasCaseStudy.homePhoneScreens.map((shot) => (
                         <div key={shot.title} className="w-[176px] shrink-0">
                           <div className="rounded-[2rem] bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-1 shadow-2xl shadow-black/35">
@@ -727,7 +727,7 @@ export default function AppShowcase() {
                 ) : null}
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <h4 className="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-slate-300">System proof</h4>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {activeApp.systems.map((system, idx) => (
@@ -736,10 +736,10 @@ export default function AppShowcase() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.04 }}
-                      className="rounded-2xl border border-white/10 bg-slate-950/50 p-4"
+                      className="min-w-0 rounded-2xl border border-white/10 bg-slate-950/50 p-4"
                     >
                       <h5 className="text-sm font-black uppercase tracking-[0.18em] text-cyan-100">{system.title}</h5>
-                      <p className="mt-3 text-sm leading-7 text-slate-300">{system.detail}</p>
+                      <p className="mt-3 break-words text-sm leading-7 text-slate-300">{system.detail}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -752,18 +752,18 @@ export default function AppShowcase() {
                       initial={{ opacity: 0, scale: 0.94 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: idx * 0.03 }}
-                      className="rounded-2xl border border-white/10 bg-slate-950/50 p-4 text-sm font-semibold text-white"
+                      className="min-w-0 rounded-2xl border border-white/10 bg-slate-950/50 p-4 text-sm font-semibold leading-7 text-white break-words"
                     >
                       {feature}
                     </motion.div>
                   ))}
                 </div>
 
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-6 flex max-w-full flex-wrap gap-2">
                   {activeApp.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-xs font-semibold text-cyan-100"
+                      className="max-w-full rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-xs font-semibold text-cyan-100 break-words"
                     >
                       {tech}
                     </span>
