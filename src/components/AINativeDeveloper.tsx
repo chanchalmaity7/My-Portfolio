@@ -49,7 +49,7 @@ export default function AINativeDeveloper() {
     <section className="relative overflow-hidden bg-[#0b1220] py-24 text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_16%,rgba(34,211,238,0.14),transparent_26%),radial-gradient(circle_at_84%_14%,rgba(59,130,246,0.12),transparent_28%),linear-gradient(180deg,#0b1220_0%,#07111f_100%)]" />
 
-      <div className="container relative z-10 mx-auto px-6">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

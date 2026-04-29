@@ -29,7 +29,7 @@ export default function Contact() {
   return (
     <section className="relative overflow-hidden bg-[#07111f] py-24 text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(34,211,238,0.14),transparent_30%),radial-gradient(circle_at_80%_60%,rgba(16,185,129,0.13),transparent_32%)]" />
-      <div className="container relative z-10 mx-auto px-6">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}

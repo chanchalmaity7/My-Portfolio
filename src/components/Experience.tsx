@@ -35,7 +35,7 @@ const experiences = [
 export default function Experience() {
   return (
     <section className="bg-[#07111f] py-24 text-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}

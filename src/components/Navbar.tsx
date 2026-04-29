@@ -44,9 +44,9 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.75, ease: 'easeOut' }}
-      className={`fixed left-1/2 z-50 w-[94%] max-w-7xl -translate-x-1/2 rounded-2xl border shadow-2xl backdrop-blur-lg transition-all duration-300 transform-gpu origin-top ${
+      className={`fixed left-1/2 z-50 w-[95.5%] max-w-7xl -translate-x-1/2 rounded-2xl border shadow-2xl backdrop-blur-lg transition-all duration-300 transform-gpu origin-top ${
         scrolled
-          ? 'top-2 scale-[0.965] border-white/10 bg-slate-950/72 shadow-slate-950/35'
+          ? 'top-2 scale-[0.965] border-white/8 bg-slate-950/38 shadow-slate-950/18'
           : 'top-4 scale-100 border-white/15 bg-slate-950/82 shadow-slate-950/45'
       }`}
     >

@@ -356,16 +356,16 @@ export default function AppShowcase() {
   }, [apps.length, isDragging, isLargeScreen, isShowcaseInView]);
 
   useEffect(() => {
-    if (!isShowcaseInView || apps[currentApp]?.name !== 'AasPas') {
+    if (!isShowcaseInView) {
       return;
     }
 
     const interval = window.setInterval(() => {
       setCurrentAaspasPhoneScreen((prev) => (prev + 1) % aaspasCaseStudy.homePhoneScreens.length);
-    }, 1850);
+    }, 1650);
 
     return () => window.clearInterval(interval);
-  }, [apps, currentApp, isShowcaseInView]);
+  }, [isShowcaseInView]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -398,7 +398,7 @@ export default function AppShowcase() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(14,165,233,0.22),transparent_34%),radial-gradient(circle_at_82%_10%,rgba(16,185,129,0.18),transparent_28%),linear-gradient(135deg,#07111f_0%,#0f172a_48%,#08111f_100%)]" />
       <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,.7)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.7)_1px,transparent_1px)] [background-size:72px_72px]" />
 
-      <div className="container relative z-10 mx-auto px-6">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}

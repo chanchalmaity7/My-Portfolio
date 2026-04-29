@@ -24,6 +24,69 @@ export const aaspasCaseStudy = {
   },
   homePhoneScreens: [
     {
+      src: '/aaspas-showcase/app-screens/promo-brand-visual.png',
+      title: 'Brand visual',
+      accent: 'Marketplace identity',
+      caption:
+        'A stylized promotional visual helps the product feel like a complete consumer brand instead of only a set of utility screens.',
+    },
+    {
+      src: '/aaspas-showcase/app-screens/customer-home-alt.png',
+      title: 'Customer home',
+      accent: 'Discovery flow',
+      caption:
+        'The main customer landing surface focuses on search, service categories, and rapid booking intent inside a polished marketplace home screen.',
+    },
+    {
+      src: '/aaspas-showcase/app-screens/service-packages-alt.png',
+      title: 'Service packages',
+      accent: 'Combo builder',
+      caption:
+        'Category and package selection screens make the marketplace deeper by supporting richer booking combinations instead of a flat list-only flow.',
+    },
+    {
+      src: '/aaspas-showcase/app-screens/payment-flow-alt.png',
+      title: 'Payment setup',
+      accent: 'Checkout state',
+      caption:
+        'Advance booking fee, payment option choice, and money-related UI states are handled through a customer-ready checkout surface.',
+    },
+    {
+      src: '/aaspas-showcase/app-screens/ai-concierge-alt.png',
+      title: 'AI booking help',
+      accent: 'Conversational assist',
+      caption:
+        'The AI concierge can understand service requests, respond in multiple languages, and guide users toward nearby workers and booking actions.',
+    },
+    {
+      src: '/aaspas-showcase/app-screens/live-tracking-alt.png',
+      title: 'Tracking map',
+      accent: 'Live movement',
+      caption:
+        'Active booking state is paired with a live map, ETA awareness, and motion visibility so customers can follow the worker journey in real time.',
+    },
+    {
+      src: '/aaspas-showcase/app-screens/worker-dashboard-alt.png',
+      title: 'Worker home',
+      accent: 'Daily controls',
+      caption:
+        'The worker-facing home surface is built for operations, with quick actions, earnings entry points, support, and job handling readiness.',
+    },
+    {
+      src: '/aaspas-showcase/app-screens/earnings-ops-alt.jpg',
+      title: 'Worker earnings',
+      accent: 'Income visibility',
+      caption:
+        'Operational and money-facing worker screens are designed to make earnings, payouts, and business-side clarity visible inside the app.',
+    },
+    {
+      src: '/aaspas-showcase/app-screens/wallet-summary-alt.png',
+      title: 'Wallet summary',
+      accent: 'Settlement layer',
+      caption:
+        'The worker wallet surface exposes balance, payout setup, commission effect, and summary-level settlement awareness.',
+    },
+    {
       src: '/aaspas-showcase/app-screens/customer-home.png',
       title: 'Customer discovery',
       accent: 'Service search',
