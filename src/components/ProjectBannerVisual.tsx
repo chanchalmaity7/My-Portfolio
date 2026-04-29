@@ -1,8 +1,8 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useInView } from 'framer-motion';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type ProjectBannerVisualProps = {
   alt: string;
@@ -50,22 +50,24 @@ export default function ProjectBannerVisual({
   variant,
 }: ProjectBannerVisualProps) {
   const [activeAaspasScreen, setActiveAaspasScreen] = useState(0);
+  const visualRef = useRef<HTMLDivElement | null>(null);
+  const isVisualInView = useInView(visualRef, { amount: 0.35 });
 
   useEffect(() => {
-    if (variant !== 'aaspasLottie') return;
+    if (variant !== 'aaspasLottie' || !isVisualInView) return;
 
     const interval = window.setInterval(() => {
       setActiveAaspasScreen((prev) => (prev + 1) % aaspasBannerScreens.length);
-    }, 2100);
+    }, 3200);
 
     return () => window.clearInterval(interval);
-  }, [variant]);
+  }, [isVisualInView, variant]);
 
   if (variant === 'aaspasLottie') {
     const currentScreen = aaspasBannerScreens[activeAaspasScreen];
 
     return (
-      <div className="relative h-full w-full overflow-hidden bg-[radial-gradient(circle_at_22%_20%,rgba(34,211,238,0.20),transparent_30%),radial-gradient(circle_at_78%_18%,rgba(59,130,246,0.18),transparent_32%),linear-gradient(135deg,#07111f_0%,#0f2b63_52%,#09111f_100%)]">
+      <div ref={visualRef} className="relative h-full w-full overflow-hidden bg-[radial-gradient(circle_at_22%_20%,rgba(34,211,238,0.20),transparent_30%),radial-gradient(circle_at_78%_18%,rgba(59,130,246,0.18),transparent_32%),linear-gradient(135deg,#07111f_0%,#0f2b63_52%,#09111f_100%)]">
         <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,.45)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.45)_1px,transparent_1px)] [background-size:42px_42px]" />
         <AnimatePresence mode="wait">
           <motion.div
@@ -81,7 +83,7 @@ export default function ProjectBannerVisual({
               alt={alt}
               fill
               sizes={sizes}
-              className="object-cover object-top opacity-30 blur-[2px]"
+              className="object-cover object-top opacity-24"
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,31,0.1)_0%,rgba(7,17,31,0.42)_35%,rgba(7,17,31,0.84)_100%)]" />
           </motion.div>
@@ -100,8 +102,7 @@ export default function ProjectBannerVisual({
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="relative h-[88%] w-[176px] rounded-[2rem] border border-white/12 bg-slate-950/82 p-2 shadow-[0_18px_44px_rgba(0,0,0,0.42)]"
             >
-              <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-slate-950 via-slate-950/96 to-slate-950/70" />
-              <div className="pointer-events-none absolute left-1/2 top-1 z-20 h-7 w-28 -translate-x-1/2 rounded-b-[1.2rem] rounded-t-[0.9rem] bg-slate-950 shadow-[0_10px_18px_rgba(0,0,0,0.35)]" />
+              <div className="pointer-events-none absolute left-1/2 top-0 z-20 h-6 w-24 -translate-x-1/2 rounded-b-[1rem] bg-[#020617] shadow-[0_2px_8px_rgba(0,0,0,0.18)]" />
               <div className="relative h-full overflow-hidden rounded-[1.55rem]">
                 <Image
                   src={currentScreen.src}
@@ -134,7 +135,7 @@ export default function ProjectBannerVisual({
 
   if (variant === 'smartBoxPhone' && image) {
     return (
-      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_20%_16%,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(59,130,246,0.16),transparent_32%),linear-gradient(180deg,#07111f_0%,#0b1630_100%)]">
+      <div ref={visualRef} className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_20%_16%,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(59,130,246,0.16),transparent_32%),linear-gradient(180deg,#07111f_0%,#0b1630_100%)]">
         <div className="absolute inset-0 opacity-15 [background-image:linear-gradient(rgba(255,255,255,.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.5)_1px,transparent_1px)] [background-size:34px_34px]" />
         <div className="absolute left-6 top-6 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-emerald-100">
           Realtime control
@@ -143,8 +144,7 @@ export default function ProjectBannerVisual({
           Energy analytics
         </div>
         <div className="relative h-[92%] w-[175px] rounded-[2rem] border border-white/12 bg-slate-950/80 p-2 shadow-[0_0_40px_rgba(14,165,233,0.18)]">
-          <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-slate-950 via-slate-950/96 to-slate-950/70" />
-          <div className="pointer-events-none absolute left-1/2 top-1 z-20 h-7 w-28 -translate-x-1/2 rounded-b-[1.2rem] rounded-t-[0.9rem] bg-slate-950 shadow-[0_10px_18px_rgba(0,0,0,0.35)]" />
+          <div className="pointer-events-none absolute left-1/2 top-0 z-20 h-6 w-24 -translate-x-1/2 rounded-b-[1rem] bg-[#020617] shadow-[0_2px_8px_rgba(0,0,0,0.18)]" />
           <div className="relative h-full overflow-hidden rounded-[1.6rem]">
             <Image
               src={image}

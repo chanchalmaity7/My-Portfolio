@@ -37,6 +37,14 @@ type ShowcaseApp = {
   imageContain?: boolean;
 };
 
+type FlagshipPhoneScreen = {
+  src: string;
+  title: string;
+  accent: string;
+  appName: string;
+  fit?: 'cover' | 'contain';
+};
+
 const flagshipMetrics = aaspasCaseStudy.heroMetrics;
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 
@@ -334,7 +342,37 @@ export default function AppShowcase() {
   );
 
   const activeApp = apps[currentApp];
-  const flagshipPhoneScreens = aaspasCaseStudy.homePhoneScreens;
+  const flagshipPhoneScreens = useMemo<FlagshipPhoneScreen[]>(
+    () => [
+      ...aaspasCaseStudy.homePhoneScreens.map((screen) => ({
+        src: screen.src,
+        title: screen.title,
+        accent: screen.accent,
+        appName: 'AasPas',
+        fit: 'cover' as const,
+      })),
+      {
+        src: aaspasSmartBoxCaseStudy.showcaseGallery[0].src,
+        title: 'Device dashboard',
+        accent: 'IoT product surface',
+        appName: 'Smart Box',
+      },
+      {
+        src: aaspasSmartBoxCaseStudy.showcaseGallery[2].src,
+        title: 'Relay control',
+        accent: 'Connected automation',
+        appName: 'Smart Box',
+      },
+      {
+        src: aiCameraProjectCaseStudy.assets.poster,
+        title: 'Camera poster',
+        accent: 'Mobile imaging app',
+        appName: 'AI Camera Pro',
+        fit: 'contain',
+      },
+    ],
+    []
+  );
 
   useEffect(() => {
     const applyScreenMode = () => setIsLargeScreen(window.innerWidth >= 1024);
@@ -386,12 +424,12 @@ export default function AppShowcase() {
 
     const interval = window.setInterval(() => {
       if (!isWindowScrolling && !isDragging) {
-        setCurrentAaspasPhoneScreen((prev) => (prev + 1) % aaspasCaseStudy.homePhoneScreens.length);
+        setCurrentAaspasPhoneScreen((prev) => (prev + 1) % flagshipPhoneScreens.length);
       }
-    }, 2400);
+    }, 3400);
 
     return () => window.clearInterval(interval);
-  }, [isDragging, isShowcaseInView, isWindowScrolling]);
+  }, [flagshipPhoneScreens.length, isDragging, isShowcaseInView, isWindowScrolling]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -553,11 +591,11 @@ export default function AppShowcase() {
                 const dragProgress = clamp(-mobileDragOffset / 120, -1.2, 1.2);
                 const virtualPosition = offset - dragProgress;
                 const distance = Math.abs(virtualPosition);
-                const isNear = distance <= 1.7;
+                const isNear = distance <= 1.05;
 
-                const angle = virtualPosition * 0.9;
-                const x = Math.sin(angle) * 92;
-                const y = (1 - Math.cos(angle)) * 34;
+                const angle = virtualPosition * 0.8;
+                const x = Math.sin(angle) * 78;
+                const y = (1 - Math.cos(angle)) * 28;
                 const scale = 1 - Math.min(distance, 1.4) * 0.18;
                 const opacity = 1 - Math.min(distance, 1.4) * 0.32;
                 const rotate = virtualPosition * 7;
@@ -587,18 +625,21 @@ export default function AppShowcase() {
                     <div className="h-[500px] w-[250px] rounded-[2.3rem] bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-1 shadow-2xl shadow-black/40">
                       <div className="h-full rounded-[2rem] bg-slate-950 p-2">
                         <div className="relative h-full overflow-hidden rounded-[1.7rem] bg-slate-900">
-                          <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-slate-950 via-slate-950/96 to-slate-950/70" />
-                          <div className="pointer-events-none absolute left-1/2 top-1 z-20 h-7 w-28 -translate-x-1/2 rounded-b-[1.2rem] rounded-t-[0.9rem] bg-slate-950 shadow-[0_10px_18px_rgba(0,0,0,0.35)]" />
+                          <div className="pointer-events-none absolute left-1/2 top-0 z-20 h-6 w-24 -translate-x-1/2 rounded-b-[1rem] bg-[#020617] shadow-[0_2px_8px_rgba(0,0,0,0.18)]" />
                           <Image
                             src={screen.src}
                             alt={screen.title}
                             fill
                             sizes="250px"
-                            className="object-cover object-top"
+                            className={
+                              screen.fit === 'contain'
+                                ? 'object-contain p-4'
+                                : 'object-cover object-top'
+                            }
                           />
                           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-transparent p-5 pt-20">
                             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">{screen.accent}</p>
-                            <h4 className="mt-2 text-xl font-black text-white">AasPas</h4>
+                            <h4 className="mt-2 text-xl font-black text-white">{screen.appName}</h4>
                           </div>
                         </div>
                       </div>
@@ -619,7 +660,7 @@ export default function AppShowcase() {
               {flagshipPhoneScreens.map((screen, index) => {
                 const offset = getCircularOffset(index, currentAaspasPhoneScreen, flagshipPhoneScreens.length);
                 const isActive = offset === 0;
-                const isNear = Math.abs(offset) <= 2;
+                const isNear = Math.abs(offset) <= 1;
 
                 if (!isNear) return null;
 
@@ -631,33 +672,35 @@ export default function AppShowcase() {
                     className="absolute left-1/2 top-1/2 block -translate-x-1/2 -translate-y-1/2 text-left outline-none"
                     initial={false}
                     animate={{
-                      x: offset * 82,
-                      y: Math.abs(offset) * 18,
+                      x: offset * 74,
+                      y: Math.abs(offset) * 14,
                       rotate: offset * 5,
                       scale: isActive ? 1 : 0.82,
                       opacity: isActive ? 1 : 0.45,
                       zIndex: isActive ? 20 : 10 - Math.abs(offset),
                     }}
                     transition={{ duration: isDragging ? 0.18 : 0.45, ease: [0.22, 1, 0.36, 1] }}
-                    whileHover={{ y: isActive ? -8 : Math.abs(offset) * 18 - 4 }}
                     style={{ willChange: 'transform, opacity' }}
                     aria-label={`Show ${screen.title}`}
                   >
                     <div className="h-[500px] w-[250px] rounded-[2.3rem] bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-1 shadow-2xl shadow-black/40">
                       <div className="h-full rounded-[2rem] bg-slate-950 p-2">
                         <div className="relative h-full overflow-hidden rounded-[1.7rem] bg-slate-900">
-                          <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-slate-950 via-slate-950/96 to-slate-950/70" />
-                          <div className="pointer-events-none absolute left-1/2 top-1 z-20 h-7 w-28 -translate-x-1/2 rounded-b-[1.2rem] rounded-t-[0.9rem] bg-slate-950 shadow-[0_10px_18px_rgba(0,0,0,0.35)]" />
+                          <div className="pointer-events-none absolute left-1/2 top-0 z-20 h-6 w-24 -translate-x-1/2 rounded-b-[1rem] bg-[#020617] shadow-[0_2px_8px_rgba(0,0,0,0.18)]" />
                           <Image
                             src={screen.src}
                             alt={screen.title}
                             fill
                             sizes="250px"
-                            className="object-cover object-top"
+                            className={
+                              screen.fit === 'contain'
+                                ? 'object-contain p-4'
+                                : 'object-cover object-top'
+                            }
                           />
                           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-transparent p-5 pt-20">
                             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">{screen.accent}</p>
-                            <h4 className="mt-2 text-xl font-black text-white">AasPas</h4>
+                            <h4 className="mt-2 text-xl font-black text-white">{screen.appName}</h4>
                           </div>
                         </div>
                       </div>
@@ -703,8 +746,7 @@ export default function AppShowcase() {
                           <div className="rounded-[2rem] bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-1 shadow-2xl shadow-black/35">
                             <div className="rounded-[1.75rem] bg-slate-950 p-2">
                               <div className="relative h-[320px] overflow-hidden rounded-[1.45rem] bg-slate-900">
-                                <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-slate-950 via-slate-950/96 to-slate-950/70" />
-                                <div className="pointer-events-none absolute left-1/2 top-1 z-20 h-7 w-28 -translate-x-1/2 rounded-b-[1.2rem] rounded-t-[0.9rem] bg-slate-950 shadow-[0_10px_18px_rgba(0,0,0,0.35)]" />
+                                <div className="pointer-events-none absolute left-1/2 top-0 z-20 h-4 w-20 -translate-x-1/2 rounded-b-[0.85rem] bg-[#020617] shadow-[0_2px_6px_rgba(0,0,0,0.16)]" />
                                 <Image
                                   src={shot.src}
                                   alt={shot.title}
