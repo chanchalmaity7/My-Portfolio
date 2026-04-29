@@ -381,7 +381,7 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className={`group overflow-hidden rounded-[1.8rem] border bg-white/[0.05] shadow-2xl shadow-slate-950/30 backdrop-blur-xl transition-all duration-300 ${
+                className={`group overflow-hidden rounded-[1.8rem] border bg-white/[0.05] shadow-xl shadow-slate-950/22 backdrop-blur-sm transition-all duration-300 md:backdrop-blur-md transform-gpu will-change-transform ${
                   index === 0 ? 'border-cyan-300/35 lg:col-span-2' : 'border-white/10 hover:border-cyan-300/30'
                 }`}
               >

@@ -333,6 +333,7 @@ export default function AppShowcase() {
   );
 
   const activeApp = apps[currentApp];
+  const flagshipPhoneScreens = aaspasCaseStudy.homePhoneScreens;
 
   useEffect(() => {
     const applyScreenMode = () => setIsLargeScreen(window.innerWidth >= 1024);
@@ -362,7 +363,7 @@ export default function AppShowcase() {
 
     const interval = window.setInterval(() => {
       setCurrentAaspasPhoneScreen((prev) => (prev + 1) % aaspasCaseStudy.homePhoneScreens.length);
-    }, 1650);
+    }, 2400);
 
     return () => window.clearInterval(interval);
   }, [isShowcaseInView]);
@@ -384,8 +385,10 @@ export default function AppShowcase() {
     const minSwipeDistance = 45;
 
     if (Math.abs(swipeDistance) > minSwipeDistance) {
-      setCurrentApp((prev) =>
-        swipeDistance > 0 ? (prev + 1) % apps.length : (prev - 1 + apps.length) % apps.length
+      setCurrentAaspasPhoneScreen((prev) =>
+        swipeDistance > 0
+          ? (prev + 1) % flagshipPhoneScreens.length
+          : (prev - 1 + flagshipPhoneScreens.length) % flagshipPhoneScreens.length
       );
     }
 
@@ -425,7 +428,7 @@ export default function AppShowcase() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.75 }}
             viewport={{ once: true }}
-            className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-5 shadow-2xl shadow-cyan-950/40 backdrop-blur-xl sm:p-7"
+            className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-5 shadow-xl shadow-cyan-950/28 backdrop-blur-sm sm:p-7 md:backdrop-blur-md"
           >
             <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
               <div>
@@ -520,17 +523,12 @@ export default function AppShowcase() {
             onTouchEnd={handleTouchEnd}
           >
             <div className="absolute inset-x-0 top-0 mx-auto h-[500px] max-w-[310px]">
-              {apps.map((app, index) => {
-                const offset = getCircularOffset(index, currentApp, apps.length);
+              {flagshipPhoneScreens.map((screen, index) => {
+                const offset = getCircularOffset(index, currentAaspasPhoneScreen, flagshipPhoneScreens.length);
                 const dragProgress = clamp(-mobileDragOffset / 120, -1.2, 1.2);
                 const virtualPosition = offset - dragProgress;
                 const distance = Math.abs(virtualPosition);
                 const isNear = distance <= 1.7;
-                const activePhoneScreen =
-                  app.name === 'AasPas' && app.phoneScreens
-                    ? app.phoneScreens[currentAaspasPhoneScreen]
-                    : undefined;
-                const previewImage = activePhoneScreen?.src ?? app.image;
 
                 const angle = virtualPosition * 0.9;
                 const x = Math.sin(angle) * 92;
@@ -544,9 +542,9 @@ export default function AppShowcase() {
 
                 return (
                   <motion.button
-                    key={app.name}
+                    key={`${screen.title}-${index}`}
                     type="button"
-                    onClick={() => setCurrentApp(index)}
+                    onClick={() => setCurrentAaspasPhoneScreen(index)}
                     className="absolute left-1/2 top-1/2 block -translate-x-1/2 -translate-y-1/2 text-left outline-none"
                     initial={false}
                     animate={{
@@ -558,24 +556,23 @@ export default function AppShowcase() {
                       zIndex,
                     }}
                     transition={{ duration: isDragging ? 0.08 : 0.24, ease: [0.22, 1, 0.36, 1] }}
-                    aria-label={`Show ${app.name}`}
+                    style={{ willChange: 'transform, opacity' }}
+                    aria-label={`Show ${screen.title}`}
                   >
-                    <div
-                      className={`h-[500px] w-[250px] rounded-[2.3rem] bg-gradient-to-br ${app.gradient} p-1 shadow-2xl shadow-black/40`}
-                    >
+                    <div className="h-[500px] w-[250px] rounded-[2.3rem] bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-1 shadow-2xl shadow-black/40">
                       <div className="h-full rounded-[2rem] bg-slate-950 p-2">
                         <div className="relative h-full overflow-hidden rounded-[1.7rem] bg-slate-900">
                           <div className="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-950" />
                           <Image
-                            src={previewImage}
-                            alt={activePhoneScreen?.title ?? `${app.name} screenshot`}
+                            src={screen.src}
+                            alt={screen.title}
                             fill
                             sizes="250px"
-                            className={app.imageContain ? 'object-contain p-7' : 'object-cover'}
+                            className="object-cover object-top"
                           />
                           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-transparent p-5 pt-20">
-                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">{app.label}</p>
-                            <h4 className="mt-2 text-xl font-black text-white">{app.name}</h4>
+                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">{screen.accent}</p>
+                            <h4 className="mt-2 text-xl font-black text-white">AasPas</h4>
                           </div>
                         </div>
                       </div>
@@ -593,23 +590,18 @@ export default function AppShowcase() {
             onTouchEnd={handleTouchEnd}
           >
             <div className="absolute inset-x-0 top-0 mx-auto h-[520px] max-w-[330px]">
-              {apps.map((app, index) => {
-                const offset = index - currentApp;
+              {flagshipPhoneScreens.map((screen, index) => {
+                const offset = getCircularOffset(index, currentAaspasPhoneScreen, flagshipPhoneScreens.length);
                 const isActive = offset === 0;
                 const isNear = Math.abs(offset) <= 2;
-                const activePhoneScreen =
-                  app.name === 'AasPas' && app.phoneScreens
-                    ? app.phoneScreens[currentAaspasPhoneScreen]
-                    : undefined;
-                const previewImage = activePhoneScreen?.src ?? app.image;
 
                 if (!isNear) return null;
 
                 return (
                   <motion.button
-                    key={app.name}
+                    key={`${screen.title}-${index}`}
                     type="button"
-                    onClick={() => setCurrentApp(index)}
+                    onClick={() => setCurrentAaspasPhoneScreen(index)}
                     className="absolute left-1/2 top-1/2 block -translate-x-1/2 -translate-y-1/2 text-left outline-none"
                     initial={false}
                     animate={{
@@ -622,24 +614,23 @@ export default function AppShowcase() {
                     }}
                     transition={{ duration: isDragging ? 0.18 : 0.45, ease: [0.22, 1, 0.36, 1] }}
                     whileHover={{ y: isActive ? -8 : Math.abs(offset) * 18 - 4 }}
-                    aria-label={`Show ${app.name}`}
+                    style={{ willChange: 'transform, opacity' }}
+                    aria-label={`Show ${screen.title}`}
                   >
-                    <div
-                      className={`h-[500px] w-[250px] rounded-[2.3rem] bg-gradient-to-br ${app.gradient} p-1 shadow-2xl shadow-black/40`}
-                    >
+                    <div className="h-[500px] w-[250px] rounded-[2.3rem] bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-1 shadow-2xl shadow-black/40">
                       <div className="h-full rounded-[2rem] bg-slate-950 p-2">
                         <div className="relative h-full overflow-hidden rounded-[1.7rem] bg-slate-900">
                           <div className="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-950" />
                           <Image
-                            src={previewImage}
-                            alt={activePhoneScreen?.title ?? `${app.name} screenshot`}
+                            src={screen.src}
+                            alt={screen.title}
                             fill
                             sizes="250px"
-                            className={app.imageContain ? 'object-contain p-7' : 'object-cover'}
+                            className="object-cover object-top"
                           />
                           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-transparent p-5 pt-20">
-                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">{app.label}</p>
-                            <h4 className="mt-2 text-xl font-black text-white">{app.name}</h4>
+                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">{screen.accent}</p>
+                            <h4 className="mt-2 text-xl font-black text-white">AasPas</h4>
                           </div>
                         </div>
                       </div>
@@ -658,7 +649,7 @@ export default function AppShowcase() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.35 }}
-            className="mt-10 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] p-4 shadow-2xl shadow-slate-950/30 backdrop-blur-xl sm:p-6 lg:p-8"
+            className="mt-10 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] p-4 shadow-xl shadow-slate-950/22 backdrop-blur-sm sm:p-6 md:backdrop-blur-md lg:p-8"
           >
             <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
               <div className="min-w-0">

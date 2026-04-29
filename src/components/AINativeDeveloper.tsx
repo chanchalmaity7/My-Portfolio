@@ -75,7 +75,7 @@ export default function AINativeDeveloper() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65 }}
             viewport={{ once: true }}
-            className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-slate-950/25 backdrop-blur-xl sm:p-8"
+            className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-xl shadow-slate-950/20 backdrop-blur-sm sm:p-8 md:backdrop-blur-md"
           >
             <div className="mb-6 grid gap-4 sm:grid-cols-[1.18fr_0.82fr]">
               <div className="overflow-hidden rounded-[1.7rem] border border-white/10 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.14),transparent_28%),linear-gradient(180deg,#07111f_0%,#0c1730_100%)]">
@@ -154,7 +154,7 @@ export default function AINativeDeveloper() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.55, delay: index * 0.06 }}
                 viewport={{ once: true }}
-                className="rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-slate-950/20 backdrop-blur-xl"
+                className="rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-6 shadow-xl shadow-slate-950/15 backdrop-blur-sm md:backdrop-blur-md"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <h3 className="text-2xl font-black text-white">{card.title}</h3>

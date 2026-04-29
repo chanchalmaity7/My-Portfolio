@@ -49,8 +49,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.15 }}
           className="relative order-1 mx-auto w-full min-w-0 max-w-[24rem] self-center lg:order-2 lg:max-w-md"
         >
-          <div className="absolute -inset-8 rounded-[3rem] bg-cyan-400/10 blur-3xl" />
-          <div className="relative rounded-[2rem] border border-white/10 bg-white/[0.07] p-3.5 shadow-2xl shadow-slate-950/50 backdrop-blur-xl sm:p-5">
+          <div className="absolute -inset-8 rounded-[3rem] bg-cyan-400/10 blur-2xl" />
+          <div className="relative rounded-[2rem] border border-white/10 bg-white/[0.07] p-3.5 shadow-xl shadow-slate-950/35 backdrop-blur-sm sm:p-5 md:backdrop-blur-md">
             <div className="relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-[radial-gradient(circle_at_20%_18%,rgba(34,211,238,0.16),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(16,185,129,0.14),transparent_30%),linear-gradient(180deg,#07111f_0%,#0c1730_100%)]">
               <div className="absolute inset-0 opacity-15 [background-image:linear-gradient(rgba(255,255,255,.6)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.6)_1px,transparent_1px)] [background-size:36px_36px]" />
               <div className="relative h-[280px] sm:h-[320px]">
@@ -154,7 +154,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 + index * 0.08, duration: 0.45 }}
-                className="rounded-2xl border border-white/10 bg-white/[0.06] p-4 backdrop-blur-xl"
+                className="rounded-2xl border border-white/10 bg-white/[0.06] p-4 backdrop-blur-sm md:backdrop-blur-md"
               >
                 <div className="text-2xl font-black text-white">{stat.value}</div>
                 <div className="mt-1 text-xs leading-5 text-slate-400">{stat.label}</div>
