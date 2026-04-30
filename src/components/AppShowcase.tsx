@@ -80,9 +80,9 @@ export default function AppShowcase() {
         })),
         gradient: 'from-cyan-400 via-blue-500 to-indigo-600',
         description:
-          'A production-grade hyperlocal service platform with customer booking, worker operations, multilingual AI booking help, React Native StyleSheet-driven screens, live tracking, native calls, payment automation, wallet settlement, support, reviews, and admin workflows.',
+          'A hyperlocal service platform with booking, worker operations, AI help, live tracking, native calls, payments, wallet settlement, support, reviews, and admin workflows.',
         proof:
-          'Built as a complete marketplace system: role-based mobile apps, React Native StyleSheet-based screen architecture, backend APIs, native Android modules, realtime sockets, route caching, multilingual AI assistance, payment reconciliation, worker earnings, settlement-aware money flows, and operational tooling.',
+          'Complete marketplace proof: role-based apps, backend APIs, native Android modules, realtime sockets, route caching, multilingual AI, payment reconciliation, earnings, and operations.',
         features: [
           'Service discovery and worker matching',
           'Multilingual AI booking assistant',
@@ -476,12 +476,10 @@ export default function AppShowcase() {
             Product engineering portfolio
           </p>
           <h2 className="text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
-            Products that prove mobile, backend, realtime, payment, native, and IoT systems depth.
+            Product systems, shown clearly.
           </h2>
           <p className="mx-auto mt-6 max-w-4xl text-base leading-8 text-slate-300 sm:text-lg">
-            This portfolio is intentionally structured to show product depth clearly: not only screens,
-            but the actual system thinking behind maps, wallet logic, booking state, notifications,
-            mobile recovery, native Android behaviors, and business-facing operations.
+            Real app screens, concise proof, and enough engineering detail to understand the depth without overloading the home page.
           </p>
         </motion.div>
 
@@ -512,7 +510,10 @@ export default function AppShowcase() {
             </p>
 
             <div className="mt-5 rounded-3xl border border-emerald-300/20 bg-emerald-300/10 p-5">
-              <p className="text-sm leading-7 text-emerald-100">{aaspasCaseStudy.soloNarrative}</p>
+              <p className="text-sm leading-7 text-emerald-100">
+                Built as a complete marketplace system, not a UI demo: role-based apps, backend APIs,
+                native Android modules, realtime state, payment logic, and operational tools.
+              </p>
             </div>
 
             <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -526,33 +527,16 @@ export default function AppShowcase() {
 
             <div className="mt-7 rounded-3xl border border-white/10 bg-slate-950/45 p-5">
               <div className="mb-4 flex items-center justify-between gap-3">
-                <h4 className="font-bold text-white">What makes AasPas unusually deep</h4>
+                <h4 className="font-bold text-white">AasPas depth</h4>
                 <span className="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-200">
-                  High-value interview proof
+                  Interview proof
                 </span>
               </div>
               <div className="grid gap-3 md:grid-cols-2">
-                {aaspasCaseStudy.homeProofBlocks.map((item) => (
+                {aaspasCaseStudy.homeProofBlocks.slice(0, 4).map((item) => (
                   <div key={item.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
                     <h5 className="text-sm font-black uppercase tracking-[0.18em] text-cyan-100">{item.title}</h5>
                     <p className="mt-3 text-sm leading-7 text-slate-300">{item.detail}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-7 rounded-3xl border border-white/10 bg-slate-950/45 p-5">
-              <div className="mb-4 flex items-center justify-between gap-3">
-                <h4 className="font-bold text-white">Technology footprint</h4>
-                <span className="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-200">
-                  Full-stack systems
-                </span>
-              </div>
-              <div className="grid gap-3 md:grid-cols-2">
-                {aaspasCaseStudy.technicalArchitecture.map((group) => (
-                  <div key={group.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                    <h5 className="text-sm font-black uppercase tracking-[0.18em] text-cyan-100">{group.title}</h5>
-                    <p className="mt-3 text-sm leading-7 text-slate-300">{group.summary}</p>
                   </div>
                 ))}
               </div>
@@ -791,7 +775,7 @@ export default function AppShowcase() {
               <div className="min-w-0">
                 <h4 className="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-slate-300">System proof</h4>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {activeApp.systems.map((system, idx) => (
+                  {activeApp.systems.slice(0, 4).map((system, idx) => (
                     <motion.div
                       key={system.title}
                       initial={{ opacity: 0, y: 10 }}
@@ -807,7 +791,7 @@ export default function AppShowcase() {
 
                 <h4 className="mb-4 mt-6 text-sm font-bold uppercase tracking-[0.22em] text-slate-300">Feature proof</h4>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                  {activeApp.features.map((feature, idx) => (
+                  {activeApp.features.slice(0, 6).map((feature, idx) => (
                     <motion.div
                       key={feature}
                       initial={{ opacity: 0, scale: 0.94 }}

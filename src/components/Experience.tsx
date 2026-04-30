@@ -8,13 +8,12 @@ const experiences = [
     company: 'Independent product development',
     period: '2022 - Present',
     description:
-      'Built production-grade mobile and web products end-to-end for more than three years, including AasPas, a large service marketplace with native Android calling, live tracking, payments, sockets, AI-assisted booking support, worker operations, and admin-ready backend logic.',
+      'Built mobile and web products end-to-end, including AasPas: a service marketplace with native Android calling, live tracking, payments, sockets, AI booking support, worker operations, and admin-ready backend logic.',
     achievements: [
-      'Designed complete booking, tracking, payment, wallet, review, and support workflows',
-      'Built custom native Android modules for call screens, notifications, location, and background behavior',
-      'Implemented realtime Socket.IO architecture with customer, worker, booking, and admin rooms',
-      'Integrated Razorpay, Firebase FCM, Agora, Google Maps, MongoDB, and Redis-style active state flows',
-      'Used high-control AI collaboration and prompt orchestration to accelerate complex implementation while preserving production correctness',
+      'Designed booking, tracking, payment, wallet, review, and support workflows',
+      'Built native Android modules for call screens, notifications, location, and background behavior',
+      'Implemented Socket.IO architecture for customer, worker, booking, and admin rooms',
+      'Integrated Razorpay, Firebase FCM, Agora, Google Maps, MongoDB, and Redis-style active state',
     ],
   },
   {
@@ -22,7 +21,7 @@ const experiences = [
     company: 'Client and portfolio projects',
     period: '2021 - 2022',
     description:
-      'Delivered modern web applications and business websites using React, Next.js, Node.js, MongoDB, authentication, payment integrations, and responsive UI systems.',
+      'Delivered web applications and business websites using React, Next.js, Node.js, MongoDB, auth, payments, and responsive UI systems.',
     achievements: [
       'Shipped e-commerce, food commerce, architecture, and learning platform projects',
       'Built JWT authentication, database models, admin flows, forms, and deployment pipelines',
@@ -44,7 +43,7 @@ export default function Experience() {
           className="mx-auto mb-14 max-w-3xl text-center"
         >
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.26em] text-cyan-200">Experience</p>
-          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">How I have been building</h2>
+          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">Building history</h2>
         </motion.div>
 
         <div className="mx-auto max-w-5xl">

@@ -36,7 +36,7 @@ type Project = {
 };
 
 export default function Projects() {
-  const [expandedProject, setExpandedProject] = useState<number | null>(0);
+  const [expandedProject, setExpandedProject] = useState<number | null>(null);
 
   const projects: Project[] = [
     {
@@ -44,9 +44,9 @@ export default function Projects() {
       image: aaspasCaseStudy.assets.heroCard,
       visualVariant: 'aaspasLottie',
       description:
-        'A full-stack React Native and Node.js platform for service booking, multilingual AI booking help, worker operations, native calling, live tracking, payment automation, wallet settlement, multilingual UX, and admin workflows.',
+        'A full-stack React Native and Node.js service marketplace with booking, payments, tracking, worker operations, AI help, native calls, and admin logic.',
       impact:
-        'Flagship proof of mobile engineering, backend architecture, native Android modules, realtime sockets, Redis and Mongo recovery, AI-guided booking support, payment correctness, live location systems, and business-facing operational tooling built solo.',
+        'Flagship proof of solo ownership across mobile UX, backend architecture, native Android, realtime state, payment correctness, and operations.',
       tech: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'MongoDB', 'Socket.IO', 'Redis', 'Firebase FCM', 'Agora', 'Razorpay'],
       status: 'Flagship product',
       gradient: 'from-cyan-500 to-blue-700',
@@ -86,9 +86,9 @@ export default function Projects() {
       image: aaspasSmartBoxCaseStudy.assets.phonePreview,
       visualVariant: 'smartBoxPhone',
       description:
-        'A full-stack smart-switch platform built around ESP32 hardware, cloud APIs, a web dashboard, a mobile app, relay automation, energy analytics, and device-recovery behavior.',
+        'A smart-switch platform with ESP32 hardware, cloud APIs, mobile app, web dashboard, relay automation, energy analytics, and recovery behavior.',
       impact:
-        'Strong proof of end-to-end IoT product engineering across device identity, backend automation, realtime transport, energy logic, mobile UX, web control surfaces, and power-loss handling.',
+        'End-to-end IoT proof across device identity, backend automation, realtime sync, energy logic, UX, and power-loss handling.',
       tech: ['ESP32', 'Expo', 'React Native', 'Next.js', 'Node.js', 'MongoDB', 'Socket.IO', 'JWT', 'Render'],
       status: 'IoT product system',
       gradient: 'from-sky-500 to-blue-700',
@@ -122,9 +122,9 @@ export default function Projects() {
       title: 'Mushdelight - Premium Food Commerce',
       image: mushdelightProjectCaseStudy.assets.poster,
       description:
-        'A premium food-commerce website with customer auth, OTP verification, order lifecycle handling, reviews, subscriber communication, and admin-side product operations.',
+        'A premium food-commerce website with auth, OTP verification, orders, reviews, subscriber communication, and admin operations.',
       impact:
-        'Shows deeper commerce execution across customer accounts, Mongo-backed products and orders, review systems, email communication, and brand-ready operational tooling.',
+        'Shows commerce depth through customer accounts, Mongo-backed orders, reviews, email flows, and brand-ready tooling.',
       tech: ['Next.js 15', 'React 19', 'TypeScript', 'MongoDB', 'Mongoose', 'JWT patterns', 'Brevo', 'Nodemailer', 'Framer Motion'],
       status: 'Commerce product',
       gradient: 'from-emerald-500 to-lime-600',
@@ -157,9 +157,9 @@ export default function Projects() {
       title: 'Lizz-Shop - Retail E-commerce Platform',
       image: lizzShopProjectCaseStudy.assets.poster,
       description:
-        'A full-stack retail storefront with category browsing, search, variant-aware product pages, cookie-authenticated sessions, wishlist, cart persistence, and merchandising sections.',
+        'A retail storefront with search, category browsing, variant-aware product pages, sessions, wishlist, cart persistence, and merchandising.',
       impact:
-        'Demonstrates practical ecommerce engineering through JWT-backed sessions, MongoDB user state, size and color variants, persistent shopping intent, and curated retail presentation.',
+        'Practical ecommerce engineering with JWT sessions, MongoDB user state, variants, persistent shopping intent, and retail presentation.',
       tech: ['Next.js 15', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB Atlas', 'Mongoose', 'JWT', 'cookies-next', 'Axios'],
       status: 'Retail commerce system',
       gradient: 'from-pink-500 to-rose-600',
@@ -192,9 +192,9 @@ export default function Projects() {
       title: 'AasPas Private Theater - Realtime Watch Party Website',
       image: streamingProjectCaseStudy.assets.poster,
       description:
-        'A collaborative watch-party website with host-controlled playback, join-link room entry, WebRTC voice, live chat, emoji reactions, and multi-source video support.',
+        'A collaborative watch-party website with host playback control, room links, WebRTC voice, chat, reactions, and multi-source video support.',
       impact:
-        'Strong proof of collaborative media engineering across playback authority, player abstraction, Socket.IO room sync, Mongo-backed recovery, and WebRTC communication.',
+        'Realtime media proof across playback authority, player abstraction, Socket.IO room sync, Mongo recovery, and WebRTC.',
       tech: ['Next.js', 'React 19', 'TypeScript', 'Node.js', 'MongoDB', 'Socket.IO', 'WebRTC', 'SimplePeer', 'ReactPlayer', 'react-youtube'],
       status: 'Realtime web product',
       gradient: 'from-red-500 to-fuchsia-700',
@@ -228,9 +228,9 @@ export default function Projects() {
       title: 'Visual Voicemail System',
       image: voicemailProjectCaseStudy.assets.poster,
       description:
-        'An Android-first visual voicemail product with Twilio call forwarding flow, voicemail inbox, unread state, greeting setup, and audio playback.',
+        'An Android-first visual voicemail product with Twilio forwarding, inbox state, greeting setup, and audio playback.',
       impact:
-        'Shows cross-layer product thinking across telephony webhooks, Mongo-backed voicemail storage, greeting handling, and mobile inbox UX.',
+        'Shows cross-layer thinking across telephony webhooks, Mongo storage, greeting handling, and mobile inbox UX.',
       tech: ['React Native', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Twilio', 'TwiML', 'Multer', 'React Native Sound'],
       status: 'Telephony workflow app',
       gradient: 'from-blue-500 to-emerald-600',
@@ -243,9 +243,9 @@ export default function Projects() {
       title: 'AI Camera Pro',
       image: aiCameraProjectCaseStudy.assets.poster,
       description:
-        'A premium camera-style React Native app with capture modes, gallery import, permission UX, device-side enhancement flow, quality selection, and polished preview behavior.',
+        'A premium camera-style React Native app with capture modes, import, permissions, enhancement flow, quality selection, and preview polish.',
       impact:
-        'Highlights mobile-product craftsmanship around permissions, processing flow, animation polish, and richer camera interactions beyond a basic utility screen.',
+        'Highlights mobile craftsmanship around permissions, processing, animation, and richer camera interactions.',
       tech: ['React Native', 'TypeScript', 'Image Picker', 'Image Resizer', 'react-native-permissions', 'Animated API'],
       status: 'Mobile imaging product',
       gradient: 'from-sky-500 to-indigo-700',
@@ -258,9 +258,9 @@ export default function Projects() {
       title: 'Building Junction - Architecture Consultancy',
       image: '/project/Building Junction.png',
       description:
-        'A premium business website for an architecture consultancy with service storytelling, portfolio presentation, responsive sections, and lead-generation structure.',
+        'A business website for an architecture consultancy with service storytelling, portfolio presentation, responsive sections, and lead flow.',
       impact:
-        'Demonstrates brand positioning, responsive design, SEO-friendly content hierarchy, and business-focused website execution.',
+        'Demonstrates brand positioning, responsive design, SEO-friendly hierarchy, and business-focused execution.',
       tech: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Responsive Design', 'SEO', 'Framer Motion'],
       status: 'Live demo',
       gradient: 'from-orange-500 to-red-600',
@@ -287,9 +287,9 @@ export default function Projects() {
       title: 'EduQuest - Gamified Learning Platform',
       image: '/project/EduQuest .png',
       description:
-        'A gamified learning product with quiz flows, progress mechanics, role-based learning ideas, PWA thinking, and interactive frontend architecture.',
+        'A gamified learning product with quiz flows, progress mechanics, role-based ideas, PWA thinking, and interactive frontend work.',
       impact:
-        'Highlights product creativity with learning loops, gamification, responsive UX, and ambitious hackathon-style execution.',
+        'Highlights product creativity with learning loops, gamification, responsive UX, and rapid execution.',
       tech: ['React', 'TypeScript', 'Vite', 'React Three Fiber', 'PWA', 'Tailwind CSS'],
       status: 'Hackathon project',
       gradient: 'from-sky-500 to-cyan-600',
@@ -316,9 +316,9 @@ export default function Projects() {
       title: 'Private Client Systems',
       image: null,
       description:
-        'Confidential client projects across commerce, management dashboards, booking systems, realtime workflows, payment integrations, and business websites.',
+        'Confidential client work across commerce, dashboards, booking systems, realtime workflows, payments, and business websites.',
       impact:
-        'Shows ability to deliver under client constraints, handle NDA work, and translate business requirements into reliable software.',
+        'Shows delivery under client constraints, NDA responsibility, and business-to-software execution.',
       tech: ['React', 'Next.js', 'Node.js', 'MongoDB', 'TypeScript', 'Socket.IO', 'Payments', 'Cloud Deployment'],
       status: 'NDA protected',
       gradient: 'from-indigo-500 to-violet-700',
@@ -355,18 +355,16 @@ export default function Projects() {
           className="mx-auto mb-14 max-w-4xl text-center"
         >
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.26em] text-cyan-200">Selected work</p>
-          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">Projects with visible engineering depth</h2>
+          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">Selected product work</h2>
           <p className="mt-5 text-base leading-8 text-slate-300">
-            Each project is presented as a product system: what it solves, how it behaves, and what
-            level of engineering ownership it demonstrates.
+            A concise view of the strongest systems. Open details only when you want the deeper engineering proof.
           </p>
         </motion.div>
 
         <div className="mb-8 rounded-[1.8rem] border border-cyan-300/20 bg-cyan-300/10 p-6 text-slate-100">
           <p className="text-sm leading-8">
-            AasPas is the strongest proof of solo product ownership in this portfolio. It combines
-            maps, payments, wallet logic, realtime booking state, native Android, worker operations,
-            and business-side controls in one connected system.
+            AasPas is the flagship proof: maps, payments, wallet logic, realtime booking, native Android,
+            worker operations, and admin controls in one connected marketplace.
           </p>
         </div>
 

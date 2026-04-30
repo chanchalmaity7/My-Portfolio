@@ -6,28 +6,22 @@ import OptimizedLottie from '@/components/OptimizedLottie';
 
 const capabilityCards = [
   {
-    title: 'AI-native productivity',
-    badge: 'Execution speed',
+    title: 'Structured prompting',
+    badge: 'Planning',
     detail:
-      'I do not use AI as a novelty tool. I use it as an execution multiplier. When a problem is well-scoped, work that can take a conventional workflow ten hours can often be compressed into a focused thirty-minute delivery cycle through structured collaboration with GPT, Claude, and Gemini.',
+      'I break complex work into specs, constraints, implementation steps, and review passes before touching production code.',
   },
   {
-    title: 'Hallucination control',
-    badge: 'Reliability layer',
+    title: 'Verification discipline',
+    badge: 'Quality',
     detail:
-      'My advantage is not only generating output fast, but knowing when AI is wrong. I actively detect hallucinations, challenge weak logic, and drive the model toward production-ready behavior for complex flows such as native Android calling, payment correctness, recovery logic, and realtime state handling.',
+      'I check AI-assisted output against code, edge cases, runtime behavior, and product requirements instead of accepting it blindly.',
   },
   {
-    title: 'Prompt orchestration',
-    badge: 'Accuracy discipline',
+    title: 'Faster delivery',
+    badge: 'Leverage',
     detail:
-      'For architecture and system design, I use multi-step prompts, verification loops, constraint framing, and logic re-checks so the final output is not just fast but dependable enough to ship.',
-  },
-  {
-    title: 'Force multiplier on flagship products',
-    badge: 'Applied in real projects',
-    detail:
-      'I built major systems such as AasPas Marketplace, AasPas Smart Box, and AasPas Private Theater through deep AI collaboration while still owning the technical decisions, debugging, validation, and final production behavior myself.',
+      'This workflow helps me ship larger solo builds without losing ownership of architecture, debugging, and final decisions.',
   },
 ];
 
@@ -38,10 +32,7 @@ const orchestrationStack = [
   'Prompt decomposition',
   'Verification loops',
   'Architecture prompting',
-  'Hallucination detection',
-  'Spec refinement',
   'Diff review',
-  'Logic validation',
 ];
 
 export default function AINativeDeveloper() {
@@ -57,15 +48,14 @@ export default function AINativeDeveloper() {
           viewport={{ once: true }}
           className="mx-auto max-w-4xl text-center"
         >
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.26em] text-cyan-200">Elite skills</p>
-          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">AI-native developer with high-control prompt engineering</h2>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.26em] text-cyan-200">AI workflow</p>
+          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">AI-native, but engineering-led</h2>
           <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
-            I work with AI the way strong engineers work with powerful infrastructure: with control,
-            structure, and accountability. My edge is not simply using AI faster than others. It is
-            using AI to accelerate complex engineering without losing correctness.
+            I use GPT, Claude, and Gemini as engineering accelerators. The value is not only speed;
+            it is scoped prompting, careful review, and the ability to turn assistance into shippable work.
           </p>
           <div className="mt-6 inline-flex rounded-full border border-emerald-300/20 bg-emerald-300/10 px-5 py-2 text-sm font-bold text-emerald-200">
-            Visible portfolio strength: speed, control, verification, and production judgment
+            Speed with ownership, review, and production judgment
           </div>
         </motion.div>
 
@@ -113,24 +103,17 @@ export default function AINativeDeveloper() {
               </span>
             </div>
 
-            <h3 className="mt-6 text-3xl font-black text-white">How I collaborate with AI at a serious engineering level</h3>
+            <h3 className="mt-6 text-3xl font-black text-white">How I use AI in real builds</h3>
             <p className="mt-5 text-lg leading-8 text-slate-300">
-              I use AI to reduce execution time dramatically, but never by blindly accepting output.
-              I break systems into stages, set constraints, verify logic, and keep the final judgment
-              on architecture, edge cases, and production readiness in my own hands.
-            </p>
-            <p className="mt-5 text-lg leading-8 text-slate-300">
-              This is how I ship large solo builds with unusual depth. AasPas Marketplace, Smart Box,
-              and Private Theater were not created through copy-paste prompting. They were built through
-              guided AI collaboration, repeated validation, and engineering decisions strong enough for
-              complex mobile, backend, realtime, and device workflows.
+              I use AI to speed up architecture planning, debugging, implementation, and refactoring.
+              Then I review the result like normal engineering work: code paths, edge cases, build
+              output, and product behavior.
             </p>
 
             <div className="mt-7 rounded-[1.7rem] border border-emerald-300/20 bg-emerald-300/10 p-5">
               <p className="text-sm leading-8 text-emerald-100">
-                International teams and startups care about leverage. My leverage is that I can move
-                with AI-level speed while still protecting correctness, system quality, and production
-                behavior on real products.
+                Applied across AasPas Marketplace, Smart Box, and Private Theater where mobile,
+                backend, realtime, and device flows all need careful decisions.
               </p>
             </div>
 

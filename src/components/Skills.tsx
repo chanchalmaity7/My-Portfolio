@@ -5,32 +5,32 @@ import { motion } from 'framer-motion';
 const skillGroups = [
   {
     title: 'Mobile engineering',
-    summary: 'Mobile products with native Android behavior, background services, notifications, maps, payments, and cross-platform implementation breadth.',
+    summary: 'React Native and Flutter apps with native Android, maps, notifications, payments, and real device behavior.',
     items: ['React Native', 'Expo', 'Flutter', 'Native Android modules', 'Firebase FCM', 'Google Maps', 'Agora calls'],
   },
   {
     title: 'Backend systems',
-    summary: 'API, realtime, database, auth, payments, cache, and operational flows for production products across JavaScript and Python ecosystems.',
+    summary: 'APIs, realtime state, database models, auth, payments, and operational flows for product backends.',
     items: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Socket.IO', 'Redis patterns', 'Django', 'Flask'],
   },
   {
     title: 'Web products',
-    summary: 'Modern websites and dashboards with strong UI, SEO, responsiveness, and deployment readiness.',
+    summary: 'Next.js and React websites, dashboards, SEO structure, responsive UI, and deployment-ready frontend work.',
     items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'SEO structure', 'HTML5', 'CSS3'],
   },
   {
     title: 'Product architecture',
-    summary: 'Designing reliable user journeys across booking, payment, tracking, recovery, and admin operations.',
+    summary: 'Reliable booking, payment, tracking, recovery, role-based UX, and admin workflows.',
     items: ['Payment flows', 'Role-based UX', 'Realtime rooms', 'Recovery logic', 'i18n', 'Admin tooling'],
   },
   {
     title: 'Languages and foundations',
-    summary: 'Strong implementation comfort across modern product languages, lower-level foundations, markup, styling, and core application logic.',
+    summary: 'Comfort across product languages, lower-level foundations, markup, styling, and application logic.',
     items: ['TypeScript', 'JavaScript', 'Java', 'Python', 'C', 'C++', 'HTML5', 'CSS3', 'SQL'],
   },
   {
     title: 'AI collaboration and prompt engineering',
-    summary: 'Advanced use of GPT, Claude, and Gemini for architecture breakdown, verification loops, hallucination control, and faster production delivery.',
+    summary: 'GPT, Claude, and Gemini for architecture breakdown, review loops, debugging, and faster delivery.',
     items: ['Prompt orchestration', 'Hallucination control', 'Multi-step verification', 'Architecture prompting', 'AI-assisted debugging', 'Spec refinement'],
   },
 ];
@@ -49,8 +49,7 @@ export default function Skills() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.26em] text-cyan-200">Skill map</p>
           <h2 className="text-4xl font-black tracking-tight sm:text-5xl">Engineering range</h2>
           <p className="mt-5 text-base leading-8 text-slate-300">
-            I focus on building complete products: frontend, backend, native mobile behavior, realtime infrastructure,
-            payments, and operational reliability.
+            A compact map of the tools and systems I use to ship complete products.
           </p>
         </motion.div>
 

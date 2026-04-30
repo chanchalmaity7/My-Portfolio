@@ -7,10 +7,10 @@ import isometricUiuxAnimation from '@/animations/isometric-uiux.json';
 import OptimizedLottie from '@/components/OptimizedLottie';
 
 const proofStats = [
-  { value: 'Three-plus years', label: 'Building products across mobile, web, backend, realtime, and device systems' },
-  { value: 'AI-native', label: 'High-control collaboration with GPT, Claude, and Gemini for faster delivery' },
-  { value: 'Realtime + native', label: 'Mobile, backend, cloud, and device flows built end to end' },
-  { value: 'Twelve', label: 'Languages shipped for real user-facing product UX' },
+  { value: '3+ years', label: 'Product engineering' },
+  { value: 'AI-native', label: 'Fast, verified delivery' },
+  { value: 'Mobile + backend', label: 'End-to-end ownership' },
+  { value: 'Realtime', label: 'Maps, sockets, payments' },
 ];
 
 const coreStack = [
@@ -28,12 +28,6 @@ const coreStack = [
   'ESP32',
   'Java',
   'Python',
-  'Django',
-  'Flask',
-  'C',
-  'C++',
-  'HTML5',
-  'CSS3',
 ];
 
 export default function Hero() {
@@ -82,11 +76,10 @@ export default function Hero() {
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-200">
                   Now featuring
                 </p>
-                <h2 className="mt-2 text-2xl font-black">Marketplace, IoT, and commerce systems</h2>
+                <h2 className="mt-2 text-2xl font-black">Marketplace, IoT, commerce</h2>
                 <p className="mt-3 text-sm leading-7 text-slate-300">
-                  AasPas marketplace, AasPas Smart Box, and Mushdelight show end-to-end ownership
-                  across payments, live tracking, native Android, connected devices, automation,
-                  AI-assisted workflows, commerce journeys, and cloud-backed product behavior.
+                  Flagship work across AasPas, Smart Box, and commerce products with real workflows,
+                  backend logic, mobile UX, payments, and device control.
                 </p>
               </div>
 
@@ -94,11 +87,10 @@ export default function Hero() {
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200">
                   AI-native execution
                 </p>
-                <h2 className="mt-2 text-2xl font-black">Fast delivery without losing correctness</h2>
+                <h2 className="mt-2 text-2xl font-black">Fast delivery, verified logic</h2>
                 <p className="mt-3 text-sm leading-7 text-slate-300">
-                  I use GPT, Claude, and Gemini as force multipliers for architecture, debugging, and
-                  implementation, but I also control hallucinations, verify logic, and push output to
-                  production-ready quality on complex systems.
+                  I use GPT, Claude, and Gemini to move faster, then verify architecture, edge cases,
+                  and production behavior before shipping.
                 </p>
               </div>
             </div>
@@ -112,18 +104,17 @@ export default function Hero() {
           className="order-2 w-full min-w-0 max-w-4xl lg:order-1"
         >
           <p className="mb-5 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
-            Three-plus years of building AI-native mobile, realtime, IoT, and web products
+            AI-native full-stack and mobile product engineer
           </p>
 
           <h1 className="text-4xl font-black leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">
-            I build real products with mobile, backend, payments, maps, and native Android depth.
+            I build production-ready apps across mobile, backend, realtime, and IoT.
           </h1>
 
           <p className="mt-7 max-w-3xl text-base leading-8 text-slate-300 sm:text-xl">
-            I am Chanchal Maity, a developer focused on production-grade systems: React Native apps,
-            Next.js websites, Node.js APIs, realtime sockets, payment workflows, location tracking,
-            reliable mobile behavior beyond basic UI screens, and AI-native execution with strong
-            prompt control and verification discipline.
+            I am Chanchal Maity. My strongest work combines React Native, Next.js, Node.js,
+            MongoDB, Socket.IO, native Android modules, payments, maps, and AI-assisted engineering
+            into complete product systems.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const principles = [
-  'I prefer shipping complete user journeys, not isolated screens.',
-  'I design backend truth first for payments, booking state, and recovery.',
-  'I use native mobile code when React Native alone cannot deliver the right UX.',
-  'I care about reliability on real Android devices, poor networks, and background app states.',
+  'Complete user journeys over isolated UI screens.',
+  'Backend truth for payments, bookings, and recovery.',
+  'Native Android when cross-platform code is not enough.',
+  'Practical reliability on real devices and weak networks.',
 ];
 
 export default function About() {
@@ -22,7 +22,7 @@ export default function About() {
           className="mx-auto mb-14 max-w-3xl text-center"
         >
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.26em] text-cyan-200">About me</p>
-          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">A builder who connects product and engineering</h2>
+          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">Product-minded engineer</h2>
         </motion.div>
 
         <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
@@ -49,15 +49,13 @@ export default function About() {
 
             <h3 className="text-3xl font-black text-white">Chanchal Maity</h3>
             <p className="mt-5 text-lg leading-8 text-slate-300">
-              I build applications where mobile UX, backend correctness, realtime state, and business workflows all need
-              to work together. My strongest work is AasPas, a full-stack service marketplace that includes native Android
-              call screens, live tracking, booking workflows, payments, worker earnings, localization, AI booking assistance,
-              and admin operations.
+              I build products where mobile UX, backend correctness, realtime state, and business workflows need to work
+              together. My strongest proof is AasPas: a full-stack service marketplace with native Android flows,
+              tracking, payments, worker operations, AI booking support, and admin logic.
             </p>
             <p className="mt-5 text-lg leading-8 text-slate-300">
-              I am now positioning my work for serious interviews and remote opportunities, especially where teams value
-              ownership, product thinking, AI-native execution speed, and the ability to debug across frontend, backend,
-              native mobile, and production flows.
+              I am focused on remote roles and product teams that value ownership, AI-native execution, and the ability
+              to debug across frontend, backend, native mobile, and real user flows.
             </p>
 
             <div className="mt-7 grid gap-3">
