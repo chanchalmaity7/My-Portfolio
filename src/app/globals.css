@@ -27,6 +27,25 @@ html {
   background: #07111f;
 }
 
+.container {
+  width: 100%;
+  max-width: 100rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1679px) {
+  .container {
+    max-width: 92rem;
+  }
+}
+
+@media (max-width: 1279px) {
+  .container {
+    max-width: 72rem;
+  }
+}
+
 .render-section {
   position: relative;
   isolation: isolate;

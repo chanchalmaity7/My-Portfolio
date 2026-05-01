@@ -46,8 +46,8 @@ export default function Navbar() {
       transition={{ duration: 0.75, ease: 'easeOut' }}
       className={`fixed left-1/2 z-50 w-[95.5%] max-w-7xl -translate-x-1/2 rounded-2xl border shadow-xl backdrop-blur-md transition-all duration-300 transform-gpu origin-top will-change-transform ${
         scrolled
-          ? 'top-2 scale-[0.965] border-white/8 bg-slate-950/38 shadow-slate-950/18'
-          : 'top-4 scale-100 border-white/15 bg-slate-950/82 shadow-slate-950/45'
+          ? 'top-1 scale-[0.965] border-white/8 bg-slate-950/38 shadow-slate-950/18 md:top-2'
+          : 'top-2 scale-100 border-white/15 bg-slate-950/82 shadow-slate-950/45 md:top-4'
       }`}
     >
       <div className={`px-4 transition-all duration-300 sm:px-6 ${scrolled ? 'py-2.5' : 'py-3'}`}>
