@@ -20,7 +20,7 @@ export const aaspasCaseStudy = {
   ],
   assets: {
     heroCard: '/aaspas-showcase/verified-professionals.jpg',
-    heroBanner: '/aaspas-showcase/hero-collage.jpg',
+    heroBanner: '/aaspas-showcase/hero-collage1.jpg',
   },
   homePhoneScreens: [
     {
@@ -152,7 +152,7 @@ export const aaspasCaseStudy = {
   ],
   showcaseGallery: [
     {
-      src: '/aaspas-showcase/hero-collage.jpg',
+      src: '/aaspas-showcase/hero-collage1.jpg',
       title: 'Marketplace identity',
       caption:
         'AasPas positioned as a modern hyperlocal service brand with worker discovery, booking intent, and service-at-home messaging.',
