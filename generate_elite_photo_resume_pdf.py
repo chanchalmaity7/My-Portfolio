@@ -431,6 +431,18 @@ class EliteResume:
             self.text(MAIN_X, y2, detail, 7.45, "F1", BODY)
             y2 -= 11
 
+        y2 = self.main_heading("Interview Focus", y2 - 1)
+        y2 = self.main_bullets(
+            y2,
+            [
+                "End-to-end ownership across mobile apps, backend APIs, realtime state, payments, maps, and admin workflows.",
+                "Git/GitHub-based delivery with API testing, deployment workflows, and clean iteration habits.",
+                "Hardware-aware mindset from TRC/Brightex experience plus IoT experimentation.",
+            ],
+            7.35,
+            286,
+        )
+
         self.rect(MAIN_X, 31, MAIN_R - MAIN_X, 20, PANEL)
         self.text(MAIN_X + 9, 38.5, "Portfolio focus: mobile, backend, realtime, payments, native Android, IoT, and AI workflows.", 6.9, "F2", BLUE)
 

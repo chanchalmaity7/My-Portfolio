@@ -59,7 +59,7 @@ export default function Footer() {
           >
             <h4 className="mb-3 text-base font-semibold text-white sm:mb-4 sm:text-lg">Technologies</h4>
             <div className="flex flex-wrap gap-2">
-              {['React Native', 'Next.js', 'Node.js', 'MongoDB', 'Socket.IO', 'Python', 'Flutter', 'Bootstrap'].map((tech) => (
+              {['React Native', 'Next.js', 'Node.js', 'MongoDB', 'Socket.IO', 'Python', 'Flutter', 'Git/GitHub'].map((tech) => (
                 <span key={tech} className="rounded-full bg-slate-800 px-3 py-1 text-sm text-gray-300">
                   {tech}
                 </span>

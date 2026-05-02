@@ -24,9 +24,14 @@ const skillGroups = [
     items: ['Payment flows', 'Role-based UX', 'Realtime rooms', 'Recovery logic', 'i18n', 'Admin tooling'],
   },
   {
+    title: 'Tooling and delivery',
+    summary: 'Version control, API testing, package workflows, and deployment tools used across full-stack projects.',
+    items: ['Git', 'GitHub', 'Postman', 'API testing', 'npm', 'Vercel', 'Render', 'Deployment workflows'],
+  },
+  {
     title: 'Languages and foundations',
     summary: 'Comfort across product languages, lower-level foundations, markup, styling, and application logic.',
-    items: ['TypeScript', 'JavaScript', 'Java', 'Python', 'C', 'C++', 'HTML5', 'CSS3', 'SQL'],
+    items: ['TypeScript', 'JavaScript', 'Java', 'Python', 'C', 'C++', 'HTML5', 'CSS3', 'Bootstrap', 'SQL'],
   },
   {
     title: 'AI collaboration and prompt engineering',
