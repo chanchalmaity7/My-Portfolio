@@ -3,8 +3,8 @@
 const contactOptions = [
   {
     title: 'Email',
-    value: 'maitychanchal7@gmail.com',
-    href: 'mailto:maitychanchal7@gmail.com',
+    value: 'chanchal@aaspasindia.com',
+    href: 'mailto:chanchal@aaspasindia.com',
   },
   {
     title: 'WhatsApp',
@@ -40,7 +40,7 @@ export default function Contact() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="mailto:maitychanchal7@gmail.com"
+                  href="mailto:chanchal@aaspasindia.com"
                   className="inline-flex justify-center rounded-full bg-cyan-300 px-6 py-3 text-sm font-black text-slate-950 transition-transform hover:-translate-y-0.5"
                 >
                   Send email

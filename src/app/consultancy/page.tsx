@@ -8,7 +8,7 @@ export default function ConsultancyPage() {
   };
 
   const handleEmail = () => {
-    window.open('mailto:maitychanchal7@gmail.com?subject=Free Consultancy - Startup Plan&body=Hi, I want to book a free consultancy for the Startup Plan', '_blank');
+    window.open('mailto:chanchal@aaspasindia.com?subject=Free Consultancy - Startup Plan&body=Hi, I want to book a free consultancy for the Startup Plan', '_blank');
   };
 
   return (

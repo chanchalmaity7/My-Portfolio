@@ -11,8 +11,11 @@ const navItems = [
   { label: 'Projects', href: '#projects' },
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ];
+
+const resumeHref = '/resume/Chanchal_Maity_Resume.pdf';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +62,7 @@ export default function Navbar() {
             <span className="text-cyan-300">.</span>
           </a>
 
-          <div className="hidden items-center gap-1 md:flex">
+          <div className="hidden items-center gap-0.5 lg:flex">
             {navItems.map((item, index) => (
               <motion.a
                 key={item.href}
@@ -68,16 +71,27 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25 + index * 0.04, duration: 0.35 }}
                 whileHover={{ y: -2 }}
-                className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-300 transition-colors duration-300 hover:bg-cyan-300/10 hover:text-white"
+                className="rounded-xl px-2.5 py-2 text-xs font-semibold text-slate-300 transition-colors duration-300 hover:bg-cyan-300/10 hover:text-white xl:px-3 xl:text-sm"
               >
                 {item.label}
               </motion.a>
             ))}
+            <motion.a
+              href={resumeHref}
+              download="Chanchal_Maity_Resume.pdf"
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25 + navItems.length * 0.04, duration: 0.35 }}
+              whileHover={{ y: -2 }}
+              className="ml-2 rounded-xl bg-cyan-300 px-3.5 py-2 text-xs font-black text-slate-950 transition-colors hover:bg-cyan-200 xl:text-sm"
+            >
+              Download CV
+            </motion.a>
           </div>
 
           <button
             onClick={() => setIsOpen((value) => !value)}
-            className="rounded-xl border border-white/10 bg-white/8 px-4 py-2 text-sm font-bold text-white md:hidden"
+            className="rounded-xl border border-white/10 bg-white/8 px-4 py-2 text-sm font-bold text-white lg:hidden"
           >
             {isOpen ? 'Close' : 'Menu'}
           </button>
@@ -89,7 +103,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="mt-4 grid gap-2 border-t border-white/10 pt-4 md:hidden"
+            className="mt-4 grid gap-2 border-t border-white/10 pt-4 lg:hidden"
           >
             {navItems.map((item) => (
               <a
@@ -101,6 +115,14 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
+            <a
+              href={resumeHref}
+              download="Chanchal_Maity_Resume.pdf"
+              onClick={() => setIsOpen(false)}
+              className="rounded-xl bg-cyan-300 px-4 py-3 text-sm font-black text-slate-950 hover:bg-cyan-200"
+            >
+              Download My CV
+            </a>
           </motion.div>
         )}
       </div>

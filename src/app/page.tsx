@@ -6,6 +6,7 @@ import Skills from '@/components/Skills';
 import AINativeDeveloper from '@/components/AINativeDeveloper';
 import AppShowcase from '@/components/AppShowcase';
 import Projects from '@/components/Projects';
+import Education from '@/components/Education';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import HomeIntroSplash from '@/components/HomeIntroSplash';
@@ -23,6 +24,7 @@ export default function Home() {
         <section id="projects" className="render-section deferred-section"><Projects /></section>
         <section id="about" className="render-section deferred-section"><About /></section>
         <section id="experience" className="render-section deferred-section"><Experience /></section>
+        <section id="education" className="render-section deferred-section"><Education /></section>
         <section id="contact" className="render-section deferred-section"><Contact /></section>
       </main>
       <Footer />
