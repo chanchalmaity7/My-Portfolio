@@ -431,13 +431,13 @@ class EliteResume:
             self.text(MAIN_X, y2, detail, 7.45, "F1", BODY)
             y2 -= 11
 
-        y2 = self.main_heading("Interview Focus", y2 - 1)
+        y2 = self.main_heading("Core Strengths", y2 - 1)
         y2 = self.main_bullets(
             y2,
             [
-                "End-to-end ownership across mobile apps, backend APIs, realtime state, payments, maps, and admin workflows.",
-                "Git/GitHub-based delivery with API testing, deployment workflows, and clean iteration habits.",
-                "Hardware-aware mindset from TRC/Brightex experience plus IoT experimentation.",
+                "End-to-end product ownership across mobile apps, backend APIs, realtime systems, payments, maps, and admin workflows.",
+                "Version-controlled delivery with Git/GitHub, API testing, deployment workflows, and clean iteration habits.",
+                "Hardware-aware engineering mindset from TRC/Brightex experience and IoT experimentation.",
             ],
             7.35,
             286,
