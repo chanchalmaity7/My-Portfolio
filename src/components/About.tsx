@@ -6,6 +6,7 @@ import Image from 'next/image';
 const principles = [
   'Complete user journeys over isolated UI screens.',
   'Backend truth for payments, bookings, and recovery.',
+  'Data-structure thinking for complex state and edge cases.',
   'Native Android when cross-platform code is not enough.',
   'Practical reliability on real devices and weak networks.',
 ];
@@ -29,7 +30,7 @@ export default function About() {
           <div className="relative mx-auto w-full max-w-sm">
             <div className="absolute -inset-5 rounded-[2.2rem] bg-cyan-400/10 blur-2xl" />
             <div className="relative h-[420px] overflow-hidden rounded-[2rem] border border-white/10 shadow-xl shadow-slate-950/28">
-              <Image src="/img/chanchal.jpg" alt="Chanchal Maity" fill className="object-cover" />
+              <Image src="/img/chanchal-professional.jpg" alt="Chanchal Maity" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
             </div>
           </div>
@@ -51,11 +52,11 @@ export default function About() {
             <p className="mt-5 text-lg leading-8 text-slate-300">
               I build products where mobile UX, backend correctness, realtime state, and business workflows need to work
               together. My strongest proof is AasPas: a full-stack service marketplace with native Android flows,
-              tracking, payments, worker operations, AI booking support, and admin logic.
+              tracking, payments, worker operations, AI booking support, admin logic, and complex recovery problems.
             </p>
             <p className="mt-5 text-lg leading-8 text-slate-300">
               I am focused on remote roles and product teams that value ownership, AI-native execution, and the ability
-              to debug across frontend, backend, native mobile, and real user flows.
+              to debug across frontend, backend, native mobile, data structures, and real user flows.
             </p>
 
             <div className="mt-7 grid gap-3">

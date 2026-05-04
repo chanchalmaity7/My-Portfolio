@@ -1,0 +1,90 @@
+ ⨯ [Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.uofog9h5s3'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.uofog9h5s3'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.gj3fskda8br'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.gj3fskda8br'
+}
+[Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.uofog9h5s3'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.uofog9h5s3'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.hubcbcbwovu'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.hubcbcbwovu'
+}
+[Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.i1kd3xwfsyo'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.i1kd3xwfsyo'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.mxd3kj94tti'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.mxd3kj94tti'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.b7dj3tfvvfj'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.b7dj3tfvvfj'
+}
+[Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.mxd3kj94tti'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.mxd3kj94tti'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.01tggueutni6'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.01tggueutni6'
+}
+[Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.clyg6x9jel8'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.clyg6x9jel8'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.aco50th3s6q'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.aco50th3s6q'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.aj7ub1jkz8p'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.aj7ub1jkz8p'
+}
+[Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.aco50th3s6q'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.aco50th3s6q'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.pt1zsxt6alc'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.pt1zsxt6alc'
+}
+[Error: ENOENT: no such file or directory, open 'C:\Users\maity\OneDrive\Desktop\my_portfolio\.next\static\development\_buildManifest.js.tmp.ze7s8zncoyg'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\maity\\OneDrive\\Desktop\\my_portfolio\\.next\\static\\development\\_buildManifest.js.tmp.ze7s8zncoyg'
+}

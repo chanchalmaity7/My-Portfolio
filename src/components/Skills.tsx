@@ -24,6 +24,11 @@ const skillGroups = [
     items: ['Payment flows', 'Role-based UX', 'Realtime rooms', 'Recovery logic', 'i18n', 'Admin tooling'],
   },
   {
+    title: 'Problem solving and debugging',
+    summary: 'DSA-style thinking for edge cases, state correctness, recovery paths, and hard production bugs.',
+    items: ['Problem solving', 'Data structures', 'Algorithms', 'Debugging', 'Edge cases', 'State consistency', 'Race conditions'],
+  },
+  {
     title: 'Tooling and delivery',
     summary: 'Version control, API testing, package workflows, and deployment tools used across full-stack projects.',
     items: ['Git', 'GitHub', 'Postman', 'API testing', 'npm', 'Vercel', 'Render', 'Deployment workflows'],

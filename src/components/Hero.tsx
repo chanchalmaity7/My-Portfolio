@@ -8,7 +8,7 @@ import OptimizedLottie from '@/components/OptimizedLottie';
 
 const proofStats = [
   { value: '3+ years', label: 'Product engineering' },
-  { value: 'AI-native', label: 'Fast, verified delivery' },
+  { value: 'DSA + debugging', label: 'Problem solving' },
   { value: 'Mobile + backend', label: 'End-to-end ownership' },
   { value: 'Realtime', label: 'Maps, sockets, payments' },
 ];
@@ -28,6 +28,8 @@ const coreStack = [
   'ESP32',
   'Java',
   'Python',
+  'DSA',
+  'Problem Solving',
 ];
 
 export default function Hero() {
@@ -62,7 +64,7 @@ export default function Hero() {
 
               <div className="absolute bottom-4 right-4 flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-950/72 px-4 py-3 backdrop-blur-md">
                 <div className="overflow-hidden rounded-full border border-cyan-300/20">
-                  <Image src="/img/chanchal.jpg" alt="Chanchal Maity" width={44} height={44} className="h-11 w-11 object-cover" />
+                  <Image src="/img/chanchal-professional.jpg" alt="Chanchal Maity" width={44} height={44} className="h-11 w-11 object-cover" />
                 </div>
                 <div>
                   <p className="text-sm font-black text-white">Chanchal Maity</p>
@@ -108,13 +110,13 @@ export default function Hero() {
           </p>
 
           <h1 className="text-4xl font-black leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">
-            I build production-ready apps across mobile, backend, realtime, and IoT.
+            I build production-ready apps across mobile, backend, realtime, IoT, and complex product logic.
           </h1>
 
           <p className="mt-7 max-w-3xl text-base leading-8 text-slate-300 sm:text-xl">
             I am Chanchal Maity. My strongest work combines React Native, Next.js, Node.js,
             MongoDB, Socket.IO, native Android modules, payments, maps, and AI-assisted engineering
-            into complete product systems.
+            into complete product systems with strong debugging and problem-solving depth.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

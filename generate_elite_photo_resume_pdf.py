@@ -27,7 +27,7 @@ LINE = (0.845, 0.885, 0.925)
 SIDEBAR_TEXT = (0.790, 0.850, 0.925)
 
 
-PHOTO_PATH = Path(r"C:\Users\maity\Downloads\Picsart_25-10-03_13-31-52-869.jpg.jpeg")
+PHOTO_PATH = Path(__file__).with_name("public").joinpath("img", "chanchal-professional.jpg")
 OUTPUT_PATH = Path(__file__).with_name("Chanchal_Maity_Resume.pdf")
 
 
@@ -136,12 +136,12 @@ class EliteResume:
 
     def image_circle(self, cx: float, cy: float, diameter: float) -> None:
         r = diameter / 2
-        # Manual focus crop: keeps face and upper body centered instead of showing the whole room.
-        scale = diameter / 430
+        # Manual focus crop: keeps the professional headshot centered inside the resume avatar.
+        scale = diameter / 720
         draw_w = self.photo_w * scale
         draw_h = self.photo_h * scale
-        crop_left = 140
-        crop_top = 72
+        crop_left = 270
+        crop_top = 130
         x = cx - r - (crop_left * scale)
         y = cy + r - draw_h + (crop_top * scale)
         self.ops.append("q")
@@ -240,7 +240,8 @@ class EliteResume:
                 "Payments, maps, calling",
                 "Native Android behavior",
                 "IoT hardware-to-cloud",
-                "AI-assisted engineering",
+                "DSA problem solving",
+                "AI-assisted debugging",
             ],
             7.55,
         )
@@ -252,7 +253,7 @@ class EliteResume:
                 "Mobile: React Native, Expo, Flutter, TypeScript, Java",
                 "Web: Next.js, React, Tailwind CSS, Bootstrap, Framer Motion",
                 "Backend: Node.js, Express.js, MongoDB, Mongoose, JWT",
-                "Python: scripting, automation, debugging, API utilities",
+                "Foundations: Python scripting, DSA, algorithms, debugging",
                 "Realtime: Socket.IO, WebSockets, Redis-style active state",
                 "Integrations: Razorpay, Maps, Agora, Firebase FCM, Twilio",
                 "Tools: Postman/API testing, Git/GitHub, npm, Vercel, Render",
@@ -304,7 +305,7 @@ class EliteResume:
         self.stroke_rect(MAIN_X, 641, MAIN_R - MAIN_X, 78, LINE, 0.8)
         self.text(MAIN_X + 12, 700, "TOP SPECIALITY", 7.8, "F2", BLUE)
         speciality_lines = wrap_text(
-            "Marketplace-grade apps with realtime state, payments, maps, native Android, and backend-owned correctness.",
+            "Marketplace-grade apps with realtime state, payments, maps, native Android, DSA-style problem solving, and backend-owned correctness.",
             MAIN_R - MAIN_X - 24,
             7.9,
             True,
@@ -317,7 +318,7 @@ class EliteResume:
             ("AasPas", "customer + worker"),
             ("Realtime", "tracking + calls"),
             ("IoT", "ESP32 control"),
-            ("AI-native", "verified delivery"),
+            ("Problem solving", "DSA + debugging"),
         ]
         chip_x = MAIN_X + 12
         chip_y = 650
@@ -333,7 +334,7 @@ class EliteResume:
         y2 = self.main_heading("Professional Summary", y2)
         y2 = self.main_paragraph(
             y2,
-            "3+ years building React Native, Flutter, Next.js, Node.js, Python scripting, MongoDB, Socket.IO, payments, maps, native Android, IoT, and AI-assisted products. Strongest proof: AasPas, a customer-worker marketplace with live tracking, in-app calling, payments, wallet/earnings, and admin-ready backend operations.",
+            "3+ years building React Native, Flutter, Next.js, Node.js, Python scripting, MongoDB, Socket.IO, payments, maps, native Android, IoT, and AI-assisted products. Strongest proof: AasPas, a customer-worker marketplace with live tracking, in-app calling, payments, wallet/earnings, DSA-style problem solving, and admin-ready backend operations.",
             7.9,
             max_w=292,
         )
@@ -358,6 +359,7 @@ class EliteResume:
                 "Built customer and worker flows: discovery, booking, acceptance, tracking, payments, wallet, reviews, support, and admin visibility.",
                 "Integrated Socket.IO tracking, Razorpay, Maps, Firebase FCM, Agora calling, and Android full-screen booking/call flows.",
                 "Owned backend correctness for booking state, payment status, worker earnings, commission, wallet records, and recovery.",
+                "Solved complex edge cases around double-booking prevention, active-job recovery, realtime state, and weak-network behavior.",
             ],
             7.75,
             285,
@@ -420,7 +422,7 @@ class EliteResume:
 
         y2 = self.main_heading("Education & Certifications", y2 - 2)
         edu = [
-            ("Full-Stack Software Engineering Certificate", "Meta / Coursera - Advanced JavaScript, React, backend development", "2023"),
+            ("HackerRank Certifications", "Problem Solving, JavaScript, Node.js, REST API, and React", "2026"),
             ("Diploma in Computer Hardware & Networking", "The George Telegraph Training Institute", "2020 - 2022"),
             ("Higher Secondary (HS)", "Nachinda Jibankrishna High School - 85.4%", "2020"),
         ]
@@ -436,6 +438,7 @@ class EliteResume:
             y2,
             [
                 "End-to-end product ownership across mobile apps, backend APIs, realtime systems, payments, maps, and admin workflows.",
+                "DSA-backed problem solving for state consistency, race conditions, recovery paths, and production bugs.",
                 "Version-controlled delivery with Git/GitHub, API testing, deployment workflows, and clean iteration habits.",
                 "Hardware-aware engineering mindset from TRC/Brightex experience and IoT experimentation.",
             ],
@@ -444,7 +447,7 @@ class EliteResume:
         )
 
         self.rect(MAIN_X, 31, MAIN_R - MAIN_X, 20, PANEL)
-        self.text(MAIN_X + 9, 38.5, "Portfolio focus: mobile, backend, realtime, payments, native Android, IoT, and AI workflows.", 6.9, "F2", BLUE)
+        self.text(MAIN_X + 9, 38.5, "Portfolio focus: mobile, backend, realtime, DSA problem solving, native Android, IoT, and AI workflows.", 6.9, "F2", BLUE)
 
     def write(self, output: Path) -> None:
         self.render()
