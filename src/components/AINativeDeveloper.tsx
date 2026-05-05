@@ -6,16 +6,16 @@ import OptimizedLottie from '@/components/OptimizedLottie';
 
 const capabilityCards = [
   {
-    title: 'Structured prompting',
+    title: 'GenAI prompt systems',
     badge: 'Planning',
     detail:
-      'I break complex work into specs, constraints, implementation steps, and review passes before touching production code.',
+      'I combine documentation, product requirements, and GenAI prompts into specs, constraints, implementation steps, and review passes.',
   },
   {
     title: 'Verification discipline',
     badge: 'Quality',
     detail:
-      'I check AI-assisted output against code, edge cases, runtime behavior, and product requirements instead of accepting it blindly.',
+      'I check GenAI-assisted output against code, edge cases, runtime behavior, and product requirements instead of accepting it blindly.',
   },
   {
     title: 'Faster delivery',
@@ -26,6 +26,9 @@ const capabilityCards = [
 ];
 
 const orchestrationStack = [
+  'Self-directed learning',
+  'Documentation reading',
+  'GenAI workflows',
   'GPT',
   'Claude',
   'Gemini',
@@ -49,10 +52,10 @@ export default function AINativeDeveloper() {
           className="mx-auto max-w-4xl text-center"
         >
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.26em] text-cyan-200">AI workflow</p>
-          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">AI-native, but engineering-led</h2>
+          <h2 className="text-4xl font-black tracking-tight sm:text-5xl">AI-native and GenAI-assisted, but engineering-led</h2>
           <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
-            I use GPT, Claude, and Gemini as engineering accelerators. The value is not only speed;
-            it is scoped prompting, careful review, and the ability to turn assistance into shippable work.
+            I use GPT, Claude, and Gemini as GenAI engineering accelerators. The value is not only speed;
+            it is self-directed learning, documentation reading, scoped prompting, careful review, and the ability to turn assistance into shippable work.
           </p>
           <div className="mt-6 inline-flex rounded-full border border-emerald-300/20 bg-emerald-300/10 px-5 py-2 text-sm font-bold text-emerald-200">
             Speed with ownership, review, and production judgment
@@ -89,14 +92,14 @@ export default function AINativeDeveloper() {
                   Verified delivery
                 </p>
                 <p className="mt-2 text-sm leading-7 text-slate-300">
-                  Speed matters, but trust matters more. I use verification loops so AI-assisted output can still hold up in real production logic.
+                  Speed matters, but trust matters more. I use verification loops so GenAI-assisted output can still hold up in real production logic.
                 </p>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-3">
               <span className="rounded-full bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-200">
-                AI as a force multiplier
+                GenAI as a force multiplier
               </span>
               <span className="rounded-full bg-emerald-300/10 px-4 py-2 text-sm font-bold text-emerald-200">
                 Speed with verification
@@ -105,7 +108,7 @@ export default function AINativeDeveloper() {
 
             <h3 className="mt-6 text-3xl font-black text-white">How I use AI in real builds</h3>
             <p className="mt-5 text-lg leading-8 text-slate-300">
-              I use AI to speed up architecture planning, debugging, implementation, and refactoring.
+              I use documentation plus GenAI to speed up architecture planning, debugging, implementation, and refactoring.
               Then I review the result like normal engineering work: code paths, edge cases, build
               output, and product behavior.
             </p>

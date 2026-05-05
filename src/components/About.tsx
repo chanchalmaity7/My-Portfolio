@@ -44,7 +44,7 @@ export default function About() {
                 Three-plus years building products
               </span>
               <span className="rounded-full bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-200">
-                Full-stack + mobile + AI-native
+                Self-directed + GenAI
               </span>
             </div>
 
@@ -55,8 +55,8 @@ export default function About() {
               tracking, payments, worker operations, AI booking support, admin logic, and complex recovery problems.
             </p>
             <p className="mt-5 text-lg leading-8 text-slate-300">
-              I am focused on remote roles and product teams that value ownership, AI-native execution, and the ability
-              to debug across frontend, backend, native mobile, data structures, and real user flows.
+              I am focused on remote roles and product teams that value ownership, AI-native and GenAI-assisted execution, and the ability
+              to learn from documentation, debug across frontend, backend, native mobile, data structures, and real user flows.
             </p>
 
             <div className="mt-7 grid gap-3">

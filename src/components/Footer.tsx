@@ -22,7 +22,7 @@ export default function Footer() {
               <span className="text-cyan-300">.</span>
             </h3>
             <p className="mb-3 text-sm text-gray-400 sm:mb-4 sm:text-base">
-              AI-native full-stack and mobile product engineer building real app systems across mobile, backend,
+              AI-native and GenAI-assisted full-stack and mobile product engineer building real app systems across mobile, backend,
               realtime, payments, maps, and IoT.
             </p>
             <div className="flex items-center gap-2">

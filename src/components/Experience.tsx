@@ -4,29 +4,42 @@ import { motion } from 'framer-motion';
 
 const experiences = [
   {
-    title: 'Full-Stack & Mobile Product Engineer',
-    company: 'Independent product development',
-    period: '2022 - Present',
+    title: 'Founder & Lead Product Engineer',
+    company: 'AasPas India',
+    period: 'Sep 2025 - Present',
     description:
-      'Built mobile and web products end-to-end, including AasPas: a service marketplace with native Android calling, live tracking, payments, sockets, AI booking support, worker operations, and admin-ready backend logic.',
+      'Building AasPas as a full-stack service marketplace with native Android calling, live tracking, payments, sockets, AI booking support, worker operations, and admin-ready backend logic.',
     achievements: [
       'Designed booking, tracking, payment, wallet, review, and support workflows',
       'Built native Android modules for call screens, notifications, location, and background behavior',
       'Implemented Socket.IO architecture for customer, worker, booking, and admin rooms',
-      'Integrated Razorpay, Firebase FCM, Agora, Google Maps, MongoDB, and Redis-style active state',
+      'Solved edge cases around active jobs, weak networks, recovery, and realtime state consistency',
     ],
   },
   {
-    title: 'Full-Stack Web Developer',
-    company: 'Client and portfolio projects',
-    period: '2021 - 2022',
+    title: 'Technical Integration Specialist',
+    company: 'Brightex Solutions P Ltd',
+    period: 'Jul 2023 - May 2024',
     description:
-      'Delivered web applications and business websites using React, Next.js, Node.js, MongoDB, auth, payments, and responsive UI systems.',
+      'Worked on device performance optimization and component-level software-hardware integration workflows.',
     achievements: [
-      'Shipped e-commerce, food commerce, architecture, and learning platform projects',
-      'Built JWT authentication, database models, admin flows, forms, and deployment pipelines',
-      'Created responsive interfaces with Tailwind CSS, animation, and SEO-friendly page structure',
-      'Worked directly from business requirements to production-ready implementation',
+      'Optimized device performance across technical integration workflows',
+      'Managed software-hardware synergy at component and device-behavior level',
+      'Strengthened practical debugging, system diagnosis, and reliability-focused engineering habits',
+      'Built hardware-aware foundations useful for native Android, IoT, and real-device product work',
+    ],
+  },
+  {
+    title: 'TRC Engineer, QC Department',
+    company: 'Aforeserve.Com Ltd - Lenovo service workflow',
+    period: 'Jul 2022 - Jun 2023',
+    description:
+      'Worked in Lenovo service workflows around device quality checks, diagnosis, and hardware-aware debugging.',
+    achievements: [
+      'Diagnosed Lenovo device quality issues across service workflows',
+      'Built practical troubleshooting and quality-control discipline',
+      'Developed hardware-aware debugging foundations for device reliability',
+      'Improved real-device diagnosis habits that now support mobile and IoT product work',
     ],
   },
 ];

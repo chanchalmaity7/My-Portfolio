@@ -16,7 +16,7 @@ Full-stack and mobile product engineer with 3+ years of experience building prod
 **Backend:** Node.js, Express.js, MongoDB, Mongoose, JWT auth, REST APIs, role-based flows, recovery logic  
 **Realtime & Integrations:** Socket.IO, Firebase FCM, Google Maps, Google Directions, Agora, Razorpay, Redis-style active state  
 **Product Systems:** Booking lifecycle, payments, wallet settlement, worker operations, admin tooling, localization, support workflows  
-**AI-Native Workflow:** GPT, Claude, Gemini, prompt decomposition, architecture planning, debugging, verification loops, code review
+**AI-Native / GenAI Workflow:** self-directed learning, documentation, GPT, Claude, Gemini, prompt decomposition, architecture planning, debugging, verification loops, code review
 
 ## Flagship Project
 
@@ -31,7 +31,7 @@ Full-stack and mobile product engineer with 3+ years of experience building prod
 - Built payment workflows covering advance booking fee, online/cash options, remaining due, final amount, worker earnings, commission, wallet visibility, and settlement-style records.
 - Integrated native Android behavior for incoming booking popups, call screens, ongoing call notifications, lock-screen/background-safe actions, and return-to-call flows where JavaScript-only UI was not enough.
 - Integrated Firebase FCM for notifications, Agora for in-app calling, Razorpay for payments, Google Maps/Directions for location workflows, and MongoDB for durable booking/payment data.
-- Added multilingual and AI-assisted booking support to help users express service needs naturally and reduce booking friction in regional markets.
+- Added multilingual and GenAI-assisted booking support to help users express service needs naturally and reduce booking friction in regional markets.
 - Designed backend-owned correctness for sensitive states such as booking lifecycle, payment status, worker earnings, remaining amount, and active job recovery.
 
 ## Selected Projects
@@ -76,9 +76,9 @@ Full-stack and mobile product engineer with 3+ years of experience building prod
 ### Independent Full-Stack & Mobile Product Engineer
 **2022 - Present**
 
-- Built mobile, web, backend, realtime, payment, map, native Android, IoT, commerce, and AI-assisted product systems end-to-end.
+- Built mobile, web, backend, realtime, payment, map, native Android, IoT, commerce, and GenAI-assisted product systems end-to-end.
 - Owned product architecture, UI implementation, backend APIs, database models, notification flows, payments, native modules, deployment readiness, and debugging across real user workflows.
-- Used AI-native workflows to accelerate implementation while maintaining manual review, verification, architecture control, and production-quality decisions.
+- Used self-directed AI-native / GenAI-assisted workflows with documentation, prompt engineering, manual review, verification, architecture control, and production-quality decisions.
 
 ### Full-Stack Web Developer - Client & Portfolio Projects
 **2021 - 2022**
@@ -88,12 +88,15 @@ Full-stack and mobile product engineer with 3+ years of experience building prod
 
 ## Education
 
-**Diploma in [Your Branch]** - [College Name], [Year]  
-Add exact branch, college, location, and passing year.
+**Diploma in Computer Hardware & Networking** - The George Telegraph Training Institute, 2020 - 2022  
+Grade: First Class with Honours (73.63%).
+
+**Higher Secondary (HS)** - Nachinda Jibankrishna High School, 2020  
+Grade: A+ (85.4%).
 
 ## Highlights For Recruiters
 
 - Built real product systems, not only UI screens.
 - Strong ownership across mobile, backend, payments, maps, realtime, and native Android behavior.
-- Experience with marketplace, IoT, ecommerce, telephony, realtime media, and AI-assisted workflows.
+- Experience with marketplace, IoT, ecommerce, telephony, realtime media, and GenAI-assisted workflows.
 - Can discuss architecture, tradeoffs, production bugs, recovery logic, payment correctness, and mobile device behavior in interviews.

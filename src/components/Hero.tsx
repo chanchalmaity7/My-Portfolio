@@ -68,7 +68,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <p className="text-sm font-black text-white">Chanchal Maity</p>
-                  <p className="text-xs uppercase tracking-[0.18em] text-cyan-200">AI-native product engineer</p>
+                  <p className="text-xs uppercase tracking-[0.18em] text-cyan-200">GenAI-assisted engineer</p>
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function Hero() {
 
               <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/10 p-5">
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200">
-                  AI-native execution
+                  GenAI-assisted execution
                 </p>
                 <h2 className="mt-2 text-2xl font-black">Fast delivery, verified logic</h2>
                 <p className="mt-3 text-sm leading-7 text-slate-300">
@@ -106,7 +106,7 @@ export default function Hero() {
           className="order-2 w-full min-w-0 max-w-4xl lg:order-1"
         >
           <p className="mb-5 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
-            AI-native full-stack and mobile product engineer
+            AI-native / GenAI product engineer
           </p>
 
           <h1 className="text-4xl font-black leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">
@@ -115,7 +115,7 @@ export default function Hero() {
 
           <p className="mt-7 max-w-3xl text-base leading-8 text-slate-300 sm:text-xl">
             I am Chanchal Maity. My strongest work combines React Native, Next.js, Node.js,
-            MongoDB, Socket.IO, native Android modules, payments, maps, and AI-assisted engineering
+            MongoDB, Socket.IO, native Android modules, payments, maps, and GenAI-assisted engineering
             into complete product systems with strong debugging and problem-solving depth.
           </p>
 

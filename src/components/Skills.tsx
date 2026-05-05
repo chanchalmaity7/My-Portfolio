@@ -39,9 +39,9 @@ const skillGroups = [
     items: ['TypeScript', 'JavaScript', 'Java', 'Python', 'C', 'C++', 'HTML5', 'CSS3', 'Bootstrap', 'SQL'],
   },
   {
-    title: 'AI collaboration and prompt engineering',
-    summary: 'GPT, Claude, and Gemini for architecture breakdown, review loops, debugging, and faster delivery.',
-    items: ['Prompt orchestration', 'Hallucination control', 'Multi-step verification', 'Architecture prompting', 'AI-assisted debugging', 'Spec refinement'],
+    title: 'GenAI workflows and prompt engineering',
+    summary: 'Self-directed GenAI-assisted learning with documentation, GPT, Claude, and Gemini for architecture breakdown, review loops, debugging, and faster delivery.',
+    items: ['GenAI-assisted development', 'Self-directed learning', 'Documentation reading', 'Prompt orchestration', 'Hallucination control', 'Multi-step verification', 'Architecture prompting', 'GenAI-assisted debugging', 'Spec refinement'],
   },
 ];
 

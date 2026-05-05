@@ -290,14 +290,14 @@ def build_resume() -> PdfResume:
             ("Integrations", "Razorpay, Google Maps, Google Directions, Agora, Firebase FCM, Twilio, WebRTC"),
             ("Product", "booking lifecycle, payments, wallet, worker operations, support, localization, admin tooling"),
             ("IoT", "ESP32, relay control, device ownership, schedules, timers, heartbeat, power-loss recovery"),
-            ("AI Workflow", "GPT, Claude, Gemini, prompt decomposition, debugging, code review, verification loops"),
+            ("AI Workflow", "self-directed learning, documentation, GPT, Claude, Gemini, prompt decomposition, debugging, verification loops"),
         ]
     )
 
     pdf.heading("Professional Experience")
     pdf.label_line(
         "Founder & Lead Product Engineer - AasPas India (CPJ Solution)",
-        "2024 - Present",
+        "Sep 2025 - Present",
         "React Native, TypeScript, Node.js, Express.js, MongoDB, Socket.IO, Razorpay, Google Maps, Agora, Firebase FCM, Native Android",
     )
     pdf.bullets(
@@ -378,7 +378,7 @@ def build_resume() -> PdfResume:
             "End-to-end ownership across mobile, backend, database, realtime, native Android, and deployment-ready product flows.",
             "Strong debugging mindset across software, hardware, mobile lifecycle, notifications, calling, maps, payments, and recovery behavior.",
             "Product thinking around real user journeys: booking, support, trust, worker operations, payments, earnings, and operational visibility.",
-            "AI-native execution with manual review, architecture control, prompt decomposition, code reasoning, and verification discipline.",
+            "Self-directed AI-assisted engineering with documentation, manual review, architecture control, prompt decomposition, code reasoning, and verification discipline.",
         ],
         8.9,
     )
@@ -391,8 +391,8 @@ def build_resume() -> PdfResume:
                 "Meta / Coursera - Online Professional Certification; advanced JavaScript, React, and backend development",
                 "2023",
             ),
-            ("Diploma in Computer Hardware & Networking", "The George Telegraph Training Institute", "2020 - 2022"),
-            ("Higher Secondary (HS)", "Nachinda Jibankrishna High School - Percentage: 85.4%", "2020"),
+            ("Diploma in Computer Hardware & Networking", "The George Telegraph Training Institute - First Class with Honours (73.63%)", "2020 - 2022"),
+            ("Higher Secondary (HS)", "Nachinda Jibankrishna High School - A+ (85.4%)", "2020"),
         ]
     )
     return pdf

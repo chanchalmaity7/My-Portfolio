@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Chanchal Maity - Full Stack & Mobile Product Engineer",
   description:
-    "Portfolio of Chanchal Maity, a full-stack and React Native engineer building production-grade mobile apps, realtime systems, payments, maps, native Android flows, complex problem solving, and modern web products.",
+    "Portfolio of Chanchal Maity, a full-stack and React Native engineer building production-grade mobile apps, realtime systems, payments, maps, native Android flows, GenAI-assisted workflows, complex problem solving, and modern web products.",
 };
 
 export default function RootLayout({

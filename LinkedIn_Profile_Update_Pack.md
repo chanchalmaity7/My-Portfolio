@@ -20,15 +20,15 @@ Use one of these. Recommended is Option 1.
 
 ### Option 1 - Recommended
 
-AI-Native Full-Stack & Mobile Product Engineer | React Native, Next.js, Node.js, MongoDB, Socket.IO | Maps, Payments, Realtime, IoT | Founder/Builder of AasPas
+AI-Native / GenAI-Assisted Full-Stack & Mobile Product Engineer | React Native, Next.js, Node.js, MongoDB, Socket.IO | Maps, Payments, Realtime, IoT | Founder/Builder of AasPas
 
 ### Option 2 - Shorter
 
-Full-Stack & Mobile Product Engineer | React Native, Node.js, MongoDB, Socket.IO | Building AasPas, IoT, Realtime and AI-assisted Products
+Full-Stack & Mobile Product Engineer | React Native, Node.js, MongoDB, Socket.IO | Building AasPas, IoT, Realtime and GenAI-assisted Products
 
 ### Option 3 - Global Remote Focus
 
-AI-Native Product Engineer | Mobile + Backend + Realtime Systems | React Native, Next.js, Node.js, MongoDB, Socket.IO | Open to Remote/Global Roles
+AI-Native / GenAI-Assisted Product Engineer | Mobile + Backend + Realtime Systems | React Native, Next.js, Node.js, MongoDB, Socket.IO | Open to Remote/Global Roles
 
 ## Location
 
@@ -44,7 +44,7 @@ Open to remote roles and international product teams across India, Singapore, Eu
 
 Copy this into LinkedIn About:
 
-I am an AI-native full-stack and mobile product engineer building production-ready apps across mobile, backend, realtime systems, maps, payments, native Android behavior, IoT, and automation.
+I am an AI-native and GenAI-assisted full-stack and mobile product engineer building production-ready apps across mobile, backend, realtime systems, maps, payments, native Android behavior, IoT, and automation.
 
 My strongest proof is AasPas, a hyperlocal service marketplace built across customer app, worker app, backend APIs, realtime tracking, in-app calling, Razorpay payment flows, wallet/earnings logic, multilingual help, and admin-ready operations. I enjoy building complete product systems, not only UI screens.
 
@@ -54,10 +54,10 @@ What I bring:
 
 - End-to-end product ownership across mobile apps, backend APIs, realtime state, payments, maps, and admin workflows.
 - Practical debugging mindset across software, native Android behavior, devices, notifications, calls, and hardware-aware systems.
-- AI-native execution using GPT, Claude, and Gemini for architecture planning, debugging, review loops, and faster delivery with manual verification.
+- AI-native / GenAI-assisted execution using GPT, Claude, and Gemini for architecture planning, debugging, review loops, and faster delivery with manual verification.
 - Strong product thinking around booking flows, worker operations, user trust, payments, wallet/earnings, support, and recovery logic.
 
-I am open to full-stack, React Native, Node.js backend, mobile product engineering, and AI-native product roles, including remote/global teams.
+I am open to full-stack, React Native, Node.js backend, mobile product engineering, AI-native product, and GenAI-assisted developer roles, including remote/global teams.
 
 Portfolio: https://chanchal.aaspasindia.com
 Email: chanchal@aaspasindia.com
@@ -97,7 +97,7 @@ Employment type:
 Self-employed or Founder
 
 Dates:
-2024 - Present
+Sep 2025 - Present
 
 Location:
 West Bengal, India
@@ -247,7 +247,8 @@ Add these additional skills:
 - Product Engineering
 - Backend Development
 - Mobile Application Development
-- AI-assisted Development
+- GenAI-assisted Development
+- Generative AI
 - Prompt Engineering
 - Technical Integration
 - Hardware Troubleshooting
@@ -331,4 +332,3 @@ Post examples:
 - Do not write "student developer" if targeting professional roles.
 - Do not overclaim tools you cannot discuss in an interview.
 - Do not make the About section too long with personal story before proof.
-

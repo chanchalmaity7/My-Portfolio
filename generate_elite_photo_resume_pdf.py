@@ -241,7 +241,7 @@ class EliteResume:
                 "Native Android behavior",
                 "IoT hardware-to-cloud",
                 "DSA problem solving",
-                "AI-assisted debugging",
+                "GenAI-assisted debugging",
             ],
             7.55,
         )
@@ -256,7 +256,7 @@ class EliteResume:
                 "Foundations: Python scripting, DSA, algorithms, debugging",
                 "Realtime: Socket.IO, WebSockets, Redis-style active state",
                 "Integrations: Razorpay, Maps, Agora, Firebase FCM, Twilio",
-                "Tools: Postman/API testing, Git/GitHub, npm, Vercel, Render",
+                "Tools: Git/GitHub, Postman, docs, GenAI prompts, Vercel, Render",
                 "IoT: ESP32, relay control, schedules, heartbeat recovery",
             ],
             7.25,
@@ -291,7 +291,7 @@ class EliteResume:
         self.text(MAIN_X, 776, "Chanchal Maity", 27, "F2", INK)
         self.text(MAIN_X, 752, "Full-Stack & Mobile Product Engineer", 12.3, "F2", BLUE)
         header_lines = wrap_text(
-            "I build production-ready mobile, backend, realtime, IoT, and AI-assisted product systems end to end.",
+            "I build production-ready mobile, backend, realtime, IoT, and GenAI-assisted product systems end to end.",
             MAIN_R - MAIN_X,
             8.9,
         )
@@ -334,14 +334,14 @@ class EliteResume:
         y2 = self.main_heading("Professional Summary", y2)
         y2 = self.main_paragraph(
             y2,
-            "3+ years building React Native, Flutter, Next.js, Node.js, Python scripting, MongoDB, Socket.IO, payments, maps, native Android, IoT, and AI-assisted products. Strongest proof: AasPas, a customer-worker marketplace with live tracking, in-app calling, payments, wallet/earnings, DSA-style problem solving, and admin-ready backend operations.",
+            "3+ years building React Native, Flutter, Next.js, Node.js, Python scripting, MongoDB, Socket.IO, payments, maps, native Android, IoT, and GenAI-assisted products. Strongest proof: AasPas, a customer-worker marketplace with live tracking, in-app calling, payments, wallet/earnings, DSA-style problem solving, and admin-ready backend operations.",
             7.9,
             max_w=292,
         )
 
         y2 = self.main_heading("Experience", y2 - 3)
         self.text(MAIN_X, y2, "Founder & Lead Product Engineer - AasPas India", 9.25, "F2", INK)
-        self.text(MAIN_R - text_width("2024 - Present", 8.0, True), y2, "2024 - Present", 8.0, "F2", MUTED)
+        self.text(MAIN_R - text_width("Sep 2025 - Present", 8.0, True), y2, "Sep 2025 - Present", 8.0, "F2", MUTED)
         y2 -= 12
         tech_lines = wrap_text(
             "CPJ Solution | React Native, Node.js, MongoDB, Socket.IO, Razorpay, Maps, Agora, FCM, Native Android",
@@ -423,8 +423,8 @@ class EliteResume:
         y2 = self.main_heading("Education & Certifications", y2 - 2)
         edu = [
             ("HackerRank Certifications", "Problem Solving, JavaScript, Node.js, REST API, and React", "2026"),
-            ("Diploma in Computer Hardware & Networking", "The George Telegraph Training Institute", "2020 - 2022"),
-            ("Higher Secondary (HS)", "Nachinda Jibankrishna High School - 85.4%", "2020"),
+            ("Diploma in Computer Hardware & Networking", "The George Telegraph Training Institute - First Class with Honours (73.63%)", "2020 - 2022"),
+            ("Higher Secondary (HS)", "Nachinda Jibankrishna High School - A+ (85.4%)", "2020"),
         ]
         for title, detail, date in edu:
             self.text(MAIN_X, y2, title, 8.35, "F2", INK)
@@ -439,15 +439,14 @@ class EliteResume:
             [
                 "End-to-end product ownership across mobile apps, backend APIs, realtime systems, payments, maps, and admin workflows.",
                 "DSA-backed problem solving for state consistency, race conditions, recovery paths, and production bugs.",
-                "Version-controlled delivery with Git/GitHub, API testing, deployment workflows, and clean iteration habits.",
-                "Hardware-aware engineering mindset from TRC/Brightex experience and IoT experimentation.",
+                "Self-directed GenAI-assisted engineering with documentation, prompt workflows, Git/GitHub, API testing, and manual verification.",
             ],
             7.35,
             286,
         )
 
-        self.rect(MAIN_X, 31, MAIN_R - MAIN_X, 20, PANEL)
-        self.text(MAIN_X + 9, 38.5, "Portfolio focus: mobile, backend, realtime, DSA problem solving, native Android, IoT, and AI workflows.", 6.9, "F2", BLUE)
+        self.rect(MAIN_X, 15, MAIN_R - MAIN_X, 17, PANEL)
+        self.text(MAIN_X + 9, 21.3, "Portfolio focus: mobile, backend, realtime, DSA problem solving, native Android, IoT, and GenAI workflows.", 6.7, "F2", BLUE)
 
     def write(self, output: Path) -> None:
         self.render()
